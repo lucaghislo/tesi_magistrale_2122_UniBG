@@ -14,7 +14,8 @@
 \if@final
     
 	\LoadClass[12pt, twoside]{book} % 12 pt font, two-sided book style
-	
+
+        \usepackage[dvipsnames]{xcolor}
 	\RequirePackage[a4paper, includehead, headheight=0.6cm, inner=3cm ,outer=3cm, top=3cm, bottom=3cm]{geometry}  % Changing size of document
 	
 	\RequirePackage[bf]{caption} % caption: FIG in bold

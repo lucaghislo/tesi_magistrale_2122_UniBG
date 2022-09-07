@@ -26,6 +26,7 @@
 \usepackage{fancyhdr} % For the headers
 \usepackage{hyperref} % Adds clickable links at references
 \usepackage{afterpage} % blank page
+\usepackage{bm}
 \newcommand\blankpage{%
     \null
     \thispagestyle{empty}%
@@ -37,11 +38,13 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
+    
 
 %----------------------------------------------------------------------------------------
 %	ADD YOUR PACKAGES (be careful of package interaction)
 %----------------------------------------------------------------------------------------
 
+\usepackage{xcolor}
 \usepackage{amsthm,amsmath,amssymb,amsfonts,bbm}% Math symbols
 
 % Redefine the plain page style
@@ -65,7 +68,6 @@
 %\usepackage[Glenn]{fncychap}
 %\ChTitleVar{\Huge\bfseries}
 \usepackage{gensymb}
-\usepackage{xcolor}
 \usepackage{makecell}
 \hypersetup{
     colorlinks,
@@ -146,11 +148,11 @@
 
 % UNCOMMENT FOR FULL CONTENT
 %\input{Preamble/abstract} % NO
-\input{Preamble/acknowledgments}
+%\input{Preamble/acknowledgments}
 %\input{Preamble/abbreviations} % NO
 %\input{Preamble/glossary} % NO
 %\input{Preamble/nomenclature} % NO
-\input{Preamble/dedication}
+%\input{Preamble/dedication}
 
 %-------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES

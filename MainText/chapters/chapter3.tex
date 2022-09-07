@@ -1,9 +1,9 @@
 \chapter{Cosmic muon detection using an assembled Si(Li) tracker module} \label{ch3}
 
-The following chapter describes the test setup and the consequent experimental results concerning the search and detection of cosmic muons by means of an assembled Si(Li) tracker module of the GAPS experiment.
+The following Chapter describes the test setup and the consequent experimental results concerning the search and detection of cosmic muons by means of an assembled Si(Li) tracker module of the GAPS experiment.
 
 \par
-The chapter is structured as follows. Initially, the physical background concerning cosmic muons, their nature and detection possibilities on planet Earth is given. Next, a description of the test setup adopted to carry out the measurements is given, which is comprised of an assembled Si(Li) tracker module and an ArduSiPM ionising radiation detector, used as a trigger for the readout electronics. Finally, the experimental results obtained from the detection are reported, with an explanation of their usefulness in the context of flight item characterisation.
+The Chapter is structured as follows. Initially, the physical background concerning cosmic muons, their nature and detection possibilities on planet Earth is given. Next, a description of the test setup adopted to carry out the measurements is provided, which is comprised of an assembled Si(Li) tracker module and an ArduSiPM ionising radiation detector, used as a trigger for the readout electronics. Finally, the experimental results obtained from the detection are reported, with an explanation of their usefulness in the context of flight item characterisation. This Section also reports the results obtained during the characterisation activity that has been performed on the fully assemble Si(Li) tracker module.
 
 %-------------------------------------------------------------------------------
 %   Cosmic muons
@@ -11,7 +11,7 @@ The chapter is structured as follows. Initially, the physical background concern
 
 \section{Cosmic muons}
 
-Cosmic rays are intense particles that continually rain through the Earth's atmosphere, with a portion of them penetrating the surface at relativistic speeds. Cosmic rays provide a homogeneous background ionising radiation that showers on the Earth's atmosphere at a rate of around 1000 collisions per square meter every second \cite{uretsky_1997_penetration}. The sun or more exotic occurrences like as supernovae and black holes can be the source of these particles. The majority of cosmic ray energy reaches the Earth's surface in the form of muon kinetic energy.
+Cosmic rays are intense particles that continually rain through the Earth's atmosphere, with a portion of them penetrating the surface at relativistic speeds. Cosmic rays provide a homogeneous background ionising radiation that showers on the Earth's atmosphere at a rate of around 1000 collisions per square meter every second \cite{uretsky_1997_penetration}. The sun or more exotic occurrences like supernovae and black holes can be the source of these particles. The majority of cosmic ray energy reaches the Earth's surface in the form of muon kinetic energy.
 
 \par
 Muons ($\mu^{-}$ and $\mu^{+}$) are particles of the lepton family \cite{klapdorkleingrothaus_2018_lepton} that form as a result of interactions between very energetic cosmic rays and the nuclei of atmospheric particles. They are the product of pion decay ($\pi^{-}$ and $\pi^{+}$). The muons formed in the atmosphere may infiltrate the Earth's surface for hundreds of meters due to their ultra-relativistic character, which stems from the fact that these particles have a speed near to that of light. The flux of these particles may be differentiated adequately with a scintillator detection setup, as used in this experiment.
@@ -27,7 +27,7 @@ When cosmic rays collide with the atmosphere, they can cause a particle \textit{
 \end{figure}
 
 \par
-Cosmic muons, on the other hand, have a typical lifespan of around \SI{2}{\micro\second} and may reach the Earth's surface at the speed of light. All of the particles in the air shower are collectively referred to as \textit{secondary cosmic rays}. Pacini, Hess, and other physicists discovered them around the beginning of the twentieth century while studying the electric conductivity of air. They eventually realised that, in the words of Pacini, \textit{``a sizeable cause of ionisation exists in the atmosphere, originating from penetrating radiation, independent of the direct action of radioactive substances in the crust''} \cite{deangelis_2012_domenico, alessandrodeangelis_2012_lenigma}. It was Millikan that for the first time, after these experiments, called this extraterrestrial radiation \textit{cosmic rays}.  The cosmic rays, after discovery and for a few decades before the takeover of particle accelerators, have been the main source for the early development of particle physic. After its discovery and for a few decades before the takeover of particle accelerators, cosmic rays were the primary source for the early development of particle physics.
+Cosmic muons, on the other hand, have a typical lifespan of around \SI{2}{\micro\second} and may reach the Earth's surface at the speed of light. All of the particles in the air shower are collectively referred to as \textit{secondary cosmic rays}. Pacini, Hess, and other physicists discovered them around the beginning of the twentieth century while studying the electric conductivity of air. They eventually realised that, in the words of Pacini, \textit{``a sizeable cause of ionisation exists in the atmosphere, originating from penetrating radiation, independent of the direct action of radioactive substances in the crust''} \cite{deangelis_2012_domenico, alessandrodeangelis_2012_lenigma}. It was Millikan that for the first time, after these experiments, called this extraterrestrial radiation \textit{cosmic rays}.  The cosmic rays, after discovery and for a few decades before the takeover of particle accelerators, have been the main source for the early development of particle physic.
 
 \par
 The flux of muons with a momentum greater than \SI{1}{\giga\electronvolt} at sea level has been measured to be around \SI[parse-numbers=false]{(0.94 \pm 0.12) \times 10^{-2}}{\cm^{-2}.sr^{-1}.s^{-1}} \cite{tanabashi_2018_review, allkofer_1975_the}. It can be said that 10 000 of muons per minute and per square (horizontal) meter, or alternatively \SI{\approx 170}{\hertz\per\meter^{2}}, hit the ground. On average about 600 of them cross a human body every minute. Another easy to remember rule of thumb is that 1 muon per second intercepts the palm of a hand. These are indicative values, since the flux depends on many variables such as altitude, solar activity, Earth and other factors. The average energy of muons at sea level is comprised between \SI{3}{\giga\electronvolt} and \SI{4}{\giga\electronvolt} and the flux is maximum
@@ -39,7 +39,7 @@ at the zenith (vertical direction) and it scales approximately with $\cos^{2}(\t
 
 \section{Experiment setup}
 
-This Section provides a description of the setup used for the detection of cosmic muons through the joint use of the ArduSiPM ionising radiation detector and a fully assembled Si(Li) tracker module. Tests were conducted using the same setup described in \hyperref[sec21]{Section \ref{sec21}} and shown in \hyperref[figFEBtest1]{Figure \ref{figFEBtest1}}, the only difference being that instead of testing a FEB without Si(Li) detectors, in this case a complete module with 4 sensors was tested. The complete experiment setup is shown in more detail in \hyperref[figModuleSetup]{Figure \ref{figModuleSetup}}.
+This Section provides a description of the setup used for the detection of cosmic muons through the joint use of the ArduSiPM ionising radiation detector and a fully assembled Si(Li) tracker module. Tests were conducted using the same setup described in \hyperref[sec21]{Section \ref{sec21}} and shown in \hyperref[figFEBtest1]{Figure \ref{figFEBtest1}}, the only difference being that instead of testing a FEB without Si(Li) detectors, in this case a complete module with 4 Si(Li) detectors was tested. The complete experiment setup is shown in more detail in \hyperref[figModuleSetup]{Figure \ref{figModuleSetup}}.
 
 \par
 In order to carry out the tests on the module, the latter was powered by means of two instruments:
@@ -64,7 +64,7 @@ Both instruments were controlled by means of a specially developed Python applic
 The tests were carried out in a climate chamber, model ACS DY110, at a constant temperature of \SI{-40}{\celsius} and \SI{10}{\percent} relative humidity. The transition from room temperature to \SI{-40}{\celsius} and vice versa was carried out with an increment of \SI{0.5}{\celsius/\second} in order to avoid sudden temperature changes and consequent damage to the Si(Li) detectors, as well as the formation of condensation.
 
 \par
-In order to connect the high voltage lines coming from the CAEN HiVolta to the FEB, a specifically built adapter board, shown in \hyperref[figHiVoltAdapterBoard]{Figure \ref{figHiVoltAdapterBoard}}, has been designed in order to connect the negative and positive terminals of one channel of the CAEN HiVolta through two separate high voltage cables into a single one connected to the FEB. This simple adapter board, shown in \hyperref[figHiVoltAdapterBoard]{Figure \ref{figHiVoltAdapterBoard}} presents on one end a BNC connector and on the other a HIROSE MDF51SU high voltage connector to be hooked up to the respective HIROSE MDF51SY housing on the FEB. Both connectors are shown in \hyperref[figHVPSconn]{Figure \ref{figHVPSconn}}.
+In order to connect the high voltage lines coming from the CAEN HiVolta to the FEB, a specifically built adapter board, shown in \hyperref[figHiVoltAdapterBoard]{Figure \ref{figHiVoltAdapterBoard}}, has been designed in order to connect the negative and positive terminals of one channel of the CAEN HiVolta through two separate high voltage cables into a single one connected to the FEB. This simple adapter board presents on one end a BNC connector and on the other a HIROSE MDF51SU high voltage connector to be hooked up to the respective HIROSE MDF51SY housing on the FEB. Both connectors are shown in \hyperref[figHVPSconn]{Figure \ref{figHVPSconn}}.
 
 \par
 
@@ -116,7 +116,7 @@ The ArduSiPM shield is installed above the Arduino Due board, which takes care o
     \item A \textit{DC/DC converter} in the form of a boost converter capable of generating a DC output voltage between 30 and \SI{100}{\volt} needed to power the photomultiplier. The converter takes as input a voltage of \SI{5}{\volt} supplied directly from the Arduino Due's power supply.
     \item A \textit{fast low-noise amplifier} required in order to take the signal from the photomultiplier and adapt it to the reading range of the Arduino Due's ADC, which is responsible for counting events in the form of particles entering the photomultiplier.
     \item A \textit{fast discriminator} used to recognise above-threshold pulses from the photomultiplier. The output of this block is directly fed into the internal counter of the Arduino Due in order to count the photomultiplier interaction events.
-    \item A \textit{peak detector}, i.e. a circuit built for the purpose of maintaining the peak voltage read out by the photomultiplier. The latter switches very quickly, so this circuit block is designed to be very rapid in detecting peaks at very close time intervals.
+    \item A \textit{peak detector}, i.e. a circuit built with the purpose of maintaining the peak voltage read out by the photomultiplier. The latter switches very quickly, so this circuit block is designed to be very rapid in detecting peaks at very close time intervals.
 \end{itemize}
 
 \par
@@ -162,7 +162,7 @@ As can be appreciated in \hyperref[figSILImodule]{Figure \ref{figSILImodule}}, t
 \end{figure}
 
 \par
-The fully assembled tracker module shown in \hyperref[figSILImodule]{Figure \ref{figSILImodule}}, being equipped with four Si(Li) detectors, must be kept in a humidity-controlled environment, in order to avoid damage to the sensors, which may occur when the environment where the module is located has an excessively high level of humidity. To do this, a portable microcontroller platform, called \textit{Winter}, developed by the Microelectronics Laboratory of the University of Bergamo and shown in \hyperref[figWinterBattery]{Figure \ref{figWinterBattery}}, was used, as it is equipped with multiple environmental sensors, including an hygrometer, a thermometer and a barometer. 
+The fully assembled tracker module shown in \hyperref[figSILImodule]{Figure \ref{figSILImodule}}, being equipped with four Si(Li) detectors, must be kept in a humidity-controlled environment, in order to avoid damage to the detectors, which may occur when the environment where the module is located has an excessively high level of humidity. To do this, a portable microcontroller platform, called \textit{Winter}, developed by the Microelectronics Laboratory of the University of Bergamo and shown in \hyperref[figWinterBattery]{Figure \ref{figWinterBattery}}, was used, as it is equipped with multiple environmental sensors, including an hygrometer, a thermometer and a barometer. 
 
 \begin{figure}[h!]
     \centering
@@ -219,13 +219,13 @@ Data acquisition from the readout electronics of the Si(Li) tracker module was p
 %-------------------------------------------------------------------------------
 
 \section{Experimental results}
-This Section reports the experimental results obtained during the read-out electronics test, reported in \hyperref[secResultsMuonASIC]{Section \ref{secResultsMuonASIC}}, and subsequently during the cosmic muon detection experiment, the results of which are reported in \hyperref[secMuonDetectionResults]{Section \ref{secMuonDetectionResults}}.
+This Section presents the experimental results obtained during the readout electronics test, reported in \hyperref[secResultsMuonASIC]{Section \ref{secResultsMuonASIC}}, and subsequently during the cosmic muon detection experiment, the results of which are reported in \hyperref[secMuonDetectionResults]{Section \ref{secMuonDetectionResults}}.
 
 % caratterizzazione modulo
 \subsection{Module characterisation}
 \label{secResultsMuonASIC}
 
-In this Section, the tests performed on the readout electronics of the Si(Li) tracker module using the \textit{Automated test} of the \texttt{GAPS\_ModuleTester} software are presented. The purpose of these measurements, which were carried out prior to the muon detection experiment, is to verify the correct functioning of the readout electronics installed inside the assembled module equipped with Si(Li) detectors and it represents the last step in the process of testing the Si(Li) tracker readout electronics illustrated in this thesis work. In this regard, \hyperref[ch1]{Chapter \ref{ch1}} proposes the results of tests carried out on the SLIDER32 ASIC alone at different temperature steps. Consequently, \hyperref[ch2]{Chapter \ref{ch2}} proposes the tests carried out on the FEB without the sensors and \hyperref[ch3]{Chapter \ref{ch3}} finally provides the results of the tests on the assembled module in the version intended for flight. All tests were carried out by keeping the module at a controlled temperature of \SI{-40}{\celsius} and \SI{10}{\percent} relative humidity. The Si(Li) detectors were biased with a voltage of \SI{-250}{\volt} and bit \texttt{H} was set to \texttt{0}.
+In this Section, the tests performed on the readout electronics of the Si(Li) tracker module using the \textit{Automated test} of the \texttt{GAPS\_ModuleTester} software are presented. The purpose of these measurements, which were carried out prior to the muon detection experiment, is to verify the correct functioning of the readout electronics installed inside the assembled module equipped with Si(Li) detectors and it represents the last step in the process of testing the Si(Li) tracker readout electronics illustrated in this thesis work. In this regard, \hyperref[ch1]{Chapter \ref{ch1}} proposes the results of tests carried out on the SLIDER32 ASIC alone at different temperature steps. Consequently, \hyperref[ch2]{Chapter \ref{ch2}} proposes the tests carried out on the FEB without Si(Li) detectors and \hyperref[ch3]{Chapter \ref{ch3}} finally provides the results of the tests on the assembled module in the version intended for flight. All tests were carried out by keeping the module at a controlled temperature of \SI{-40}{\celsius} and \SI{10}{\percent} relative humidity. The Si(Li) detectors were biased with a voltage of \SI{-250}{\volt} and bit \texttt{H} was set to \texttt{0}.
 
 % modulo a -40C con sensori a -250V H=0, tau6
 \begin{figure}[h!]
@@ -273,7 +273,7 @@ On the other hand, \hyperref[figWAVEmoduleALLPT]{Figure \ref{figWAVEmoduleALLPT}
 \end{figure}
 
 % leakage current
-The leakage current associated with Si(Li) detectors was also evaluated. The measurement was carried out at a constant temperature of \SI{-40}{\celsius} using the manual test provided by the \texttt{GAPS\_ModuleTester} software already presented in \hyperref[sec21]{Section \ref{sec21}}. The software outputs a text file containing 1000 acquisitions of the leakage current value reported in ADU, as obtained at the output of the ADC located in the portion of the circuit dedicated to both temperature and leakage current measurements. In order to activate the latter mode of operation, bit \texttt{I} of the \texttt{ISA} triplet must be set to \texttt{1}. The conversion from ADU to Ampere is carried out by means of the following formula, which takes into account the design parameters associated with the circuit used to measure the leakage current:
+The leakage current associated with Si(Li) detectors was also evaluated. The measurement was carried out at a constant temperature of \SI{-40}{\celsius} using the \textit{manual test} provided by the \texttt{GAPS\_ModuleTester} software already presented in \hyperref[sec21]{Section \ref{sec21}}. The software outputs a text file containing 1000 acquisitions of the leakage current value reported in ADU, as obtained at the output of the ADC located in the portion of the circuit dedicated to both temperature and leakage current measurements. In order to activate the latter mode of operation, bit \texttt{I} of the \texttt{ISA} triplet must be set to \texttt{1}. The conversion from ADU to Ampere is carried out by means of the following formula, which takes into account the design parameters associated with the circuit used to measure the leakage current:
 
 \begin{equation}
     I_{leakage} = \frac{(1024 - ADC_{code}) \cdot \SI{1.76}{\milli\volt}}{3.87 \cdot 10 \cdot R}
@@ -321,14 +321,14 @@ During this test, the threshold value is kept constant and the value of the inje
 \end{figure}
 
 \par
-Both of the previously mentioned parameters were obtained from the charge scan by interpolating the Cumulative Distribution Function (CDF) of the normal distribution reported in \hyperref[eqCDFnormale]{Equation \ref{eqCDFnormale}}. The mean value ($\mu$) equals to the threshold associated to each channel and corresponds to the charge value that causes the channel to trigger in \SI{50}{\percent} of the cases. On the other hand, the FWHM ENC value was obtained by multiplying the corresponding standard deviation ($\sigma$) by $2.35$, as reported in \hyperref[ENCchargeScan]{Equation \ref{ENCchargeScan}}. \\
+Both of the previously mentioned parameters were obtained from the charge scan by interpolating the Cumulative Distribution Function (CDF) of the normal distribution reported in \hyperref[eqCDFnormale]{Equation \ref{eqCDFnormale}}. The mean value ($\mu$) equals to the threshold associated to each channel and corresponds to the charge value that causes the channel to trigger in \SI{50}{\percent} of the cases. On the other hand, the FWHM ENC value was obtained by multiplying the corresponding standard deviation ($\sigma$) by the \textit{Fano factor}, as reported in \hyperref[ENCchargeScan]{Equation \ref{ENCchargeScan}}. \\
 
 \begin{equation}
     F(x) = \Phi \left(\frac{x-\mu}{\sigma}\right) = \frac{1}{2} \left[ 1 + erf \left( \frac{x-\mu}{\sigma \sqrt{2}} \right) \right]
     \label{eqCDFnormale}
 \end{equation}
 
-\vspace{0.4cm}
+\vspace{0.15cm}
 
 \begin{equation}
     ENC = \sigma \cdot 2.35
@@ -349,10 +349,17 @@ The acquisition was carried out for a duration of 1 hour in self-trigger mode wi
 \subsection{Muon detection}
 \label{secMuonDetectionResults}
 
-This section reports the results obtained during the muon detection experiment. Data acquisition was performed both in self-trigger mode, in which the sampling signal is generated internally starting from the information provided by the zero-crossing discriminator output signal, and in external trigger mode. In the latter mode, the trigger signal is provided by the \textit{ArduiSiPM} device, previously illustrated in \hyperref[secArduSiPM]{Section \ref{secArduSiPM}}, at the moment when an interaction event is recorded in the scintillator located below one of the sensors.
+This Section reports the results obtained during the muon detection experiment. Data acquisition was performed both in self-trigger mode, in which the sampling signal is generated internally starting from the information provided by the zero-crossing discriminator output signal, and in external trigger mode. In the latter mode, the trigger signal is provided by the \textit{ArduiSiPM} device, previously illustrated in \hyperref[secArduSiPM]{Section \ref{secArduSiPM}}, at the moment when an interaction event is recorded in the scintillator located below one of the sensors.
 
 \par
 \hyperref[figMUONSconfronto]{Figure \ref{figMUONSconfronto}} shows in blue the result of the acquisition performed for a duration of 1 hour in self-trigger mode with global threshold set to \texttt{100}. The plot also shows a comparison with the measurements carried out by INFN Napoli (in red) and MIT (in green). It can be seen that both the low and high energy peaks, representing noise and muons respectively, are in correspondence with those recorded by the first two measurements.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/incoming_energy_comparison.pdf}
+    \caption{ Self trigger acquisition with global threshold set to \texttt{100} (in blue) compared to acquisitions performed by INFN Napoli (in red) and MIT (in green).}
+    \label{figMUONSconfronto}
+\end{figure}
 
 % muoni self trigger threshold 130 confronto zero suppression
 \begin{figure}[h!]
@@ -381,13 +388,7 @@ The same representation of the acquisition carried out in self trigger mode with
 The most interesting result of the entire experiment is represented in \hyperref[figMUON4sensors]{Figure \ref{figMUON4sensors}}, which depicts the energy spectrum at the input of each of the 4 Si(Li) detectors, with detector 2 (channels 16 to 23) highlighted in red, i.e. the Si(Li) detector below which the scintillator was placed.
 
 \par
-The acquisition represented by the plot was carried out in external trigger mode and lasted 2 hours. The global threshold was set to \texttt{130} and the trigger hold delay was set to 34 FPGA clocks. The latter parameter was estimated experimentally through tests, and is described below. It can be seen that in all 32 channels there is a low-energy peak representing noise, as the detection was carried out without zero suppression. The interesting result, however, can be seen in channels 16 to 23 highlighted in red. In them, a higher energy peak is visible, roughly between 400 ADU and 800 ADU, representing the energy released by cosmic muons as they pass through the Si(Li) detector strips. This behaviour serves as a proof of concept of the operating principle on which the entire GAPS experiment is based, demonstrating how a scintillator placed at a known distance from the Si(Li) detector is able to intercept cosmic muons, allowing the energy released in the Si(Li) detector to be measured by the readout electronics, as implemented in the experiment with the Time Of Flight (TOF) system, described in \hyperref[appendixGAPSexperiment]{Appendix \ref{appendixGAPSexperiment}}. A 32-channel representation of the same acquisition in which the phenomenon can be observed for each individual channel is available in \hyperref[appendix32CHmuons]{Appendix \ref{appendix32CHmuons}}.
-
-\par
-The graph in \hyperref[figMUONselfExtComparativa]{Figure \ref{figMUONselfExtComparativa}} shows in pink the histogram associated with the acquisition performed in external trigger mode superimposed on the equivalent acquisition performed in self-trigger mode, considering in both cases the sum of the interaction events on all 32 channels. It can be seen that the energy peak in the muon region is lower in the external trigger measurement than in the self-trigger one.
-
-\par
-This phenomenon can be interpreted in two ways: first, the explanation could be associated therewith a geometrical aspect concerning the positioning of the scintillator with respect to the Si(Li) detector. In fact, the use of a single scintillator positioned below the sensor at a distance of  4 to \SI{5}{\cm} could result in the interaction with the scintillator of incident muons at an angle to the vertical greater than zero. This would result in the release of energy spread over several strips, so that a lower energy per strip is measured. To solve this problem, it would be necessary to use a second scintillator placed at a known distance from the first one, so that the trigger signal would be generated when an interaction event occurs on both scintillators. Such a device, based on the operating principle of a telescope, would make it possible to uniquely identify the interaction of vertically interacting muons with the Si(Li) detector, thus removing readings from the interaction with muons reaching the sensor at an angle from the vertical greater than zero.
+The acquisition represented by the plot was carried out in external trigger mode and lasted 2 hours. The global threshold was set to \texttt{130} and the trigger hold delay was set to 34 FPGA clocks. The latter parameter was estimated experimentally through tests, and is described below. It can be seen that in all 4 detectors there is a low-energy peak representing noise (the pedestal), as the detection was carried out without zero suppression. The interesting result, however, can be seen in channels 16 to 23 highlighted in red. In them, a higher energy peak is visible, roughly between 400 ADU and 800 ADU, representing the energy released by cosmic muons as they pass through the Si(Li) detector strips. This behaviour serves as a proof of concept of the operating principle on which the entire GAPS experiment is based, demonstrating how a scintillator placed at a known distance from the Si(Li) detector is able to intercept cosmic muons, allowing the energy released in the Si(Li) detector to be measured by the readout electronics, as implemented in the experiment with the Time Of Flight (TOF) system, described in \hyperref[appendixGAPSexperiment]{Appendix \ref{appendixGAPSexperiment}}. A 32-channel representation of the same acquisition in which the phenomenon can be observed for each individual channel is available in \hyperref[appendix32CHmuons]{Appendix \ref{appendix32CHmuons}}.
 
 % Plot per rimpiazzare visualizzazione a 32 canali singoli
 \begin{figure}[h!]
@@ -401,7 +402,10 @@ This phenomenon can be interpreted in two ways: first, the explanation could be 
 \end{figure}
 
 \par
-A second hypothesis could be related to the time required for the ArduSiPM detector to generate the trigger signal. Indeed, it is possible that the time required for the detector to generate the trigger signal from the interaction event recorded in the scintillator is too long for the sample-and-hold circuit to sample the channel at the point of maximum signal output from the shaper filter. For this purpose, various delay values were evaluated, a parameter known as \textit{trigger hold delay}, which in the specific case of this test was set to 34 FPGA clocks. This parameter can be defined via the \texttt{GAPS\_DAQ} Python software and represents the delay, measured in FPGA clocks, that elapses from the acquisition of the trigger signal to the moment when the channel is actually sampled. With this trigger hold delay value, sampling may not occur at the maximum point of the signal output from the shaper, resulting in a lower recorded energy value than measured in self-trigger mode. 
+The graph in \hyperref[figMUONselfExtComparativa]{Figure \ref{figMUONselfExtComparativa}} shows in pink the histogram associated with the acquisition performed in external trigger mode superimposed on the equivalent acquisition performed in self-trigger mode, considering in both cases the sum of the interaction events on all 32 channels. It can be seen that the energy peak in the muon region is lower in the external trigger measurement than in the self-trigger one.
+
+\par
+This phenomenon can be interpreted in two ways: first, the explanation could be associated therewith a geometrical aspect concerning the positioning of the scintillator with respect to the Si(Li) detector. In fact, the use of a single scintillator positioned below the sensor at a distance of  4 to \SI{5}{\cm} could result in the interaction with the scintillator of incident muons at an angle to the vertical greater than zero. This would result in the release of energy spread over several strips, so that a lower energy per strip is measured. To solve this problem, it would be necessary to use a second scintillator placed at a known distance from the first one, so that the trigger signal would be generated when an interaction event occurs on both scintillators. Such a device, based on the operating principle of a telescope, would make it possible to uniquely identify the interaction of vertically interacting muons with the Si(Li) detector, thus removing readings from the interaction with muons reaching the sensor at an angle from the vertical greater than zero.
 
 % comparativa self external che evidenza ridotto picco energia muoni per external trigger: problema posizionamento o ritardo campionamento del canale
 \begin{figure}[h!]
@@ -410,6 +414,9 @@ A second hypothesis could be related to the time required for the ArduSiPM detec
     \caption{Comparison between self trigger mode (in blue) and external trigger mode (in pink); both self and external trigger acquisitions were performed with global threshold set to \texttt{130} and trigger hold delay set to 34 FPGA clocks.}
     \label{figMUONselfExtComparativa}
 \end{figure}
+
+\par
+A second hypothesis could be related to the time required for the ArduSiPM detector to generate the trigger signal. Indeed, it is possible that the time required for the detector to generate the trigger signal from the interaction event recorded in the scintillator is too long for the sample-and-hold circuit to sample the channel at the point of maximum signal output from the shaper filter. For this purpose, various delay values were evaluated, a parameter known as \textit{trigger hold delay}, which in the specific case of this test was set to 34 FPGA clocks. This parameter can be defined via the \texttt{GAPS\_DAQ} Python software and represents the delay, measured in FPGA clocks, that elapses from the acquisition of the trigger signal to the moment when the channel is actually sampled. With this trigger hold delay value, sampling may not occur at the maximum point of the signal output from the shaper, resulting in a lower recorded energy value than measured in self-trigger mode. 
 
 \par
 Unfortunately, it was not possible to measure by means of an oscilloscope the delay between the recording of the interaction event on the scintillator and the moment when the trigger signal is generated by the ArduSiPM device, shown in \hyperref[figArduiSiPMtrigger]{Figure \ref{figArduiSiPMtrigger}}. It is also possible that even a zero trigger hold delay value is not sufficient to ensure that the channel output is sampled at the correct instant, consistent with the set peak time \#4 ($\tau_{p} = \SI{0.98}{\micro\second}$), if the trigger generation delay is excessively high.

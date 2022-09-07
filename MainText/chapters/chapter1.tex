@@ -1,12 +1,12 @@
 \chapter{Evaluation of temperature effects on ASIC performance} \label{ch1}
 
-This chapter describes the characterisation activity that has been carried out on the SLIDER32 ASIC employed for the readout of the lithium-drifted silicon, Si(Li), detectors of the GAPS inner tracker, described in \hyperref[gapsTrackingSystem]{Appendix \ref{gapsTrackingSystem}}. Specifically, the measurements were taken with a purposely developed test board described in \hyperref[testboardsetup]{Section \ref{testboardsetup}} and were aimed at the evaluation of thermal effects on:
+This Chapter describes the characterisation activity that has been carried out on the SLIDER32 ASIC employed for the readout of the lithium-drifted silicon, Si(Li), detectors of the GAPS inner tracker, described in \hyperref[gapsTrackingSystem]{Appendix \ref{gapsTrackingSystem}}. Specifically, the measurements were taken with a purposely developed test board described in \hyperref[testboardsetup]{Section \ref{testboardsetup}} and were aimed at the evaluation of thermal effects on:
 
 \begin{enumerate}
     \itemsep0em 
-    \item Channel input-output characteristic.
-    \item Bandgap reference current.
-    \item Digital-to-Analog Converter (DAC) used to set the global threshold voltage.
+    \item \textbf{Channel input-output characteristic}.
+    \item \textbf{Bandgap reference current}.
+    \item \textbf{Digital-to-Analog Converter (DAC) used to set the global threshold voltage}.
 \end{enumerate}
 
 \par
@@ -23,7 +23,7 @@ The setup used for the temperature characterisation of the SLIDER32 ASIC has bee
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{Images/chap1/test_setup_test_board_csavrefgm_auto.png}
-    \caption{SLIDER32 ASIC test board setup \texttt{1}}
+    \caption{SLIDER32 ASIC test board setup \texttt{1}.}
     \label{figTESTBOARDsetup1}
 \end{figure}
 
@@ -32,7 +32,7 @@ The setup used for the temperature characterisation of the SLIDER32 ASIC has bee
 \begin{figure}[ht]
     \centering
     \includegraphics[width=1\textwidth]{Images/chap1/test_setup_test_board_csavrefgm_530mv.png}
-    \caption{SLIDER32 ASIC test board setup \texttt{2}}
+    \caption{SLIDER32 ASIC test board setup \texttt{2}.}
     \label{figTESTBOARDsetup2}
 \end{figure}
 
@@ -42,7 +42,7 @@ Both variants comprise the components discussed in the following.
 
 \begin{itemize}
     \itemsep0em 
-    \item A custom designed test board that allows tests to be performed on the ASIC without having to solder it to the board and then desolder it. This is made possible by a specific socket that allows the ASIC to be mounted and removed without having to solder it to the test board. This solution also allows several ASICs to be tested using a single board, although being not the case of the proposed measurements, that involved only ASIC No. \texttt{536}.
+    \item A custom designed test board that allows tests to be performed on the ASIC without having to solder it to the board and then desolder it. This is made possible by a specific socket that allows the ASIC to be mounted and removed without having to solder it to the test board. This solution also allows several ASICs to be tested using a single board, although being not being the case of the proposed measurements, that involved only ASIC No. \texttt{536}.
     \item A Keysight N6705C DC Power analyser providing both analog and digital voltages to the FEB. \hyperref[figKeysightFEBtb]{Figure \ref{figKeysightFEBtb}} shows a screen capture of the power supply. Specifically, channel \texttt{1} provides the analog supply voltage (\SI{2.4}{\volt}), channel \texttt{3} provides the digital supply voltage (\SI{2.4}{\volt}) and channel \texttt{4} the 16-bit calibration DAC supply voltage (\SI{3.6}{\volt}).
     
     \begin{minipage}{\linewidth}
@@ -63,7 +63,7 @@ Both variants comprise the components discussed in the following.
 \end{itemize}
 
 \par
-Specific to version \texttt{1} of the test setup is the Agilent 34461A digital multimeter \texttt{(a)} that has been used to measure the \texttt{CSAVrefGM} voltage, automatically regulated by a bandgap with respect to the temperature at which the system operates in order to guarantee the correct gain of the channel.
+Specific to version \texttt{1} of the test setup is the Agilent 34461A digital multimeter \texttt{(a)} that has been used to measure the \texttt{CSAVrefGM} voltage, automatically regulated by a bandgap with respect to the temperature at which the system operates in order to guarantee the correct gain of the readout channel.
 
 \par
 Version \texttt{2} of the test setup employs a Keysight E3631A DC power supply \texttt{(d)} in order to force the \texttt{CSAVrefGM} voltage to a fixed \SI{530}{\milli\volt} value. This voltage corresponds to the one provided by the bandgap at a temperature of \SI{-40}{\celsius}.
@@ -82,7 +82,7 @@ The analog front-end channel designed for the readout of the Si(Li) detectors of
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.7\textwidth]{Images/chap1/results/BGR_current/BGR_current_Xtemp_all-BBB.pdf}
-    \caption{reference current values for a given bias setting with respect to temperature varying from \SI{-40}{\celsius} to \SI{30}{\celsius} with \SI{10}{\celsius} increments.}
+    \caption{Reference current values for a given bias setting with respect to temperature varying from \SI{-40}{\celsius} to \SI{30}{\celsius} with \SI{10}{\celsius} increments.}
     \label{figBGRplotsXtempall}
 \end{figure}
 
@@ -151,7 +151,7 @@ The reference current measurements have also been evaluated by extracting the te
 \end{equation}
 
 \noindent
-where $I_{T_{0}}$ represents the current value measured at a reference temperature of \SI{0}{\celsius} and $\Delta T$ is defined as the difference between the maximum and the minimum temperatures at which the measurements have been performed and can be expressed as
+where $I_{T_{0}}$ represents the current value measured at a reference temperature of \SI{0}{\celsius} and $\Delta T$ is defined as the difference between the maximum and the minimum temperatures at which the measurements have been performed and it can be expressed as
 
 \begin{equation}
     \Delta T = \lvert T_{max} - T_{min} \rvert
@@ -165,7 +165,7 @@ In the same way, $\Delta I$ represents the difference between the current measur
 \end{equation}
 
 \noindent
-In the specific case of the presented measurements and simulations, the temperature delta is equal to $\Delta T = \SI{70}{\celsius}$. The estimated temperature coefficients, expressed as \SI{}{ppm/\celsius}, are reported in \hyperref[tabtempcoefficients]{Table \ref{tabtempcoefficients}}. It is clear to see that the temperature coefficient of the measured reference current is above every one of the temperature coefficients evaluated over the readings coming from simulation in all of the 3 process corners. %This behaviour can be associated to [?].
+In the specific case of the presented measurements and simulations, the temperature delta is equal to $\Delta T = \SI{70}{\celsius}$. The estimated temperature coefficients, expressed as \SI{}{ppm/\celsius}, are reported in \hyperref[tabtempcoefficients]{Table \ref{tabtempcoefficients}}. It is clear to see that the temperature coefficient of the measured reference current is above every one of the temperature coefficients evaluated over the readings coming from simulations in all of the 3 process corners. %This behaviour can be associated to [?].
 
 \begin{table}[ht]
     \centering
@@ -191,7 +191,7 @@ In the specific case of the presented measurements and simulations, the temperat
 \section{Input-output channel trans-characteristic}
 \label{testboardFDT}
 
-In this Section a description of the temperature effects on the channel input-output characteristic is given. The curve trend is due to the Charge Sensitive Amplifier (CSA) circuit block, which is responsible for converting the incident charge on the Si(Li) sensor into a voltage signal that is subsequently supplied to the shaper, described in \hyperref[shaper]{Section \ref{shaper}}. 
+In this Section a description of the temperature effects on the channel input-output characteristic is given. The curve trend is due to the Charge Sensitive Amplifier (CSA) circuit block, which is responsible for converting the incident charge on the Si(Li) detector into a voltage signal that is subsequently supplied to the shaper, described in \hyperref[shaper]{Section \ref{shaper}}. 
 
 \par
 The CSA is based on an inverting gain stage and a feedback capacitor where charge restoration is achieved by a continuous-time Krummenacher network \cite{krummenacher_1991_pixel}. The main feature of the CSA is the dynamic signal compression that is achieved by implementing the the feedback capacitor with an NMOSFET operating in the inversion mode \cite{manghisoni_2018_dynamic}. In this transistor, source and drain are shorted to form the capacitor terminal connected to the amplifier input, while the gate terminal is connected to the output. At small signal amplitudes, the gate-to-channel voltage is smaller than the transistor threshold voltage and the capacitance is equal to the sum of gate-source and gate-drain overlap capacitances. At larger signal amplitudes, the gate-to-channel voltage becomes larger than the the transistor threshold and the capacitance increases including also the gate-to-channel capacitance. According to this mechanism, the feedback capacitance increases from \SI{175}{\femto\farad} at small input signal amplitudes to \SI{14.7}{\pico\farad} at large signal amplitudes. \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} shows the schematic of the CSA, with the nonlinear MOSFET feedback capacitance.
@@ -199,7 +199,7 @@ The CSA is based on an inverting gain stage and a feedback capacitor where charg
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.65\textwidth]{Images/chap1/CSA_schematic.pdf}
-    \caption{Schematic of the charge-sensitive preamplifier, with the forward gain stage, the nonlinear MOSFET capacitor and the Krummenacher feedback network}
+    \caption{Schematic of the charge-sensitive preamplifier, with the forward gain stage, the nonlinear MOSFET capacitor and the Krummenacher feedback network.}
     \label{figCSAschematic}
 \end{figure}
 
@@ -258,7 +258,7 @@ As it can be seen from the charts, the channel input-output trans-characteristic
 
 \begin{itemize}
     \itemsep0em
-    \item \textit{Low energy region}: Also known as X-ray detection region, it ranges from approximately 10 to \SI{100}{\kilo\electronvolt};
+    \item \textit{Low energy region}: Also known as X-ray detection region, it ranges from approximately 10 to \SI{100}{\kilo\electronvolt}.
     \item \textit{High energy region}: Also described as muon detection region, it spans an energy range comprised between 40 and \SI{55}{\mega\electronvolt}.
 \end{itemize}
 
@@ -275,9 +275,9 @@ where
 
 \begin{itemize}
     \itemsep0em
-    \item \textbf{y} [\SI{}{ADU}] (Analog Digital Unit) is the channel output;
-    \item \textbf{p} [\SI{}{ADU}] is the pedestal, which consists of a repeated sampling of the channel output without charge injected;
-    \item \textbf{g} [\SI{}{ADU/\kilo\electronvolt}] is the channel gain;
+    \item \textbf{y} [\SI{}{ADU}] (Analog Digital Unit) is the channel output.
+    \item \textbf{p} [\SI{}{ADU}] is the pedestal, which consists of a repeated sampling of the channel output without charge injected.
+    \item \textbf{g} [\SI{}{ADU/\kilo\electronvolt}] is the channel gain.
     \item \textbf{x} [\SI{}{\kilo\electronvolt}] is the input energy.
 \end{itemize}
 
@@ -395,8 +395,10 @@ Pedestal and gain measurements were used to study the variation in the position 
 
 \begin{equation}
     \begin{cases}
+        \vspace{-0.06cm}
         y = p_{LE} + g_{LE} \cdot x \\
         y = p_{HE} + g_{HE} \cdot x
+        \vspace{0.08cm}
     \end{cases}
     \label{FDTkinkSystem}
 \end{equation}
@@ -405,7 +407,7 @@ Pedestal and gain measurements were used to study the variation in the position 
 In particular, the subscript \textit{LE} refers to the model that describes the trend of the transfer function in the low energy region, while the subscript \textit{HE} describes its trend in the high energy region. 
 
 \par
-The resolution of the system reported in \hyperref[FDTkinkSystem]{Equation \ref{FDTkinkSystem}} allows the kink value expressed in \SI{}{\mega\electronvolt} to be obtained:
+Solving the system reported in \hyperref[FDTkinkSystem]{Equation \ref{FDTkinkSystem}} allows the kink value expressed in \SI{}{\mega\electronvolt} to be obtained:
 
 \begin{equation}
     x = \frac{p_{LE} - p_{HE}}{g_{HE} - g_{LE}}
@@ -439,14 +441,14 @@ It is easy to see that in the case where \texttt{CSAVrefGM} varies dynamically o
 \section{Global threshold voltage}
 \label{thresholdVoltageANALYSIS}
 
-This Section illustrates the measurements performed on the 8-bit DAC that provides two voltages $V_{\textit{tp}}$ and $V_{\textit{tn}}$ used by the threshold generator (described in \hyperref[secGAPSfrontend]{Appendix \ref{secGAPSfrontend}}) to generate the Signal-Over-Threshold (SOT) comparator voltage. In particular, the difference between the two voltages $\Delta V_{\textit{t}} = V_{\textit{tp}}-V_{\textit{tn}}$ is the meaningful quantity and will be referred to as \textit{global threshold voltage}: the higher $\Delta V_{\textit{t}}$, the higher the threshold of the SOT comparator. It has to be noted that the voltage $V_{\textit{tp}}$ remains constant by varying the DAC codes, whereas the voltage $V_{\textit{tn}}$ can vary from \SI{0}{\volt} to $(V_{\textit{tp}}+V_{\textit{s}})$, where $V_{\textit{s}}$ is a voltage margin which permits to obtain negative $\Delta V_{\textit{t}}$. During design of this circuit, the DAC voltage Least Significant Bit (LSB) has been set to 
+This Section illustrates the measurements performed on the 8-bit DAC that provides two voltages $V_{\textit{tp}}$ and $V_{\textit{tn}}$ used by the threshold generator (described in \hyperref[secGAPSfrontend]{Appendix \ref{secGAPSfrontend}}) to generate the Signal-Over-Threshold (SOT) comparator voltage. In particular, the difference between the two voltages $\Delta V_{\textit{t}} = V_{\textit{tp}}-V_{\textit{tn}}$ is the meaningful quantity and will be referred to as \textit{global threshold voltage}: the higher $\Delta V_{\textit{t}}$, the higher the threshold of the SOT comparator. It has to be noted that the voltage $V_{\textit{tp}}$ remains constant by varying the DAC codes, whereas the voltage $V_{\textit{tn}}$ can vary from \SI{0}{\volt} to $(V_{\textit{tp}}+V_{\textit{s}})$, where $V_{\textit{s}}$ is a voltage margin which permits to obtain negative $\Delta V_{\textit{t}}$. During design of this circuit, the DAC voltage Least Significant Bit (LSB) has chosen to be
 
 \begin{equation}
     V_{\textit{tn, LSB}} = \SI{1.2}{\milli\volt}
 \end{equation}
 
 \noindent
-Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$: this forces the maximum value of $V_{\textit{tn}}$ to be
+Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$. This forces the maximum value of $V_{\textit{tn}}$ to be
 
 \begin{equation}
     V_{\textit{tn, max}} = V_{\textit{tn, lsb}} \cdot 255 = \SI{306}{\milli\volt}
@@ -462,7 +464,7 @@ Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$: this 
 \noindent
 \hyperref[figDACthrtemp]{Figure \ref{figDACthrtemp}} shows the $\Delta V_{\textit{t}}$ voltage with respect to DAC codes varying from 0 to 255 at temperatures comprised between \SI{-40}{\celsius} and \SI{30}{\celsius} on channel 31. 
 
-\hyperref[tabDACmaxlsb]{Table \ref{tabDACmaxlsb}} shows the maximum value assumed by $V_{\textit{tn}}$ and the corresponding DAC voltage LSB measured at each temperature. Threshold voltage measurements have been evaluated by interpolating a linear regression model, whose Equation is illustrated below. Coefficient $a$ is expressed in \SI{}{\milli\volt} and coefficient $b$ in \SI{}{\milli\volt\per\celsius}. The Root Mean Square Error (RMSE) is reported for each temperature.
+\hyperref[tabDACmaxlsb]{Table \ref{tabDACmaxlsb}} shows the maximum value assumed by $V_{\textit{tn}}$ and the corresponding DAC voltage LSB measured at each temperature. Threshold voltage measurements have been evaluated by interpolating a linear regression model, whose Equation is illustrated below. Coefficient $a$ is expressed in \SI{}{\milli\volt} and coefficient $b$ in \SI{}{\milli\volt/\celsius}. The Root Mean Square Error (RMSE) is reported for each temperature.
 
 \begin{table}[ht]
     \centering
@@ -578,7 +580,7 @@ Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$: this 
 The measurement of the Equivalent Noise Charge (ENC) is of fundamental importance to evaluate the performance of the channel in terms of resolution and, therefore, of minimum detectable energy. The ENC represents the electronic noise generated by the front-end channel reported in the form of equivalent noise charge at the channel input. In the case of GAPS, the main requirement for the channel comes from the resolution, that must be less than \SI{4}{\kilo\electronvolt}: this is equivalent to saying that the ENC for each channel must be less than \SI{4}{\kilo\electronvolt} in order to consider the channel suitable for the experiment.
 
 \par
-ENC is calculated by dividing the standard deviation of the noise, obtained from the pedestal measurement and measured in ADC units, by the low energy gain of the channel transfer function, extracted from the input-output characteristic measurements and expressed in (ADC units)/(DAC injection units):
+ENC is calculated by dividing the standard deviation of the noise, obtained from the pedestal measurement and measured in ADU, by the low energy gain of the channel transfer function, extracted from the input-output characteristic measurements and expressed in (ADU)/(DAC injection units):
 
 \begin{equation}
     ENC = \frac{\sigma_{\textit{ped}} \cdot 2.35}{\mu_{\textit{ch}}} \cdot \SI{0.841}{\frac{\SI{}{\kilo\electronvolt}}{\SI{}{DAC\_inju}}} 
@@ -599,14 +601,14 @@ where $C_{\textit{inj}}$ is the injection capacitance, $V_{\textit{LSB, CAL}}$ i
 Lastly, 2.35 is the \textit{Fano factor}. This factor is taken into account since the ENC measurement must be expressed at Full Width at Half Maximum (FWHM). One does not simply want to consider the standard deviation of the pedestal, but the width of its Gaussian distribution at half of its maximum height. To obtain this measurement, the standard deviation of the pedestal must be multiplied by the Fano factor.
 
 \par
-\hyperref[figENCnormal]{Figure \ref{figENCnormal}} represents the FWHM ENC with and without $\SI{40}{\pico\farad}$ detector capacitors, that have been soldered on the test board and connected to the first 8 (0 to 7) channels of the ASIC in order to emulate the Si(Li) detectors capacitance. It is clear to see from the graph on the right that channels with the capacitors installed experience an increase in ENC, as it should be expected. \cite{iakovidis_2018_vmm}
+\hyperref[figENCnormal]{Figure \ref{figENCnormal}} represents the ENC FWHM with and without $\SI{40}{\pico\farad}$ detector capacitors, that have been soldered on the test board and connected to the first 8 (0 to 7) channels of the ASIC in order to emulate the Si(Li) detectors capacitance. It is clear to see from the graph on the right that channels with the capacitors installed experience an increase in ENC, as it should be expected \cite{iakovidis_2018_vmm}.
 
 \begin{figure}[ht]
     \centering
     \begin{tabular}{cc}
          \includegraphics[width=0.475\textwidth]{Images/chap1/results/ENC_minus40C/ASIC_cold_wocaps_normal.pdf} &  \includegraphics[width=0.475\textwidth]{Images/chap1/results/ENC_minus40C/ASIC_cold_wcaps_normal.pdf} \\
     \end{tabular}
-    \caption{Graphs showing FWHM ENC without detector capacitors (on the left) and with detector capacitors (on the right) at \SI{-40}{\celsius} without removal of external interference.}
+    \caption{Graphs showing ENC FWHM without detector capacitors (on the left) and with detector capacitors (on the right) at \SI{-40}{\celsius} without removal of external interference.}
     \label{figENCnormal}
 \end{figure}
 
@@ -614,7 +616,7 @@ Lastly, 2.35 is the \textit{Fano factor}. This factor is taken into account sinc
 Since the ENC is a measurement derived from the pedestal, it is also subject to interference phenomena arising from electromagnetic noise present in the environment where the tests are performed. In this regard, a method was devised to remove interference contributions not directly attributable to pure electronic noise and the results of the analysis are presented in the following Sections.
 
 \subsection{Sampled pedestal processing}
-The pedestal is simultaneously dependent on both the channel on which the measurement is made, $y$, and the specific sample taken from the measurement, $x$, as the sum of 3 components. The first component, $p_0[y]$, represents the ideal pedestal free of external noise and interference, which therefore depends only on the specific channel on which the measurement is made. The second component, $n[x, y]$, represents the stochastic noise and the third one represents the deterministic interference component, $d[x]$. In this first analysis, the deterministic component, $d[x]$, is assumed to be common to all channels and therefore it only depends on the specific sample. For this reason, the pedestal can be written as
+The pedestal is simultaneously dependent on both the channel on which the measurement is made, $y$, and the specific sample taken from the measurement, $x$, as the sum of 3 components. The first component, $p_0[y]$, represents the ideal pedestal free of external noise and interference, which therefore only depends on the specific channel on which the measurement is made. The second component, $n[x, y]$, represents the stochastic noise and the third one represents the deterministic interference component, $d[x]$. In this first analysis, the deterministic component, $d[x]$, is assumed to be common to all channels and therefore it only depends on the specific sample. For this reason, the pedestal can be written as
 
 \begin{equation} \label{eq1}
     p[x,y] = p_0[y] + n[x, y] + d[x]
@@ -624,10 +626,10 @@ The pedestal is simultaneously dependent on both the channel on which the measur
 where
 \begin{itemize}
     \itemsep0em 
-    \item $x=1,2,...,1000$ represents the sample number;
-    \item $y=0,1,...,31$ represents the channel number;
-    \item $p_0$ is the ideal pedestal without noise and external interference and depends on $y$ only;
-    \item $n$ is the stochastic noise component of the pedestal;
+    \item $x=1,2,...,1000$ represents the sample number.
+    \item $y=0,1,...,31$ represents the channel number.
+    \item $p_0$ is the ideal pedestal without noise and external interference and depends on $y$ only.
+    \item $n$ is the stochastic noise component of the pedestal.
     \item $d$ is the deterministic external interference, at first we assume that it is common to all channels and it depends on $x$ only.
 \end{itemize}
 
@@ -686,7 +688,7 @@ The standard deviation with respect to $x$ of this new pedestal depends on the s
     \begin{tabular}{cc}
          \includegraphics[width=0.475\textwidth]{Images/chap1/results/ENC_minus40C/ASIC_cold_wocaps_wo_mean.pdf} &  \includegraphics[width=0.475\textwidth]{Images/chap1/results/ENC_minus40C/ASIC_cold_wcaps_wo_mean.pdf} \\
     \end{tabular}
-    \caption{Graphs showing FWHM ENC without detector capacitors (on the left) and with detector capacitors (on the right) at \SI{-40}{\celsius} without external interference.}
+    \caption{Graphs showing ENC FWHM without detector capacitors (on the left) and with detector capacitors (on the right) at \SI{-40}{\celsius} without external interference.}
     \label{figENCwomean}
 \end{figure}
 
@@ -762,6 +764,6 @@ The result of the application of the latter method can be seen in \hyperref[figE
     \begin{tabular}{cc}
          \includegraphics[width=0.475\textwidth]{Images/chap1/results/ENC_minus40C/ASIC_cold_wocaps_wo_fit.pdf} &  \includegraphics[width=0.475\textwidth]{Images/chap1/results/ENC_minus40C/ASIC_cold_wcaps_wo_fit.pdf} \\
     \end{tabular}
-    \caption{Graphs showing FWHM ENC without detector capacitors (on the left) and with detector capacitors (on the right) at \SI{-40}{\celsius} without weighed external interference.}
+    \caption{Graphs showing ENC FWHM without detector capacitors (on the left) and with detector capacitors (on the right) at \SI{-40}{\celsius} without weighed external interference.}
     \label{figENCwofit}
 \end{figure}

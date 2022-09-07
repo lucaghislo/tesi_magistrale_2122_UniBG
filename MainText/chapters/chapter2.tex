@@ -1,17 +1,17 @@
 \chapter[Si(Li) tracker flight components validation]{Si(Li) tracker flight components \\validation} \label{ch2}
 
-This chapter provides a detailed description of the test setup and the test procedure of the flight items that will be used for the assembly of the Si(Li) tracker of the GAPS detector. For each of the flight items, a report has been produced in order to detail all the most important parameters with their measured values. Every component has also been uniquely numbered following a specific alphanumeric pattern that can briefly sum up its most relevant characteristics, allowing it to be immediately recognised during the assembly process. This chapter also provides a deep explanation of the results obtained during the testing activity on all the flight components.
+This Chapter provides a detailed description of the test setup and the test procedure of the flight items that will be used for the assembly of the Si(Li) tracker of the GAPS detector. For each of the flight items, a report has been produced in order to detail all the most important parameters with their measured values. Every component has also been uniquely numbered following a specific alphanumeric pattern that can briefly sum up its most relevant characteristics, allowing it to be immediately recognised during the assembly process. This Chapter also provides a deep explanation of the results obtained during the testing activity on all the flight components.
 
 \par
 Tests were conducted in order to verify the integrity and proper functioning of the following components:
 
 \begin{enumerate}
     \itemsep0em 
-    \item Front-End Board (FEB).
-    \item Dummy-1 front-end board.
-    \item Flex-rigid board.
-    \item Connector for termination.
-    \item Front-end board shield.
+    \item \textbf{Front-End Board (FEB)}.
+    \item \textbf{Dummy-1 front-end board}.
+    \item \textbf{Flex-rigid board}.
+    \item \textbf{Connector for termination}.
+    \item \textbf{Front-end board shield}.
 \end{enumerate}
 
 \par
@@ -44,7 +44,7 @@ The items classified as \textbf{GOOD} have been shipped to \textit{Columbia Univ
 \section{Front-End Board (FEB)} \label{sec21}
 
 \par
-The front-end board (FEB) that houses the SLIDER32 ASIC is shown in \hyperref[figFEBimage]{Figure \ref{figFEBimage}}. The board was designed in a cross-like shape to make room for the four Si(Li) detectors which will be wire-bonded to the ASIC through the smooth vertical tracks running in the central section of the FEB.
+The Front-End Board (FEB) that houses the SLIDER32 ASIC is shown in \hyperref[figFEBimage]{Figure \ref{figFEBimage}}. The board was designed in a cross-like shape to make room for the four Si(Li) detectors which will be wire-bonded to the ASIC through the smooth vertical tracks running in the central section of the FEB.
 
 \begin{figure}[ht]
     \centering
@@ -68,12 +68,12 @@ The test of the front-end boards has been performed at ambient temperature and w
     
     \begin{enumerate}
         \itemsep0em 
-        \item Noise (ENC).
-        \item Pedestal.
-        \item Self trigger.
-        \item Threshold scan.
-        \item Channel input-output characteristic.
-        \item Waveform scan.
+        \item \textbf{Noise (ENC)}.
+        \item \textbf{Pedestal}.
+        \item \textbf{Self trigger}.
+        \item \textbf{Threshold scan}.
+        \item \textbf{Channel input-output characteristic}.
+        \item \textbf{Waveform scan}.
     \end{enumerate}
 \end{itemize}
 
@@ -128,7 +128,7 @@ In order for the FPGA to be programmed, the software Intel Quartus Prime is used
 \end{figure}
 
 \par
-The first interface, called \textit{ASIC configuration}, is dedicated to the configuration of the ASIC, namely its addresses, registers and configuration bits, specifically:
+The first interface, called \textit{ASIC configuration}, is dedicated to the configuration of the ASIC, namely its addresse, registers and configuration bits, specifically:
 
 \begin{enumerate}
     \itemsep0em 
@@ -209,9 +209,9 @@ where \texttt{X} represents the channel identifier number that spans from 0 to 3
     \item \texttt{ConfigurationTest.dat}: Basic communication and configuration tests.
     \item \texttt{HK\_Leakage\_chX.dat}: Leakage current measurement (to be done with detectors).
     \item \texttt{Pedestal\_tauY.dat}: Pedestal test, in which the baseline variations due to electronic noise are measured. This test evaluates the electronic noise within the channel, measuring its output without injecting any charge. The output signal is therefore purely attributable to noise.
-    \item \texttt{SelfTrigger\_chX.dat}: Self-trigger measurement, which reports the output of the ASIC channel (in ADC units) obtained with a fixed DAC injection code and using the automatic peak detection feature of the Zero Crossing circuit, described in \hyperref[zeroCrossing]{Appendix \ref{zeroCrossing}}.
+    \item \texttt{SelfTrigger\_chX.dat}: Self-trigger measurement, which reports the output of the ASIC channel (in ADU) obtained with a fixed DAC injection code and using the automatic peak detection feature of the Zero Crossing circuit, described in \hyperref[zeroCrossing]{Appendix \ref{zeroCrossing}}.
     \item \texttt{ThresholdScan\_fthrZ\_tauY.dat}: Threshold measurement, which reports the number of comparator hits, obtained by varying the global threshold word over its range and injecting 1000 times with a fixed DAC code at each step.
-    \item \texttt{TransferFunction\_fast\_tauY.dat}: Transfer function measurement, which lists the channel output ADC codes obtained by sweeping the calibration DAC code over its range.
+    \item \texttt{TransferFunction\_fast\_tauY.dat}: Transfer function measurement, which lists the channel output ADC code obtained by sweeping the calibration DAC code over its range.
     \item \texttt{WaveformScan\_fast\_tauY.dat}: Waveform scan, which reports the output ADC code sampled at delayed times making possibile to reconstruct the shaper transient response.
 \end{enumerate}
 
@@ -318,8 +318,8 @@ In this Section of the test report document, results coming from the \textit{Aut
 
 \begin{itemize}
     \itemsep0em 
-    \item \textbf{Configuration test}: It checks the capability to write and read registers of the digital back-end section of the ASIC of the board under tests. For the FEBs where the improved setup shown in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}} has been used, this test also accounts for the capability to communicate with the second FEB in the chain;
-    \item \textbf{Wrong address test}: It checks the capability of the ASIC to ignore commands when an address, different to the one hardware coded on the board, is selected;
+    \item \textbf{Configuration test}: It checks the capability to write and read registers of the digital back-end section of the ASIC of the board under tests. For the FEBs where the improved setup shown in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}} has been used, this test also accounts for the capability to communicate with the second FEB in the chain.
+    \item \textbf{Wrong address test}: It checks the capability of the ASIC to ignore commands when an address, different to the one hardware coded on the board, is selected.
     \item \textbf{Temperature sensor}: It verifies the response of the ADC when the sensor temperature of the FEB is readout.
     
 \end{itemize}
@@ -339,7 +339,7 @@ The results reported in this Section of the test report document are relevant to
 \paragraph{Pedestal dispersion} The distribution of the pedestal of the 32 readout channels is reported in this Section.\\
 
 \par
-For each FEB tested, a test report has been generated in order to sum up all the information regarding the whole testing activity carried out on the front-end boards. An example of the aforementioned test report is shown in \hyperref[figF065I]{Figure \ref{figF065I}}. 
+For each FEB tested, a test report has been generated in order to sum up all the information regarding the whole testing activity carried out on the front-end board. An example of the aforementioned test report is shown in \hyperref[figF065I]{Figure \ref{figF065I}}. 
 
 \par
 Each FEB has also been numbered using an alphanumerical identifier, allowing the board to be uniquely recognised during the assembly of the tracker. The identifier number is composed of three parts, as shown below.
@@ -377,7 +377,7 @@ The Python code is basically organised in two parts:
 
 \begin{enumerate}
     \itemsep0em
-    \item \texttt{FEB\_report\_fun.py}: It contains all the functions that are used in order to fill in the Word document and to export the corresponding PDF file. This file also contains the functions used to export log files and CSV tables containing a summary of the values obtained during the testing of each individual FEB;
+    \item \texttt{FEB\_report\_fun.py}: It contains all the functions that are used in order to fill in the Word document and to export the corresponding PDF file. This file also contains the functions used to export log files and CSV tables containing a summary of the values obtained during the testing of each individual FEB.
     \item \texttt{FEB\_report\_out.py}: It contains the function calls to the function blocks defined in the previous file and uses them to build the output document.
 \end{enumerate}
 
@@ -421,16 +421,16 @@ Moreover, each individual item serves the following function.
 
 \begin{enumerate}
     \itemsep0em
-    \item \texttt{config.conf}: Configuration file where the user can specify the nation identifier letter (\texttt{nation\_letter} field) of the producer of the board (\texttt{I} for Italy and \texttt{U} for US production), the document version (\texttt{doc\_version} field), the date, the author name and surname and the nationality of the manufacturer (\texttt{Italian} or \texttt{US}); 
-    \item \texttt{FEB\_testing - Defects.csv}: CSV file containing a list of the defects found during the visual inspection of the FEBs, as discussed in \hyperref[FEBdefects]{Section \ref{FEBdefects}};
-    \item \texttt{FEB\_testing - Multimeter.csv}: CSV file containing the voltage and current measurements taken on the FEBs, as described in \hyperref[bias]{Section \ref{bias}};
-    \item \texttt{modules} folder: Containing the folders generated by the purposely developed MATLAB script, described in \hyperref[sec21]{Section \ref{sec21}};
-    \item \texttt{FEB\_report\_log.pdf} and \texttt{FEB\_report\_log.txt}: Log file containing a summary of all the reports fields presented in a single, multi-page document format;
-    \item \texttt{script\_values.csv}: CSV file containing a summary of the values obtained during the evaluation of the performance of the analog readout channels of the ASIC generated by the \texttt{GAPS\_ModuleTester} testing software, as mentioned in \hyperref[FEBanalogtest]{Section \ref{FEBanalogtest}};
-    \item \texttt{temperature\_ADC.csv} and \texttt{temperature\_C.csv}: CSV files containing the readings of the temperatures in \SI{}{ADU} and \SI{}{\celsius} respectively;
-    \item \texttt{report\_PDF/} folder: Folder containing the PDF version of the reports generated by the software;
-    \item \texttt{test\_report\_FEB.docx}: Word template used to produce the final test reports in Word and PDF format;
-    \item \texttt{report\_word/} folder: Folder containing the Word version of the reports generated by the software;
+    \item \texttt{config.conf}: Configuration file where the user can specify the nation identifier letter (\texttt{nation\_letter} field) of the producer of the board (\texttt{I} for Italy and \texttt{U} for US production), the document version (\texttt{doc\_version} field), the date, the author name and surname and the nationality of the manufacturer (\texttt{Italian} or \texttt{US}). 
+    \item \texttt{FEB\_testing - Defects.csv}: CSV file containing a list of the defects found during the visual inspection of the FEBs, as discussed in \hyperref[FEBdefects]{Section \ref{FEBdefects}}.
+    \item \texttt{FEB\_testing - Multimeter.csv}: CSV file containing the voltage and current measurements taken on the FEBs, as described in \hyperref[bias]{Section \ref{bias}}.
+    \item \texttt{modules} folder: Containing the folders generated by the purposely developed MATLAB script, described in \hyperref[sec21]{Section \ref{sec21}}.
+    \item \texttt{FEB\_report\_log.pdf} and \texttt{FEB\_report\_log.txt}: Log file containing a summary of all the reports fields presented in a single, multi-page document format.
+    \item \texttt{script\_values.csv}: CSV file containing a summary of the values obtained during the evaluation of the performance of the analog readout channels of the ASIC generated by the \texttt{GAPS\_ModuleTester} testing software, as mentioned in \hyperref[FEBanalogtest]{Section \ref{FEBanalogtest}}.
+    \item \texttt{temperature\_ADC.csv} and \texttt{temperature\_C.csv}: CSV files containing the readings of the temperatures in \SI{}{ADU} and \SI{}{\celsius} respectively.
+    \item \texttt{report\_PDF/} folder: Folder containing the PDF version of the reports generated by the software.
+    \item \texttt{test\_report\_FEB.docx}: Word template used to produce the final test reports in Word and PDF format.
+    \item \texttt{report\_word/} folder: Folder containing the Word version of the reports generated by the software.
     \item \texttt{script\_files} folder: Folder containing the two main Python files used to implement the program, as described in \hyperref[GAPSrepfun]{section \ref{GAPSrepfun}}.
     
 \end{enumerate}
@@ -453,7 +453,7 @@ The program can be launched with Python 3 installed on the PC by double-clicking
 
 This Section describes the results of the measurements carried out during the validation phase of the front-end boards. Each graph shows the data distribution for the Italian-made front-end boards (in blue) and US-made ones (in red) separately for comparison purposes. 
 
-\paragraph{AVDD and IVDD} The graphs in \hyperref[figAVDDIVDD]{Figure \ref{figAVDDIVDD}} show the distributions of the analog supply voltage, AVDD, and the corresponding current IAVDD. The nominal value of AVDD, shown in \hyperref[tabvoltages]{Table \ref{tabvoltages}}, is \SI{1.80}{\volt}, while that of IAVDD, shown in \hyperref[tabcurrents]{Table \ref{tabcurrents}}, corresponds to \SI{136}{\milli\ampere}. It can be seen that both productions present an average voltage value comparable to the nominal one and have the same standard deviation. On the other hand, the average current value is below the nominal one for both productions, with the American one being on average \SI{1.49}{\percent} lower than expected and the Italian one reaching almost exactly the desired current value (\SI{135.93}{\milli\ampere} compared to the \SI{136.00}{\milli\ampere} nominal value).
+\paragraph{AVDD and IAVDD} The graphs in \hyperref[figAVDDIVDD]{Figure \ref{figAVDDIVDD}} show the distributions of the analog supply voltage, AVDD, and the corresponding current IAVDD. The nominal value of AVDD, shown in \hyperref[tabvoltages]{Table \ref{tabvoltages}}, is \SI{1.80}{\volt}, while that of IAVDD, shown in \hyperref[tabcurrents]{Table \ref{tabcurrents}}, corresponds to \SI{136}{\milli\ampere}. It can be seen that both productions present an average voltage value comparable to the nominal one and have the same standard deviation. On the other hand, the average current value is below the nominal one for both productions, with the American one being on average \SI{1.49}{\percent} lower than expected and the Italian one reaching almost exactly the desired current value (\SI{135.93}{\milli\ampere} compared to the \SI{136.00}{\milli\ampere} nominal value).
 
 \begin{figure}[ht]
     \centering
@@ -484,7 +484,7 @@ This Section describes the results of the measurements carried out during the va
     \label{figDVDDIDVDD}
 \end{figure}
 
-\paragraph{3V3 and I3V3} The distribution of the voltage used as a power supply for calibration, 3V3, and the associated current, I3V3, are shown in \hyperref[fig3V3I3V3]{Figure \ref{fig3V3I3V3}}. It can be seen that the voltage distribution in the case of American production has almost twice the dispersion of Italian production. This phenomenon is attributed to the fact that for 6 PCBs, values greatly different from the expected one are obtained, up to \SI{2.33}{\percent} less. On the other hand, for the Italian production, all measured values are are consistent with the mean, with a standard deviation of \SI{5.00}{\milli\volt}.
+\paragraph{3V3 and I3V3} The distribution of the voltage used as a power supply for calibration, 3V3, and the associated current, I3V3, are shown in \hyperref[fig3V3I3V3]{Figure \ref{fig3V3I3V3}}. It can be seen that the voltage distribution in the case of American production has almost twice the dispersion of Italian production. This phenomenon is attributed to the fact that for 6 FEBs, values greatly different from the expected one are obtained, up to \SI{2.33}{\percent} less. On the other hand, for the Italian production, all measured values are are consistent with the mean, with a standard deviation of \SI{5.00}{\milli\volt}.
 
 \begin{figure}[ht]
     \centering
@@ -581,12 +581,12 @@ From this Equation the temperature T can be obtained (expressed in \SI{}{\celsiu
         \includegraphics[width=0.475\textwidth]{Images/chap2/results/ENC_15.pdf} & \includegraphics[width=0.475\textwidth]{Images/chap2/results/ENC_16.pdf}\\
         \includegraphics[width=0.475\textwidth]{Images/chap2/results/ENC_23.pdf} & \includegraphics[width=0.475\textwidth]{Images/chap2/results/ENC_31.pdf}\\
     \end{tabular}
-    \caption{Statistical distributions of measured ENC FWHM for a limited set of boards belonging to the US production. Each histogram also reports the distribution mean value.}
+    \caption{Statistical distributions of measured ENC FWHM for a limited set of boards belonging to the US production. Each histogram also reports the distribution mean value and standard deviation.}
     \label{figFEBNoise}
 \end{figure}
 
 \noindent
-In particular, the displayed measurements were carried out by placing the front-end board under test inside a metal box in order to shield it from the electromagnetic interference present in the test environment. This made it possible to obtain noise measurements, in the form of ENC, that could effectively reflect the real noise performance of the boards, free of alterations due to the surrounding environment. The remaining FEBs, including those of Italian manufacture, were tested without any shielding and demonstrated ENC values even in the hundreds of \SI{}{\kilo\electronvolt} range.
+In particular, the displayed measurements were carried out by placing the front-end board under test inside a metal box in order to shield it from the electromagnetic interferences present in the test environment. This made it possible to obtain noise measurements, in the form of ENC, that could effectively reflect the real noise performance of the boards, free of alterations due to the surrounding environment. The remaining FEBs, including those of Italian manufacture, were tested without any shielding and demonstrated ENC values even in the hundreds of \SI{}{\kilo\electronvolt} range.
 
 
 %-------------------------------------------------------------------------------
@@ -627,7 +627,7 @@ which confirms the aforementioned. A common rule of thumb requires the power rat
 \end{equation}
 
 \noindent
-thus ensuring compliance to the aforementioned rule of thumb. \hyperref[figDummyThermal]{Figure \ref{figDummyThermal}} shows the thermal image for the configuration with a single resistor (on the left) and with two resistors (on the right); in both cases, the analog voltage supply (AVDD) was set to \SI{2.8}{\volt}, as a worst case scenario. It can be seen the temperature difference between the two configurations is of approximately \SI{9.8}{\celsius} for the same dissipated power.
+thus ensuring compliance to the aforementioned rule of thumb. \hyperref[figDummyThermal]{Figure \ref{figDummyThermal}} shows the thermal image for the configuration with a single resistor (on the left) and with two resistors (on the right). In both cases, the analog voltage supply (AVDD) was set to \SI{2.8}{\volt}, as a worst case scenario. It can be seen the temperature difference between the two configurations is of approximately \SI{9.8}{\celsius} for the same dissipated power.
 
 \begin{figure}[h!]
     \centering
@@ -664,11 +664,11 @@ The boards underwent one thermal cycle in a climate chamber (model ACS DY110) in
 \end{itemize}
 
 \noindent
-If, after the thermal cycle, the PCB did not show any type of defect, \texttt{[YES]} was reported in the \textit{Thermal Cycle} field of the test report module. A plot of the temperature in the climate chamber during thermal test can be found in \hyperref[figDUMMYtest]{Figure \ref{figDUMMYtemp}}, where the \SI{60}{\celsius} and \SI{-40}{\celsius} intervals are visible. It can be also noted that the boards underwent a further 20 minutes at controlled ambient temperature ($\approx\SI{25}{\celsius}$) in order to avoid any thermal shocks or damages coming from a sudden change in temperature.
+If, after the thermal cycle, the PCB did not show any type of defect, \texttt{[YES]} was reported in the \textit{Thermal Cycle} field of the test report module. A plot of the temperature in the climate chamber during thermal test can be found in \hyperref[figDUMMYtest]{Figure \ref{figDUMMYtemp}}, where the \SI{60}{\celsius} and \SI{-40}{\celsius} intervals are visible. It can be also noted that the boards underwent a further 20 minutes at controlled ambient temperature ($\approx\SI{25}{\celsius}$) after the thermal cycle was completed in order to avoid any thermal shocks or damages coming from a sudden change in temperature.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.65\textwidth]{Images/chap2/chamber_temperature.pdf}
+    \includegraphics[width=0.6\textwidth]{Images/chap2/chamber_temperature.pdf}
     \caption{Environmental chamber temperature trend during thermal test (in orange) compared to the set-point (in blue).}
     \label{figDUMMYtemp}
 \end{figure}
@@ -678,7 +678,7 @@ After the thermal cycle, the boards have been left biased for at least 10 minute
 %-------------------------------------------------------------------------------
 
 \subsection{Power test}
-In this test a nominal voltage of \SI{2.8}{\volt} was applied to the board. The current AIDD absorbed and the voltage AVDD of the dummy resistor have been measured and reported on the test report together with the computed power consumption APDD. For these measurements, the pass/fail criterion is not obvious, so the typical measurement value has been determined iteratively by analysing the scans of a larger number of boards.
+In this test a nominal voltage of \SI{2.8}{\volt} was applied to the board. The current IAVDD absorbed and the voltage APDD of the dummy resistor have been measured and reported on the test report together with the computed power consumption PAVDD. For these measurements, the pass/fail criterion is not obvious, so the typical measurement value has been determined iteratively by analysing the scans of a larger number of boards.
 
 %-------------------------------------------------------------------------------
 
@@ -698,11 +698,12 @@ As done for the front-end boards, a test report is generated, whose first page i
 \begin{table}[h!]
     \centering
     \def\arraystretch{1.3}
-    \resizebox{0.9\columnwidth}{!}{
-        \begin{tabular}{||c|c|c|c|c|c|c||} 
+    \resizebox{0.95\columnwidth}{!}{
+        \begin{tabular}{|c|c|c|c|c|c|c|} 
             \hline
-            \# & Board ID & \makecell{Thermal \\ cycling} & \makecell{Visual \\ inspection} & \makecell{Communication \\ test} & AIDD [\SI{}{\milli\ampere}] & APDD [\SI{}{\milli\watt}]\\ 
+            $\bm{\#}$ & \textbf{Board ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \makecell{\textbf{Communication}\T \\ \textbf{test}\B} & \textbf{IAVDD [\SI{}{\milli\ampere}}]\T\B & \textbf{PAVDD [\SI{}{\milli\watt}}]\T\B \\ 
             \hline
+            1 & D00 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \texttt{000.0} & \texttt{000.00}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the Dummy-1 front-end boards test report.}
@@ -730,11 +731,11 @@ This Section reports the results of current (IAVDD) and power (PAVDD) measuremen
 
 \section{Flex-Rigid Board} \label{flexrigids}
 
-Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents a picture of a flex-rigid board.
+Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power voltage supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents a picture of a flex-rigid board.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.5\textwidth]{Images/chap2/flex_rigid_pic.pdf}
+    \includegraphics[width=0.45\textwidth]{Images/chap2/flex_rigid_pic.pdf}
     \caption{Flex-rigid board.}
     \label{figDflexrigidPIC}
 \end{figure}
@@ -749,17 +750,17 @@ The flex-rigid boards underwent one thermal cycle in a climate chamber (model AC
 The purpose of this test is to validate the soldering of the two ERNI connectors. The board under test was placed in series with two fully populated FEBs as shown in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}} and a configuration test was run on the second board in the chain. If it responded correctly, it means that ERNI connectors on the Flex-rigid board are properly soldered and \texttt{[YES]} has been reported in the \textit{Communication test} field of the test report. \\
 
 \par
-\noindent
 As done for the front-end boards, a test report has been generated, whose first page is shown in \hyperref[figFLEXreport]{Figure \ref{figFLEXreport}}. In the case of the flex-rigid boards, a single multi-page document has been produced, having the following structure:
 
 \begin{table}[h!]
     \centering
     \def\arraystretch{2}
     \resizebox{0.6\columnwidth}{!}{
-        \begin{tabular}{||c|c|c|c|c||} 
+        \begin{tabular}{|c|c|c|c|c|} 
             \hline
-            \# & Board ID & \makecell{Thermal \\ cycling} & \makecell{Visual \\ inspection} & \makecell{Communication \\ test} \\
+            $\bm{\#}$ & \textbf{Board ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \makecell{\textbf{Communication}\T \\ \textbf{test}\B} \\ 
             \hline
+            1 & FR000 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the flex-rigid boards test report.}
@@ -777,7 +778,7 @@ The purpose of the termination connectors is to adapt the \SI{100}{\ohm} differe
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=0.5\textwidth]{Images/chap2/term_conn.pdf}
+    \includegraphics[width=0.45\textwidth]{Images/chap2/term_conn.pdf}
     \caption{Connector for termination with ten \SI{100}{\ohm} resistors installed.}
     \label{figTermConnector}
 \end{figure}
@@ -797,11 +798,12 @@ As done for the front-end boards, a test report has been generated, whose first 
 \begin{table}[ht]
     \centering
     \def\arraystretch{1.3}
-    \resizebox{0.6\columnwidth}{!}{
-        \begin{tabular}{||c|c|c|c|c||} 
+    \resizebox{0.65\columnwidth}{!}{
+        \begin{tabular}{|c|c|c|c|c|} 
             \hline
-            \# & Board ID & \makecell{Thermal \\cycling} & \makecell{Visual \\inspection} & \makecell{Communication \\test} \\ 
+            $\bm{\#}$ & \textbf{Connector ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \makecell{\textbf{Resistor}\T \\ \textbf{soldering}\B} \\ 
             \hline
+            1 & T00 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the termination connectors test report.}
@@ -836,11 +838,12 @@ As done for the front-end boards, a test report has been generated, whose first 
 \begin{table}[ht]
     \centering
     \def\arraystretch{1.3}
-    \resizebox{0.6\columnwidth}{!}{
-        \begin{tabular}{||c|c|c|c|c||} 
+    \resizebox{0.55\columnwidth}{!}{
+        \begin{tabular}{|c|c|c|c|c|} 
             \hline
-            \# & Board ID & \makecell{Thermal \\cycling} & \makecell{Visual \\inspection} & Note \\ 
+            $\bm{\#}$ & \textbf{Board ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \textbf{Note}\T\B \\ 
             \hline
+            1 & FR000 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textit{Text}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the front-end board shields test report.}

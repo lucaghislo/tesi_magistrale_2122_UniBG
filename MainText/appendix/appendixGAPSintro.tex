@@ -27,7 +27,7 @@ Dark Matter and dark energy are two different concepts. The sum of the Dark Matt
 %-------------------------------------------------------------------------------
 
 \subsection*{Dark Matter identification}
-Another major issue that researchers are attempting to solve is the identification of the matter. Some experiments seek to directly detect Dark Matter, while others seek to detect the byproducts of its self-annihilation or decay.
+Another major issue that researchers are attempting to solve is the identification of Dark Matter. Some experiments seek to directly detect Dark Matter, while others seek to detect the byproducts of its self-annihilation or decay. A brief description of these experiments is presented below.
 
 \begin{itemize}
     \itemsep0em
@@ -65,7 +65,7 @@ The GAPS instrument, shown in \hyperref[figGAPStrackerstructure]{Figure \ref{fig
 \begin{itemize}
     \itemsep0em
     \item Two external layers of TOF plastic scintillators that surround the inner tracker. The outer TOF dimension are $3.5 \times \SI{3.5}{\metre\squared}$, with an height of \SI{1.5}{\metre}. The inner TOF dimension are $1.5 \times \SI{1.5}{\metre\squared}$, with height of \SI{1}{\metre}. The distance between the outer TOF and the inner TOF is \SI{1}{\metre}. The entire TOF time resolution is about \SI{300}{\pico\second} \cite{doetinchem_2020_cosmicray}.
-    \item The inner tracker, that is subdivided in 10 layers with \SI{10}{\cm} separation in order to achieve 3D particle tracking. Each layer is composed of $12 \times 12$ Si(Li) detectors \cite{spieler_2014_semiconductor}. Each detector has a diameter of \SI{10}{\cm} and a thickness of \SI{2.5}{\mm}. Moreover, each detector is segmented in 8 strips in order to improve the spatial resolution enough to distinguish tracks from incident particles and exotic atom annihilation products. Each strip is then connected to a front-end channel which processes the charge released by the passing particle. The GAPS detectors are capable to detect X-rays ranging from \SI{20}{\kilo\electronvolt} to \SI{80}{\kilo\electronvolt} and charged particles up to \SI{50}{\mega\electronvolt}, at an operating temperature of \SI{-40}{\celsius}, with a FWHM energy resolution lower than \SI{4}{\kilo\electronvolt}. During flight, the cooling operation will be executed by a passive oscillating heat pipe approach, tested on two prototype test flights \cite{okazaki_2014_development}.
+    \item The inner tracker is subdivided in 10 layers with \SI{10}{\cm} separation in order to achieve 3D particle tracking. Each layer is composed of $12 \times 12$ Si(Li) detectors \cite{spieler_2014_semiconductor}. Each detector has a diameter of \SI{10}{\cm} and a thickness of \SI{2.5}{\mm}. Moreover, each detector is segmented in 8 strips in order to improve the spatial resolution enough to distinguish tracks from incident particles and exotic atom annihilation products. Each strip is then connected to a front-end channel which processes the charge released by the passing particle. The GAPS detectors are capable to detect X-rays ranging from \SI{20}{\kilo\electronvolt} to \SI{80}{\kilo\electronvolt} and charged particles up to \SI{50}{\mega\electronvolt}, at an operating temperature of \SI{-40}{\celsius}, with a FWHM energy resolution lower than \SI{4}{\kilo\electronvolt}. During flight, the cooling operation will be executed by a passive oscillating heat pipe approach, tested on two prototype test flights \cite{okazaki_2014_development}.
     \item Each layer of the inner tracker's circuitry is made up of $6 \times 6$ modules. Each module consists of a readout ASIC and a front-end board. Four detectors are linked to a single module. Each ASIC has 32 front-end channels capable of processing signals from 32 strips. The front-end board contains all of the components required to ensure the ASIC's proper operation. A flex-rigid board, particularly intended for this duty, may link two front-end boards for a total of six front-end boards connected on the same line.
 \end{itemize}
 
@@ -79,7 +79,7 @@ The GAPS instrument, shown in \hyperref[figGAPStrackerstructure]{Figure \ref{fig
 SLIDER32, the final ASIC for the GAPS experiment, contains 32 channels. Each channel is linked to a different detector strip. When an antiparticle goes through one of the GAPS instrument's strips, it loses energy in each of the Si(Li) detector layers. When it has expended enough energy, it comes to a halt and creates an exotic excited atom. The atom then de-excites and produces X-rays. The nucleus that remains annihilates, producing pions and protons. When an antiparticle travels over a detector strip, it emits a little quantity of charge.
 
 \par
-The antiparticle annihilation result causes a little quantity of charge to be released in the detector strips. The main purpose of the channel front-end is to analyse the quantity of charge coming from the associated detector strip. This is accomplished by collecting current pulses at the channel's input and turning them into an analog voltage, which is then digitised using an analog-to-digital converter. It is feasible to deduce which particle travelled through the detector based on these digitised values.
+The antiparticle annihilation causes a little quantity of charge to be released in the detector strips. The main purpose of the channel front-end is to analyse the quantity of charge coming from the associated detector strip. This is accomplished by collecting current pulses at the channel's input and turning them into an analog voltage, which is then digitised using an analog-to-digital converter. It is feasible to deduce which particle travelled through the detector based on these digitised values.
 
 \par
 The GAPS front-end channel has been designed with a \SI{180}{\nano\meter} CMOS technology and its schematic is shown in \hyperref[figGAPSchannel]{Figure \ref{figGAPSchannel}}. The design has been carried out to target the experiment requirements reported in \hyperref[tabGAPSrequirements]{Table \ref{tabGAPSrequirements}}.
@@ -105,7 +105,7 @@ The GAPS front-end channel has been designed with a \SI{180}{\nano\meter} CMOS t
 
 %-------------------------------------------------------------------------------
 
-\subsection*{Injection circuit}
+\subsection{Injection circuit}
 The injection circuit generates a current pulse, whose amplitude is decided by the user, in order to simulate the release of charge due to the passage of particles through the GAPS Si(Li) detector. This block is used only during the test phase, because in the real experiment, the channels will be connected to the detector strips. 
 
 \par
@@ -120,7 +120,7 @@ An injection capacitor $C_{inj}$, shown in \hyperref[figGAPSchannel]{Figure \ref
 
 %-------------------------------------------------------------------------------
 
-\subsection*{Charge Sensitive Amplifier with dynamic signal compression}
+\subsection[Charge Sensitive Amplifier with dynamic signal compression]{Charge Sensitive Amplifier with dynamic signal \\compression}
 The Charge Sensitive Amplifier is the channel's initial block. The goal of this block is to transform the detector's current pulses into a voltage step whose amplitude is proportional to the area of the current pulse. This block's key feature is its input-output trans-characteristic, which is defined by  dynamic signal compression. This is a critical feature of the CSA because, due to the high supply voltage and large number of bits required for this solution, a linear gain was not an option for covering the large energy dynamic range required by the project specifications and maintaining a high resolution in the low energy range.
 
 \par
@@ -128,7 +128,7 @@ The CSA is built around an active folded cascode (with local feedback) that is l
 
 %-------------------------------------------------------------------------------
 
-\subsection*{Time-invariant filter (CR-(RC)\textsuperscript{2})}
+\subsection{Time-invariant filter (CR-(RC)\textsuperscript{2})}
 \label{shaper}
 The shaper is the second GAPS channel block. The primary purpose of this block is to enhance the Signal-to-Noise ratio in order to achieve the requisite high energy resolution. It consists of two stages: one CR (high-pass filter) and two RC (low-pass filter). This block's Transfer Function is
 
@@ -141,7 +141,7 @@ The shaper output is a unipolar semi-Gaussian function, characterized by a peaki
 
 %-------------------------------------------------------------------------------
 
-\subsection*{Threshold Generator and SOT comparator} \label{thrSOT}
+\subsection{Threshold Generator and SOT comparator} \label{thrSOT}
 The threshold generator is linked to the shaper output. The remaining two inputs are threshold voltages. This block transforms the single-ended signal from the shaping stage's output to a differential signal. To avoid crosstalk, a differential threshold voltage is utilized. The threshold generator's two output signals are:
 
 \begin{equation}
@@ -180,7 +180,7 @@ $V_{tp}$ and $V_{tn}$ are created via an 8-bit DAC external to the channels of t
 
 %-------------------------------------------------------------------------------
 
-\subsection*{Active CR differentiator and Zero Crossing comparator (ZC)}
+\subsection{Active CR differentiator and Zero Crossing comparator (ZC)}
 \label{zeroCrossing}
 The differentiator goal is to use a CR filter to extract the shaper output in order to discover the precise shaper peaking moment. When the shaper signal derivative equals zero, the shaper output is at its maximum voltage, i.e. it has reached its peaking time. This block negates the differentiator output and adds a constant voltage of $V_{dd}/2$ to the derivative signal in the process.
 
@@ -191,7 +191,7 @@ The ZC comparator operates only when the SOT comparator voltage is set to logic 
 
 %-------------------------------------------------------------------------------
 
-\subsection*{Single-ended to differential S\&H}
+\subsection{Single-ended to differential S\&H}
 When the signal \texttt{CONV} changes from logic 0 to logic 1, this block stores the shaper output voltage value. When the front-end is in self-trigger mode, the \texttt{CONV} signal is identical to ZC; however, when it is not in self-trigger mode, the \texttt{CONV} signal must be supplied from an external source.
 
 \par
