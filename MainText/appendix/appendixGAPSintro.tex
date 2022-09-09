@@ -5,7 +5,7 @@
 %-------------------------------------------------------------------------------
 
 \section{The Dark Matter unsolved issue}
-The study and understanding of Dark Matter is a broad field of modern physics. Dark Matter is a hypothetical component of matter that, unlike known matter, is unaffected by electromagnetic fields. As a result, it does not absorb, reflect, or emit electromagnetic radiation, making it difficult to detect. This is the origin of the term "Dark Matter". Gravitational effects are the only ones that appear to be related to Dark Matter based on astrophysical observations. In fact, some events are not explainable by the common gravity theories accepted by the scientific community, unless there is more matter than what can be detected through all other physical effects. In the standard Lambda-CDM (Cold Dark Matter) model, based on the Big Bang, Dark Matter has to exist because \cite{aramaki_2016_review}:
+The study and understanding of Dark Matter is a broad field of modern physics. Dark Matter is a hypothetical component of matter that, unlike known matter, is unaffected by electromagnetic fields. As a result, it does not absorb, reflect, or emit electromagnetic radiation, making it difficult to detect. This is the origin of the term "Dark Matter". Gravitational effects are the only ones that appear to be related to Dark Matter based on astrophysical observations. In fact, some events are not explainable by the common gravity theories accepted by the scientific community, unless there is more matter than what can be detected through all other physical effects. In the standard Lambda-CDM (Cold Dark Matter) model, based on thg Bang, Dark Matter has to exist because \cite{aramaki_2016_review}:
 
 \begin{itemize}
     \itemsep0em
@@ -27,15 +27,16 @@ Dark Matter and dark energy are two different concepts. The sum of the Dark Matt
 %-------------------------------------------------------------------------------
 
 \subsection*{Dark Matter identification}
-Another major issue that researchers are attempting to solve is the identification of Dark Matter. Some experiments seek to directly detect Dark Matter, while others seek to detect the byproducts of its self-annihilation or decay. A brief description of these experiments is presented below.
+Another major issue that researchers are attempting to solve is the identification of Dark Matter. Some experiments seek to directly detect Dark Matter, while others seek to detect the byproducts of its self-annihilation or decay. \cite{feng_2010_dark} A brief description of these experiments is presented below.
 
 \begin{itemize}
     \itemsep0em
-    \item Direct detection experiments \cite{feng_2010_dark}: These experiments attempt to observe the recoils caused by the interaction of Dark Matter passing through the earth with atomic nuclei at very low energies. When Dark Matter passes through special sensitive apparatuses, the particles emit light (scintillators) or phonons (calorimeters). Instruments must be able to differentiate between background particles, which primarily scatter electrons, and Dark Matter particles, which scatter nuclei.
-    \item Indirect detection experiments \cite{feng_2010_dark}: Experiments of this type attempt to detect the products of self-annihilation or decay of Dark Matter particles in space. In theory, two Dark Matter particles could annihilate in areas with a high density of Dark Matter. In fact, some regions, such as the center of our galaxy, are expected to have a high concentration of Dark Matter. These events are thought to produce gamma rays, Standard Model particle-antiparticle pairs, or Standard Model particles. The main challenge of this type of detection is distinguishing products of Dark Matter annihilation from products of other astrophysical sources \cite{doetinchem_2020_cosmicray}. As a result, different types of evidence are required for a conclusive discovery.
-    \item Collider searches for Dark Matter \cite{feng_2010_dark}: These experiments attempt to recreate Dark Matter particles in special colliders (like the Large Hadron Collider at CERN in Geneva). All collider discoveries must be validated by further direct or indirect tests to prove that the newly discovered particle is indeed Dark Matter.
+    \item \textbf{Direct detection experiments}: These experiments attempt to observe the recoils caused by the interaction of Dark Matter passing through the earth with atomic nuclei at very low energies. When Dark Matter passes through special sensitive apparatuses, the particles emit light (scintillators) or phonons (calorimeters). Instruments must be able to differentiate between background particles, which primarily scatter electrons, and Dark Matter particles, which scatter nuclei.
+    \item \textbf{Indirect detection experiments}: Experiments of this type attempt to detect the products of self-annihilation or decay of Dark Matter particles in space. In theory, two Dark Matter particles could annihilate in areas with a high density of Dark Matter. In fact, some regions, such as the center of our galaxy, are expected to have a high concentration of Dark Matter. These events are thought to produce gamma rays, Standard Model particle-antiparticle pairs, or Standard Model particles. The main challenge of this type of detection is distinguishing products of Dark Matter annihilation from products of other astrophysical sources \cite{doetinchem_2020_cosmicray}. As a result, different types of evidence are required for a conclusive discovery.
+    \item \textbf{Collider searches for Dark Matter}: These experiments attempt to recreate Dark Matter particles in special colliders (like the Large Hadron Collider at CERN in Geneva). All collider discoveries must be validated by further direct or indirect tests to prove that the newly discovered particle is indeed Dark Matter.
 \end{itemize}
 
+\noindent
 Because of their unusual sensitivity to annihilating and decaying Dark Matter, cosmic-ray antinuclei (antiprotons, antideuterons, and antihelium) can help researchers show or reject a variety of Dark Matter ideas. These indirect detections can also be used to avoid or supplement collider, direct, or other cosmic-ray searches. The hunt for cosmic antideuterons is a novel experiment that provides a strong new approach of studying cosmic physics. The antideuteron is distinguished by its extremely low astrophysical backdrop, particularly at low energies. In reality, some Dark Matter theories anticipate antideuteron flow with energies in the order of a few GeV/n \cite{doetinchem_2020_cosmicray}. All other sorts of Dark Matter searches often attempt to find other types of particles, such as the positron, at greater energy levels (around \SI{100}{\giga\electronvolt}). The key challenge for these tests is distinguishing the results of Dark Matter annihilation from other conventional sources of positrons in this energy range.
 
 %-------------------------------------------------------------------------------
@@ -142,7 +143,7 @@ The shaper output is a unipolar semi-Gaussian function, characterized by a peaki
 %-------------------------------------------------------------------------------
 
 \subsection{Threshold Generator and SOT comparator} \label{thrSOT}
-The threshold generator is linked to the shaper output. The remaining two inputs are threshold voltages. This block transforms the single-ended signal from the shaping stage's output to a differential signal. To avoid crosstalk, a differential threshold voltage is utilized. The threshold generator's two output signals are:
+The threshold generator is linked to the shaper output. The remaining two inputs are threshold voltages. This block transforms the single-ended signal from the shaping stage's output to a differential signal. To avoid crosstalk, a differential threshold voltage is utilised. The threshold generator's two output signals are:
 
 \begin{equation}
     V_{th, out1} = v_{s0} + V_{tp} - \frac{V_{sh}}{2}
@@ -195,7 +196,7 @@ The ZC comparator operates only when the SOT comparator voltage is set to logic 
 When the signal \texttt{CONV} changes from logic 0 to logic 1, this block stores the shaper output voltage value. When the front-end is in self-trigger mode, the \texttt{CONV} signal is identical to ZC; however, when it is not in self-trigger mode, the \texttt{CONV} signal must be supplied from an external source.
 
 \par
-The sample \& hold output is then connected to a multiplexer, and finally to an ADC used to digitise to voltage stored in it. All the blocks signals are shown in \hyperref[figASICsignals]{Figure \ref{figASICsignals}} for an incoming energy of \SI{100}{\kilo\electronvolt} at \SI{-40}{\celsius}.
+The sample \& hold output is then connected to a multiplexer, and finally to an ADC used to digitise the voltage stored in it. All the blocks signals are shown in \hyperref[figASICsignals]{Figure \ref{figASICsignals}} for an incoming energy of \SI{100}{\kilo\electronvolt} at \SI{-40}{\celsius}.
 
 \begin{figure}[h!]
     \centering

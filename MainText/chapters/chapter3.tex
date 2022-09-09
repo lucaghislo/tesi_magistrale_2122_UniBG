@@ -205,7 +205,7 @@ Data acquisition from the readout electronics of the Si(Li) tracker module was p
          \hline
          \multirow{3}{*}{Mode (\texttt{ISA})} & \texttt{010} & Self trigger mode with Zero Suppression \T\B \\ & \texttt{011} & Self trigger mode without Zero Suppression \T\B \\ & \texttt{001} & External trigger mode without Zero Suppression \T\B \\
          Bias (\texttt{TBBB}) & \texttt{0110} & Gloabal bias regulation \T\B \\ 
-         CSArefs (\texttt{HRRR}) & \texttt{0011} & \texttt{H} set to \texttt{1}, test performed at \SI{-40}{\celsius} \T\B \\ 
+         CSArefs (\texttt{HRRR}) & \texttt{0011} & \texttt{H} set to \texttt{0}, test performed at \SI{-40}{\celsius} \T\B \\ 
          Shaper & \texttt{100} & Peaking time \#4 ($\tau_{p} = \SI{0.98}{\micro\second}$) \T\B \\ 
          \Xhline{2\arrayrulewidth}
     \end{tabular}
@@ -276,7 +276,7 @@ On the other hand, \hyperref[figWAVEmoduleALLPT]{Figure \ref{figWAVEmoduleALLPT}
 The leakage current associated with Si(Li) detectors was also evaluated. The measurement was carried out at a constant temperature of \SI{-40}{\celsius} using the \textit{manual test} provided by the \texttt{GAPS\_ModuleTester} software already presented in \hyperref[sec21]{Section \ref{sec21}}. The software outputs a text file containing 1000 acquisitions of the leakage current value reported in ADU, as obtained at the output of the ADC located in the portion of the circuit dedicated to both temperature and leakage current measurements. In order to activate the latter mode of operation, bit \texttt{I} of the \texttt{ISA} triplet must be set to \texttt{1}. The conversion from ADU to Ampere is carried out by means of the following formula, which takes into account the design parameters associated with the circuit used to measure the leakage current:
 
 \begin{equation}
-    I_{leakage} = \frac{(1024 - ADC_{code}) \cdot \SI{1.76}{\milli\volt}}{3.87 \cdot 10 \cdot R}
+    I_{leakage} = \frac{(1024 - ADC_{code}) \cdot \SI{1.72}{\milli\volt}}{3.87 \cdot 10 \cdot R}
 \end{equation}
 
 \noindent
@@ -292,7 +292,7 @@ where $ADC_{code}$ is comprised between 0 and 2047 ADU, \SI{1.76}{\milli\volt} r
 From the graph in \hyperref[figLeakageVoltages]{Figure \ref{figLeakageVoltages}}, it can be seen that the leakage current decreases for most channels as the nominal value of the detector bias voltage set at \SI{-250}{\volt} is reached. 
 
 \par
-In order to better study the leakage current value of each of the 32 channels at the operating voltage of \SI{-250}{\volt}, the graph in \hyperref[figLeakage250V]{Figure \ref{figLeakage250V}} shows its trend as a function of channel. It can be seen that the first 16 channels (between 0 and 15) take on average 10 times more leakage current than the last 16 channels (between 16 and 31). In these channels, the highest leakage current value per individual channel is also measured, amounting to \SI{72.78}{\nano\ampere} for channel 9. In contrast, the lowest leakage current value was measured in channel 31 and evaluated at \SI{1.63}{\nano\ampere}.
+In order to better study the leakage current value of each of the 32 channels at the operating voltage of \SI{-250}{\volt}, the graph in \hyperref[figLeakage250V]{Figure \ref{figLeakage250V}} shows its trend as a function of channel. It can be seen that the first 16 channels (between 0 and 15) take on average 10 times more leakage current than the last 16 channels (between 16 and 31). In these channels, the highest leakage current value per individual channel is also measured, amounting to \SI{71.13}{\nano\ampere} for channel 9. In contrast, the lowest leakage current value was measured in channel 31 and evaluated at \SI{1.59}{\nano\ampere}.
 
 \begin{figure}[h!]
     \centering
