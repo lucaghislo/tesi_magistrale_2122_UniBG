@@ -6,12 +6,13 @@ This Chapter provides a detailed description of the test setup and the test proc
 Tests were conducted in order to verify the integrity and proper functioning of the following components:
 
 \begin{enumerate}
+    \bfseries
     \itemsep0em 
-    \item \textbf{Front-End Board (FEB)}.
-    \item \textbf{Dummy-1 front-end board}.
-    \item \textbf{Flex-rigid board}.
-    \item \textbf{Connector for termination}.
-    \item \textbf{Front-end board shield}.
+    \item Front-End Board (FEB).
+    \item Dummy-1 front-end board.
+    \item Flex-rigid board.
+    \item Connector for termination.
+    \item Front-end board shield.
 \end{enumerate}
 
 \par
@@ -70,13 +71,14 @@ The test of the front-end boards has been performed at ambient temperature and w
     \item By running a purposely developed automated validation test controlled by a terasIC OpenVino Toolkit based on an ALTERA Cyclone V Field Programmable Gate Array (FPGA) board. This procedure performs several types of tests, which are summarised in the following list:
     
     \begin{enumerate}
+        \bfseries
         \itemsep0em 
-        \item \textbf{Noise (ENC)}.
-        \item \textbf{Pedestal}.
-        \item \textbf{Self trigger}.
-        \item \textbf{Threshold scan}.
-        \item \textbf{Channel input-output characteristic}.
-        \item \textbf{Waveform scan}.
+        \item Noise (ENC).
+        \item Pedestal.
+        \item Self trigger.
+        \item Threshold scan.
+        \item Channel input-output characteristic.
+        \item Waveform scan.
     \end{enumerate}
 \end{itemize}
 
@@ -706,7 +708,7 @@ As done for the front-end boards, a test report is generated, whose first page i
             \hline
             $\bm{\#}$ & \textbf{Board ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \makecell{\textbf{Communication}\T \\ \textbf{test}\B} & \textbf{IAVDD [\SI{}{\milli\ampere}}]\T\B & \textbf{PAVDD [\SI{}{\milli\watt}}]\T\B \\ 
             \hline
-            1 & D00 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \texttt{000.0} & \texttt{000.00}\T\B \\ \hline 
+            \texttt{1} & \texttt{D00} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \texttt{000.0} & \texttt{000.00}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the Dummy-1 front-end boards test report.}
@@ -763,7 +765,7 @@ As done for the front-end boards, a test report has been generated, whose first 
             \hline
             $\bm{\#}$ & \textbf{Board ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \makecell{\textbf{Communication}\T \\ \textbf{test}\B} \\ 
             \hline
-            1 & FR000 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No}\T\B \\ \hline 
+            \texttt{1} & \texttt{FR000} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the flex-rigid boards test report.}
@@ -806,7 +808,7 @@ As done for the front-end boards, a test report has been generated, whose first 
             \hline
             $\bm{\#}$ & \textbf{Connector ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \makecell{\textbf{Resistor}\T \\ \textbf{soldering}\B} \\ 
             \hline
-            1 & T00 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No}\T\B \\ \hline 
+            \texttt{1} & \texttt{T00} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the termination connectors test report.}
@@ -846,7 +848,7 @@ As done for the front-end boards, a test report has been generated, whose first 
             \hline
             $\bm{\#}$ & \textbf{Board ID} & \makecell{\textbf{Thermal}\T \\ \textbf{cycling}\B} & \makecell{\textbf{Visual}\T \\ \textbf{inspection}\B} & \textbf{Note}\T\B \\ 
             \hline
-            1 & FR000 & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textcolor{ForestGreen}{Yes}/\textcolor{red}{No} & \textit{Text}\T\B \\ \hline 
+            \texttt{1} & \texttt{FR000} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textcolor{ForestGreen}{\texttt{Yes}}/\textcolor{red}{\texttt{No}} & \textit{Note}\T\B \\ \hline 
         \end{tabular}
     }
     \caption{Structure of the entry for the front-end board shields test report.}
