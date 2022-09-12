@@ -21,6 +21,7 @@
 
 \usetheme{SimplePlus}
 
+\usepackage{xcolor}
 \usepackage{hyperref}
 \usepackage{graphicx} % Allows including images/logos
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
@@ -35,6 +36,8 @@
 \usepackage{setspace}
 \usepackage{siunitx}
 \sisetup{detect-all}
+
+\newcommand{\greencheck}{{\color{ForestGreen}\checkmark}}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -71,8 +74,8 @@
 % all pages logos
 \logo{
     \begin{picture}(0,0)
-        \put(0,0){\makebox(-60,225)[rt]{\includegraphics[width=2.8cm]{images/logos/unibg-logo.png}}}
-         \put(0,0){\makebox(-20,226)[rt]{\includegraphics[width=0.9cm]{images/logos/gaps.png}}}
+        \put(0,0){\makebox(-60,230)[rt]{\includegraphics[width=2.8cm]{images/logos/unibg-logo.png}}}
+         \put(0,0){\makebox(-20,231)[rt]{\includegraphics[width=0.9cm]{images/logos/gaps.png}}}
     \end{picture}
 }
 
@@ -220,15 +223,15 @@
 
 %----------------------------------------------------------------------------------------
 %	Evaluation of temperature effects on ASIC performance
-%----------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------   
 
 \section{Evaluation of temperature effects on ASIC performance}
 
-\begin{frame}{\vspace{-0.3cm}Evaluation of temperature effects \\on ASIC performance}
+\begin{frame}{\vspace{-0.3cm} Evaluation of temperature effects \\ \vskip-0.15cm on ASIC performance}
 \fontsize{8.5pt}{1}\selectfont
     \begin{columns}[T]
-    \column{0.48\textwidth}
-        \vskip0.2cm
+    \column{0.475\textwidth}
+        \vskip0.3cm
         \textbf{SLIDER32 ASIC test setup}\\
         \vskip0.15cm
         
@@ -248,23 +251,32 @@
             \item $\SI{-40}{\celsius} \div \SI{30}{\celsius}$ with \SI{10}{\celsius} steps
             \item $\SI{-40}{\celsius} \div \SI{-30}{\celsius}$ with \SI{2}{\celsius} steps
         \end{itemize}
-        
-    \column{0.48\textwidth}
-    \vskip0.2cm
-    \textbf{Bandgap reference current}\\
-    \vskip0.15cm
-
+ 
+    \column{0.475\textwidth}
+        \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+        \addtolength{\leftmargini}{\labelsep}
+        \vskip0.3cm
+        \textbf{Bandgap reference current}\\
+        \vskip0.15cm
     
-    \begin{center}
-        \includegraphics[height=0.55\textheight]{images/temperature_effects/BGR_current_Xtemp_all-BBB.pdf}
-    \end{center}
-   
+        Adjustable current reference by means of 3 bits (\texttt{BBB}) and \SI{5}{\micro\ampere} nominal value
 
+        \vskip-0.4cm
+        \begin{center}
+            \includegraphics[height=0.48\textheight]{images/temperature_effects/BGR_current_Xtemp_all-BBB.pdf}
+        \end{center}
+
+        \vskip-0.2cm
+        \begin{itemize}
+            \item \SI{5}{\micro\ampere} nominal value obtained with \texttt{BBB} = $(\texttt{101})_{2}$ \greencheck
+            \item $< \SI{1}{\percent}$ variation over the whole temperature range \greencheck
+            \item $\thicksim \SI{1.8}{\micro\ampere}$ range @ \SI{-40}{\celsius} by adjusting \texttt{BBB} bits \greencheck
+        \end{itemize}
     
     \end{columns}
 \end{frame}
 
-\begin{frame}{\vspace{-0.3cm}Evaluation of temperature effects \\on ASIC performance}
+\begin{frame}{\vspace{-0.3cm}Evaluation of temperature effects \\ \vskip-0.15cm on ASIC performance}
     txt
 \end{frame}
 
@@ -275,7 +287,7 @@
 \section{Si(Li) tracker flight components validation}
 
 \subsection{Front-End Board (FEB)}
-\begin{frame}{\vspace{-0.3cm}Si(Li) tracker flight components \\ validation}
+\begin{frame}{\vspace{-0.3cm}Si(Li) tracker flight components \\ \vskip-0.15cm validation}
     \fontsize{9pt}{1}\selectfont
     \vskip0.15cm
     \textbf{\large Front-End Board (FEB)} \\
@@ -331,7 +343,7 @@
 
 \section{Muon detection using an assembled Si(Li) tracker module}
 
-\begin{frame}{\vspace{-0.3cm}Muon detection using an \\assembled Si(Li) tracker module}
+\begin{frame}{\vspace{-0.3cm}Muon detection using an \\ \vskip-0.15cm assembled Si(Li) tracker module}
     txt
 \end{frame}
 
