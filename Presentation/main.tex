@@ -1,0 +1,369 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+\newcommand{\singlelinelogo}{\setbeamertemplate{logo}{
+    \begin{picture}(0,0)
+            \put(0,0){\makebox(-60,235)[rt]{\includegraphics[width=2.8cm]{images/logos/unibg-logo.png}}}
+             \put(0,0){\makebox(-20,236)[rt]{\includegraphics[width=0.9cm]{images/logos/gaps.png}}}
+        \end{picture}
+}}
+
+\newcommand{\sectiontitlelogo}{\setbeamertemplate{logo}{
+    \begin{picture}(0,0)
+            \put(0,0){\makebox(-205,220)[rt]{\includegraphics[width=2.8cm]{images/logos/unibg-logo.png}}}
+             \put(0,0){\makebox(-165,221)[rt]{\includegraphics[width=0.9cm]{images/logos/gaps.png}}}
+    \end{picture}
+}}
+
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+
+\usetheme{SimplePlus}
+
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images/logos
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{comment}
+\usepackage{tikz}
+\usepackage{setspace}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+\usepackage{setspace}
+\usepackage{siunitx}
+\sisetup{detect-all}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\title[]{\large{Characterisation of the readout electronics of the Si(Li) tracker\\ for the first flight of the GAPS experiment}} % The short title appears at the bottom of every slide, the full title is only on the title page
+
+\author[Luca Ghislotti] {Luca Ghislotti\\Master Thesis Defence\\ \vspace{0.3cm}\small September $30^{\text{th}}$, 2022}
+
+\institute[UniBG]{
+    \\Supervisor: prof. Massimo Manghisoni \\
+    Co-Supervisors: Ph.D. Elisa Riceputi, Ms.C. Paolo Lazzaroni
+}
+
+\date{Computer Engineering\\Academic Year 2021/2022} % Date
+
+% title page logos
+\titlegraphic { 
+    \begin{picture}(0,0)
+        % VERSION WITH UNIBG AND GAPS LOGOS
+        %\put(25,165){\makebox(0,0)[rt]{\includegraphics[width=4cm]{images/logos/unibg-logo.png}}}
+        %\put(90,168){\makebox(0,0)[rt]{\includegraphics[width=1.4cm]{images/logos/gaps.png}}}
+    
+        % VERSION WITH ALL LOGOS
+        \put(-110,165){\makebox(0,0)[rt]{\includegraphics[width=3.6cm]{images/logos/unibg-logo.png}}}
+        \put(-54,168){\makebox(0,0)[rt]{\includegraphics[width=1.3cm]{images/logos/gaps.png}}}
+        \put(16,168){\makebox(0,0)[rt]{\includegraphics[width=2cm]{images/logos/nasa-logo.png}}}
+        \put(79,163){\makebox(0,0)[rt]{\includegraphics[width=2cm]{images/logos/jaxa-logo.png}}}
+        \put(143,161){\makebox(0,0)[rt]{\includegraphics[width=1.8cm]{images/logos/infn-logo.png}}}
+        \put(210,161){\makebox(0,0)[rt]{\includegraphics[width=1.8cm]{images/logos/asi-logo.jpg}}}
+    \end{picture}
+}
+
+% all pages logos
+\logo{
+    \begin{picture}(0,0)
+        \put(0,0){\makebox(-60,225)[rt]{\includegraphics[width=2.8cm]{images/logos/unibg-logo.png}}}
+         \put(0,0){\makebox(-20,226)[rt]{\includegraphics[width=0.9cm]{images/logos/gaps.png}}}
+    \end{picture}
+}
+
+%----------------------------------------------------------------------------------------
+%	SLIDE: TITOLO, SOMMARIO e CONTENUTI
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% TITOLO
+\frame[plain]{
+    \vspace{-0.5cm}
+    \titlepage
+}
+
+% SOMMARIO
+{\singlelinelogo
+\begin{frame}{Overview}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    %\setstretch{2.0}
+    \tableofcontents
+\end{frame}
+}
+
+%----------------------------------------------------------------------------------------
+%	The GAPS Experiment
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+\subsection{The GAPS experiment}
+
+{\singlelinelogo
+\begin{frame}{The GAPS experiment}
+\vskip0.2cm
+\fontsize{9pt}{1}\selectfont
+   \begin{columns}
+   \vspace{0.05cm}
+    \column{0.55\textwidth}
+        \textbf{Scientific background}
+        \vspace{0.05cm}
+        \begin{itemize}
+            \item One of the great unanswered questions in physics and astronomy concerns the properties and composition of dark matter
+            \item Unlike normal matter, dark matter does not interact with the electromagnetic force. This means it does not absorb, reflect or emit light, making it extremely hard to spot
+            \item A very promising indirect signature of dark matter are cosmic ray antideuterons
+        \end{itemize}
+        
+        \vspace{0.2cm}
+        \textbf{The experiment}
+        \vspace{0.05cm}
+        \begin{itemize}
+            \item The General Antiparticle Spectrometer (GAPS) is an Antarctic balloon experiment designed to detect low-energy cosmic antinuclei as an indirect signature of Dark Matter
+            \item Prototype flight (pGAPS) in 2012 at the JAXA balloon facility in Taiki, Japan
+            \item First balloon flight from McMurdo Station in Antarctica in late 2023 (launch approved by NASA)
+        \end{itemize}
+        
+    \column{0.4\textwidth}
+        \begin{figure}
+        \centering
+        \includegraphics[height=0.64\textheight]{images/experiment_intro/gaps_balloon.jpg}
+        \end{figure}
+    \end{columns}
+\end{frame}
+}
+
+\subsection{The GAPS instrument}
+
+{\singlelinelogo
+\begin{frame}{The GAPS instrument}
+\fontsize{9pt}{1}\selectfont
+   \begin{columns}
+    \column{0.65\textwidth}
+        \textbf{Time-of-Flight System (TOF)} 
+        \begin{itemize}
+            \item Composed of 220 plastic scintillator paddles
+        \end{itemize}
+        \textbf{Si(Li) Tracker}
+        \begin{itemize}
+            \item About 1440 Lithium-drifted Silicon, Si(Li), detectors
+            \item 10 layers with \SI{10}{\cm} spacing
+            \item 12x12 Si(Li) detectors per layer
+            \item Modular structure (360 modules)
+        \end{itemize}    
+        \vspace{0.2cm}
+        \textbf{Particle identification} \\
+        \vspace{0.15cm}
+        Time-of-flight system measures velocity and dE/dx \\
+        \vspace{0.2cm}
+        Si(Li) Tracker functions as
+        \begin{itemize}
+            \item \textbf{target} to slow an incoming antiparticle and capture it into an exotic atom in an excited state
+            \item \textbf{spectrometer} for de-excitation X-rays
+            \item \textbf{tracker} to measure antinucleus dE/dx and stopping depth, and annihilation products from nuclear decay
+        \end{itemize}
+           
+    \column{0.3\textwidth}
+    \begin{picture}(0,0)
+        \put(120,95){\makebox(0, 0)[rt]{\includegraphics[width=5.8cm]{images/experiment_intro/GAPS_tracker_structure.jpg}}}
+        \put(115,-23){\makebox(0, 0)[rt]{\includegraphics[width=4cm]{images/experiment_intro/GAPS_tracking_scheme.jpg}}}
+    \end{picture}
+    \end{columns}    
+\end{frame}
+}
+
+\subsection{Si(Li) tracker module}
+
+{\singlelinelogo
+\begin{frame}{Si(Li) tracker module}
+\fontsize{9pt}{1}\selectfont
+   \begin{columns}
+    \column{0.6\textwidth}
+        \vskip0.2cm
+        \textbf{Si(Li) tracker module structure} \\
+        \vspace{0.15cm}
+        Each module is composed by 4 Si(Li) detectors divided in 8 strips, the ASIC for the readout electronics and the Front-End Board (FEB) that allows the communication between the ASIC and the detectors \\
+        \vspace{0.3cm}
+        \textbf{SLIDER32 ASIC} \\
+        \vspace{0.15cm}
+        The first flight of the GAPS experiment will feature the current version of the SLIDER32 readout ASIC, characterized by:
+        
+        \begin{itemize}
+            \item \SI{180}{\nano\meter} CMOS technology design
+            \item 32 channels per ASIC
+            \item -\SI{40}{\celsius} operating temperature
+            %\item $\leq$ \SI{10}{\milli\volt/ch} power dissipation
+            \item \SI{10}{\kilo\electronvolt}$\div$\SI{100}{\mega\electronvolt} dynamic range
+            \item a low-noise Charge-Sensitive Amplifier (CSA) performing dynamic signal compression
+            \item a unipolar second order semi-Gaussian time invariant filter
+            \item a single-ended to differential Sample \& Hold (S\&H)
+            \item an 11-bit Analog to Digital Converter (ADC)
+        \end{itemize}
+        \vspace{0.5cm}
+  
+    \column{0.35\textwidth}
+        \begin{figure}
+        \centering
+        \vspace{-0.25cm}
+        \includegraphics[height=0.4\textheight]{images/experiment_intro/GAPS_FEB_ASIC_3.png}
+        \vspace{0.2cm}
+        \vskip0.001cm
+        \includegraphics[height=0.35\textheight]{images/experiment_intro/gaps_asic_circuit.jpg}
+        \end{figure}
+    \end{columns}
+\end{frame}
+}
+
+%----------------------------------------------------------------------------------------
+%	Evaluation of temperature effects on ASIC performance
+%----------------------------------------------------------------------------------------
+
+\section{Evaluation of temperature effects on ASIC performance}
+
+\begin{frame}{\vspace{-0.3cm}Evaluation of temperature effects \\on ASIC performance}
+\fontsize{8.5pt}{1}\selectfont
+    \begin{columns}[T]
+    \column{0.48\textwidth}
+        \vskip0.2cm
+        \textbf{SLIDER32 ASIC test setup}\\
+        \vskip0.15cm
+        
+        Tests conducted on the SLIDER32 readout ASIC with a purposely designed test board were aimed at evaluate temperature effects on:
+        \begin{enumerate}
+            \item Bandgap reference current
+            \item Channel input-output characteristic
+            \item DAC used to set the global threshold voltage
+        \end{enumerate}
+
+        \vskip0.05cm
+        \includegraphics[width=0.95\textwidth]{images/temperature_effects/test_setup_test_board_csavrefgm_530mv.png}
+        \vskip0.2cm
+
+        Temperature range: 
+        \begin{itemize}
+            \item $\SI{-40}{\celsius} \div \SI{30}{\celsius}$ with \SI{10}{\celsius} steps
+            \item $\SI{-40}{\celsius} \div \SI{-30}{\celsius}$ with \SI{2}{\celsius} steps
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+    \vskip0.2cm
+    \textbf{Bandgap reference current}\\
+    \vskip0.15cm
+
+    
+    \begin{center}
+        \includegraphics[height=0.55\textheight]{images/temperature_effects/BGR_current_Xtemp_all-BBB.pdf}
+    \end{center}
+   
+
+    
+    \end{columns}
+\end{frame}
+
+\begin{frame}{\vspace{-0.3cm}Evaluation of temperature effects \\on ASIC performance}
+    txt
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	Si(Li) tracker flight components validation
+%----------------------------------------------------------------------------------------
+
+\section{Si(Li) tracker flight components validation}
+
+\subsection{Front-End Board (FEB)}
+\begin{frame}{\vspace{-0.3cm}Si(Li) tracker flight components \\ validation}
+    \fontsize{9pt}{1}\selectfont
+    \vskip0.15cm
+    \textbf{\large Front-End Board (FEB)} \\
+    \vspace{0.15cm}
+    The test of the front-end boards has been performed at ambient temperature and was aimed at verifying the proper functioning of the board and at looking for damages to the board or improperly soldered components.
+
+    \vskip0.3cm
+    \begin{columns}
+        \column{0.3\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.9\textwidth]{images/flight_components_validation/FEB_immagine.pdf}
+            \end{figure}
+        
+        \column{0.7\textwidth}
+            \begin{figure}
+                \centering
+                \includegraphics[width=0.8\textwidth]{images/flight_components_validation/test_setup_FEB_2.jpg}
+            \end{figure}
+            txt here
+    \end{columns}
+\end{frame}
+
+{\singlelinelogo
+\begin{frame}{Front-End Board: test results}
+    \fontsize{9pt}{1}\selectfont
+    \vskip0.15cm
+
+\end{frame}
+}
+
+\subsection{Dummy-1 Front-End Board}
+{\singlelinelogo
+\begin{frame}{Dummy-1 Front-End Board}
+    \fontsize{9pt}{1}\selectfont
+    \vskip0.15cm
+
+\end{frame}
+}
+
+\subsection{Other flight components}
+{\singlelinelogo
+\begin{frame}{Other flight components}
+    \fontsize{9pt}{1}\selectfont
+    \vskip0.15cm
+
+\end{frame}
+}
+
+%----------------------------------------------------------------------------------------
+%	Muon detection using an assembled Si(Li) tracker module
+%----------------------------------------------------------------------------------------
+
+\section{Muon detection using an assembled Si(Li) tracker module}
+
+\begin{frame}{\vspace{-0.3cm}Muon detection using an \\assembled Si(Li) tracker module}
+    txt
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+%	Conclusions
+%----------------------------------------------------------------------------------------
+
+\section{Conclusions}
+
+{\singlelinelogo
+\begin{frame}{Conclusions}
+    txt
+\end{frame}
+}
+
+%----------------------------------------------------------------------------------------
+%	Backup slides
+%----------------------------------------------------------------------------------------
+
+{\sectiontitlelogo
+\begin{frame}{}
+    \fontsize{19pt}{1}\selectfont
+    \centering
+    \vspace{1.5cm}
+    \textbf{Backup slides}
+\end{frame}
+}
+
+{\singlelinelogo
+\begin{frame}{Front-end channel schematic}
+    \includegraphics[width=1\textwidth]{images/backup_slides/readoutchannelADC.pdf}
+\end{frame}
+}
+
+\end{document}
