@@ -16,6 +16,14 @@
     \end{picture}
 }}
 
+\newcommand{\backupbegin}{
+   \newcounter{finalframe}
+   \setcounter{finalframe}{\value{framenumber}}
+}
+\newcommand{\backupend}{
+   \setcounter{framenumber}{\value{finalframe}}
+}
+
 \newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
 
@@ -27,6 +35,7 @@
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage{comment}
 \usepackage{tikz}
+\usepackage{mhchem}
 \usepackage{setspace}
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -38,6 +47,7 @@
 \sisetup{detect-all}
 
 \newcommand{\greencheck}{{\color{ForestGreen}\checkmark}}
+
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -276,9 +286,36 @@
     \end{columns}
 \end{frame}
 
-\begin{frame}{\vspace{-0.3cm}Evaluation of temperature effects \\ \vskip-0.15cm on ASIC performance}
-    txt
+{\singlelinelogo
+\begin{frame}{Channel input-output characteristic}
+\fontsize{8.5pt}{1}\selectfont
+    \begin{columns}[T]
+    \column{0.475\textwidth}
+        \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+        \addtolength{\leftmargini}{\labelsep}
+        \vskip0.3cm
+        \textbf{Bandgap reference current}\\
+        \vskip0.15cm
+    
+        Adjustable current reference by means of 3 bits (\texttt{BBB}) and \SI{5}{\micro\ampere} nominal value
+
+        \vskip-0.4cm
+        \begin{center}
+            \includegraphics[height=0.48\textheight]{images/temperature_effects/fdt_csavrefgm_auto_tau6_keV_0011.pdf}
+        \end{center}
+
+        \vskip-0.2cm
+        \begin{itemize}
+            \item \SI{5}{\micro\ampere} nominal value obtained with \texttt{BBB} = $(\texttt{101})_{2}$ \greencheck
+            \item $< \SI{1}{\percent}$ variation over the whole temperature range \greencheck
+            \item $\thicksim \SI{1.8}{\micro\ampere}$ range @ \SI{-40}{\celsius} by adjusting \texttt{BBB} bits \greencheck 
+        \end{itemize}
+
+        \column{0.475\textwidth}
+    
+    \end{columns}
 \end{frame}
+}
 
 %----------------------------------------------------------------------------------------
 %	Si(Li) tracker flight components validation
@@ -341,10 +378,92 @@
 %	Muon detection using an assembled Si(Li) tracker module
 %----------------------------------------------------------------------------------------
 
-\section{Muon detection using an assembled Si(Li) tracker module}
+\section{Experimental results from module test}
 
-\begin{frame}{\vspace{-0.3cm}Muon detection using an \\ \vskip-0.15cm assembled Si(Li) tracker module}
-    txt
+\begin{frame}{\vspace{-0.3cm}Experimental results from\\ \vskip-0.15cm module test}
+    \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+    \addtolength{\leftmargini}{\labelsep}
+
+    \begin{columns}
+        \column{0.63\textwidth}
+
+            \fontsize{10pt}{1}\selectfont
+            \vskip0.1cm
+            \textbf{Si(Li) tracker module test setup} \\
+            \vspace{0.05cm}
+            
+            \fontsize{8.5pt}{1}\selectfont
+            \begin{itemize}
+                \item Tests performed in a climatic chamber at \SI{-40}{\celsius} and \SI{10}{\percent} humidity
+                \item Peaking time \#4 ($\tau_{p} = \SI{0.98}{\micro\second}$)
+                \item Self-Trigger mode employed
+                \item 1 hour long acquisition
+            \end{itemize}
+            
+            \begin{columns}
+                \column{0.6\textwidth}
+                    \includegraphics[width=0.99\textwidth]{images/muon_detection/test_setup_MODULE.jpg}
+                \column{0.4\textwidth}
+                    \includegraphics[width=0.9\textwidth]{images/muon_detection/foto_modulo_camera.jpg}
+            \end{columns}
+
+            \fontsize{10pt}{1}\selectfont
+            \textbf{Results} \\
+            \vspace{0.05cm}
+
+            \fontsize{8.5pt}{1}\selectfont
+            \begin{itemize}
+                \item \SI{59.54}{\kilo\electronvolt} and \SI{26.34}{\kilo\electronvolt} \ce{^{241}Am} $\gamma$ emission peaks detected with visible \textit{Compton Shoulder} \greencheck
+                \item Self-Trigger and Zero Suppression modes correctly tested \greencheck
+            \end{itemize}
+
+        \column{0.32\textwidth}
+            \fontsize{7pt}{1}\selectfont
+            \centering
+            \textbf{\ce{^{241}Am} source detection} \\
+            \vspace{0.1cm}
+            \includegraphics[width=0.99\textwidth]{images/muon_detection/ch4_americio_log.pdf}
+            
+            \vskip0.15cm
+            \textbf{Cosmic muon detection} \\
+            \vspace{0.1cm}
+            \includegraphics[width=0.99\textwidth]{images/muon_detection/incoming_energy_thr130_ZS_landau.pdf}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{\vspace{-0.3cm} Cosmic muon detection in\\ \vskip-0.15cm external trigger mode}
+    \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+    \addtolength{\leftmargini}{\labelsep}
+    \fontsize{9pt}{1}\selectfont
+
+    \begin{columns}
+        \column{0.33\textwidth}
+        \begin{itemize}
+            \item Scintillator/SiPM assembly placed underneath Si(Li) detector \#2: channels 16 to 23 highlighted in red
+
+            \vskip0.4cm
+            \includegraphics[width=0.9\textwidth]{images/muon_detection/scintillator_sensor_detail.png}
+
+            \vskip0.4cm
+            \item \textit{ArduSiPM} device used as an external trigger source
+            \item 2 hours long acquisition
+            \item Global threshold set to \texttt{130}
+            \item Trigger hold delay set to \texttt{34} FPGA clocks
+            
+        \end{itemize}
+
+        \column{0.65\textwidth}
+            \vskip-0.2cm
+            \begin{figure}[h!]
+                \centering
+                \begin{tabular}{c c}
+                    \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens2.pdf} & \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens3.pdf}\B \\
+                    \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens1.pdf} & \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens4.pdf}
+                \end{tabular}
+            \end{figure}
+        
+    \end{columns}
+    
 \end{frame}
 
 %----------------------------------------------------------------------------------------
@@ -363,6 +482,9 @@
 %	Backup slides
 %----------------------------------------------------------------------------------------
 
+\appendix
+\backupbegin
+
 {\sectiontitlelogo
 \begin{frame}{}
     \fontsize{19pt}{1}\selectfont
@@ -373,9 +495,38 @@
 }
 
 {\singlelinelogo
-\begin{frame}{Front-end channel schematic}
-    \includegraphics[width=1\textwidth]{images/backup_slides/readoutchannelADC.pdf}
+\begin{frame}{Analog readout channel and ADC}
+    \fontsize{8.5pt}{1}\selectfont
+    \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+    \addtolength{\leftmargini}{\labelsep}
+    \centering
+    \includegraphics[width=0.68\textwidth]{images/backup_slides/readoutchannelADC.pdf}
+
+    \vskip0.2cm
+    
+    \begin{columns}[T]
+        \column{0.3\textwidth}
+            \begin{itemize}
+                \item \textbf{Charge Sensitive Amplifier}\\ with dynamic signal compression
+                \item \textbf{CR-(RC)$^{2}$ filter}\\ with 8 selectable peaking times (from \SI{250}{\nano\second} to \SI{1.8}{\micro\second})
+            \end{itemize}
+            
+        \column{0.36\textwidth}
+            \begin{itemize}
+                \item \textbf{SOT comparator}\\ Signal Over Threshold identification
+                \item \textbf{Active CR and ZC comparator}\\ Shaper signal peak detection
+                \item \textbf{Single-ended to differential S\&H}\\ Shaper signal peak storage
+            \end{itemize}
+        
+        \column{0.25\textwidth}
+            \begin{itemize}
+                \item \textbf{Injection capacitance $C_{inj}$}\\ Used for calibration
+                \item \textbf{11-bit hybrid SAR ADC} \\ One per ASIC with 32:1 multiplexer
+            \end{itemize}
+    \end{columns}
 \end{frame}
 }
+
+\backupend
 
 \end{document}
