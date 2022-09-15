@@ -11,10 +11,10 @@ The Chapter is structured as follows. Initially, the physical background concern
 
 \section{Cosmic muons}
 
-Cosmic rays are intense particles that continually rain through the Earth's atmosphere, with a portion of them penetrating the surface at relativistic speeds. Cosmic rays provide a homogeneous background ionising radiation that showers on the Earth's atmosphere at a rate of around 1000 collisions per square meter every second \cite{uretsky_1997_penetration}. The sun or more exotic occurrences like supernovae and black holes can be the source of these particles. The majority of cosmic ray energy reaches the Earth's surface in the form of muon kinetic energy.
+Cosmic rays are intense particles that continually rain through the Earth's atmosphere, with a portion of them penetrating the surface at relativistic speeds. Cosmic rays provide a homogeneous background ionising radiation that showers on the Earth's atmosphere at a rate of around 1000 collisions per square meter every second \cite{uretsky_1997_penetration}. The sun or more exotic occurrences like supernovae and black holes can be the source of these particles. Most of the energy coming from cosmic rays reaches the Earth's surface in the form of muon kinetic energy.
 
 \par
-Muons ($\mu^{-}$ and $\mu^{+}$) are particles of the lepton family \cite{klapdorkleingrothaus_2018_lepton} that form as a result of interactions between very energetic cosmic rays and the nuclei of atmospheric particles. They are the product of pion decay ($\pi^{-}$ and $\pi^{+}$). The muons formed in the atmosphere may infiltrate the Earth's surface for hundreds of meters due to their ultra-relativistic character, which stems from the fact that these particles have a speed near to that of light. The flux of these particles may be differentiated adequately with a scintillator detection setup, as used in this experiment.
+Muons ($\mu^{-}$ and $\mu^{+}$) are elementary particles similar to electrons, but with much greater mass. They belong to the lepton family \cite{klapdorkleingrothaus_2018_lepton} and form as a result of interactions between very energetic cosmic rays and the nuclei of atmospheric particles. They are the product of pion decay ($\pi^{-}$ and $\pi^{+}$). The muons formed in the atmosphere may infiltrate the Earth's surface for hundreds of meters due to their ultra-relativistic character, which stems from the fact that these particles have a speed near to that of light. The flux of these particles may be distinguished adequately with a scintillator detection setup, as used in this experiment.
 
 \par
 When cosmic rays collide with the atmosphere, they can cause a particle \textit{shower}, which is a series of events that alter the character of the entering primary cosmic rays in other particles \cite{bonomi_2020_applications}. In a medium such as air, the particle shower has a hadronic core that serves as a source for electromagnetic subshowers. \hyperref[figCosmicRay]{Figure \ref{figCosmicRay}} shows an illustration of cosmic rays interacting with the atmosphere, where the air shower effect is evident.
@@ -27,7 +27,7 @@ When cosmic rays collide with the atmosphere, they can cause a particle \textit{
 \end{figure}
 
 \par
-Cosmic muons, on the other hand, have a typical lifespan of around \SI{2}{\micro\second} and may reach the Earth's surface at the speed of light. All of the particles in the air shower are collectively referred to as \textit{secondary cosmic rays}. Pacini, Hess, and other physicists discovered them around the beginning of the twentieth century while studying the electric conductivity of air. They eventually realised that, in the words of Pacini, \textit{``a sizeable cause of ionisation exists in the atmosphere, originating from penetrating radiation, independent of the direct action of radioactive substances in the crust''} \cite{deangelis_2012_domenico, alessandrodeangelis_2012_lenigma}. It was Millikan that for the first time, after these experiments, called this extraterrestrial radiation \textit{cosmic rays}.  The cosmic rays, after discovery and for a few decades before the takeover of particle accelerators, have been the main source for the early development of particle physic.
+Cosmic muons, on the other hand, have a mean lifetime of around \SI{2}{\micro\second} and may reach the Earth's surface at the speed of light. All of the particles in the air shower are collectively referred to as \textit{secondary cosmic rays}. Pacini, Hess, and other physicists discovered them around the beginning of the twentieth century while studying the electric conductivity of air. They eventually realised that, in the words of Pacini, \textit{``a sizeable cause of ionisation exists in the atmosphere, originating from penetrating radiation, independent of the direct action of radioactive substances in the crust''} \cite{deangelis_2012_domenico, alessandrodeangelis_2012_lenigma}. It was Millikan that for the first time, after these experiments, called this extraterrestrial radiation \textit{cosmic rays}.  The cosmic rays, after discovery and for a few decades before the takeover of particle accelerators, have been the main source for the early development of particle physic.
 
 \par
 The flux of muons with a momentum greater than \SI{1}{\giga\electronvolt} at sea level has been measured to be around \SI[parse-numbers=false]{(0.94 \pm 0.12) \times 10^{-2}}{\cm^{-2}.sr^{-1}.s^{-1}} \cite{tanabashi_2018_review, allkofer_1975_the}. It can be said that 10 000 of muons per minute and per square (horizontal) meter, or alternatively \SI{\approx 170}{\hertz\per\meter^{2}}, hit the ground. On average about 600 of them cross a human body every minute. Another easy to remember rule of thumb is that 1 muon per second intercepts the palm of a hand. These are indicative values, since the flux depends on many variables such as altitude, solar activity, Earth and other factors. The average energy of muons at sea level is comprised between \SI{3}{\giga\electronvolt} and \SI{4}{\giga\electronvolt} and the flux is maximum
@@ -61,10 +61,10 @@ Both instruments were controlled by means of a specially developed Python applic
 \end{figure}
 
 \par
-The tests were carried out in a climate chamber, model ACS DY110, at a constant temperature of \SI{-40}{\celsius} and \SI{10}{\percent} relative humidity. The transition from room temperature to \SI{-40}{\celsius} and vice versa was carried out with an increment of \SI{0.5}{\celsius/\second} in order to avoid sudden temperature changes and consequent damage to the Si(Li) detectors, as well as the formation of condensation.
+The tests were carried out in a climate chamber, model ACS DY110, at a constant temperature of \SI{-40}{\celsius} and \SI{10}{\percent} relative humidity. The transition from room temperature to \SI{-40}{\celsius} and vice versa was carried out with a decrease of \SI{0.5}{\celsius/\second} in order to avoid sudden temperature changes and consequent damage to the Si(Li) detectors, as well as the formation of condensation.
 
 \par
-In order to connect the high voltage lines coming from the CAEN HiVolta to the FEB, a specifically built adapter board, shown in \hyperref[figHiVoltAdapterBoard]{Figure \ref{figHiVoltAdapterBoard}}, has been designed in order to connect the negative and positive terminals of one channel of the CAEN HiVolta through two separate high voltage cables into a single one connected to the FEB. This simple adapter board presents on one end a BNC connector and on the other a HIROSE MDF51SU high voltage connector to be hooked up to the respective HIROSE MDF51SY housing on the FEB. Both connectors are shown in \hyperref[figHVPSconn]{Figure \ref{figHVPSconn}}.
+In order to connect the high voltage lines coming from the CAEN HiVolta to the FEB, a specifically built adapter board, shown in \hyperref[figHiVoltAdapterBoard]{Figure \ref{figHiVoltAdapterBoard}}, has been developed in order to connect the negative and positive terminals of one channel of the CAEN HiVolta through two separate high voltage cables into a single one connected to the FEB. This adapter board presents on one end a BNC connector and on the other a HIROSE MDF51SU high voltage connector to be hooked up to the respective HIROSE MDF51SY housing on the FEB. Both connectors are shown in \hyperref[figHVPSconn]{Figure \ref{figHVPSconn}}.
 
 \par
 
@@ -90,7 +90,7 @@ In order to connect the high voltage lines coming from the CAEN HiVolta to the F
 \textit{ArduSiPM} is a complete ionising particle detection and data acquisition system consisting of an open source Arduino Due board, a purpose-built shield connected to an Arduino 2 board called \textit{ArduSiPM Shield} and a scintillator connected to a Silicon PhotoMultiplier (SiPM) \cite{bocci_2015_particle}. 
 
 \par
-The scintillator was placed below one of the Si(Li) detectors, at a distance of between 4 and \SI{5}{\cm}. Due to the small size of the scintillator, measuring \SI{5}{\cm} on each side, it was not possible to cover the entire surface of the circular sensor. Therefore, the scintillator was placed below the central part of channels 16, 17, 18 and 19, like shown in \hyperref[figScintillatorSiLi]{Figure \ref{figScintillatorSiLi}}.
+The scintillator was placed below one of the Si(Li) detectors, at a distance of between 4 and \SI{5}{\cm}. Due to the small size of the scintillator, measuring \SI{5}{\cm} on each side, it was not possible to cover the entire surface of the circular detector. Therefore, the scintillator was placed below the central part of channels 16, 17, 18 and 19, like shown in \hyperref[figScintillatorSiLi]{Figure \ref{figScintillatorSiLi}}.
 
 \begin{figure}[h!]
     \centering
@@ -100,7 +100,7 @@ The scintillator was placed below one of the Si(Li) detectors, at a distance of 
 \end{figure}
 
 \par
-The transit of an ionising particle through the scintillator produces a signal in the photomultiplier that is processed by the board, which also takes care of powering the photomultiplier. The complete device assembly is shown in \hyperref[figArduiSiPM]{Figure \ref{figArduiSiPM}}.
+The transit of an ionising particle through the scintillator produces a signal in the photomultiplier that is processed by the electronics on the board. The complete device assembly is shown in \hyperref[figArduiSiPM]{Figure \ref{figArduiSiPM}}.
 
 \begin{figure}[h!]
     \centering
@@ -109,7 +109,7 @@ The transit of an ionising particle through the scintillator produces a signal i
     \label{figArduiSiPM}
 \end{figure}
 
-The ArduSiPM shield is installed above the Arduino Due board, which takes care of reading the data and powering it. The shield electronics, on the other hand, is responsible for powering the photomultiplier and taking readings from it. Specifically, this board consists of the following components.
+The ArduSiPM shield is installed above the Arduino Due board, which takes care of acquiring data and powering it. The shield electronics, on the other hand, is responsible for powering the photomultiplier and taking readings from it. Specifically, this board consists of the following components.
 
 \begin{itemize}
     \itemsep0em
@@ -162,7 +162,7 @@ As can be appreciated in \hyperref[figSILImodule]{Figure \ref{figSILImodule}}, t
 \end{figure}
 
 \par
-The fully assembled tracker module shown in \hyperref[figSILImodule]{Figure \ref{figSILImodule}}, being equipped with four Si(Li) detectors, must be kept in a humidity-controlled environment, in order to avoid damage to the detectors, which may occur when the environment where the module is located has an excessively high level of humidity. To do this, a portable microcontroller platform, called \textit{Winter}, developed by the Microelectronics Laboratory of the University of Bergamo and shown in \hyperref[figWinterBattery]{Figure \ref{figWinterBattery}}, was used, as it is equipped with multiple environmental sensors, including an hygrometer, a thermometer and a barometer. 
+The fully assembled tracker module shown in \hyperref[figSILImodule]{Figure \ref{figSILImodule}}, being equipped with four Si(Li) detectors, must be kept in a humidity-controlled environment, in order to avoid damage to the detectors. To do this, a portable microcontroller platform, called \textit{Winter}, developed by the Microelectronics Laboratory of the University of Bergamo and shown in \hyperref[figWinterBattery]{Figure \ref{figWinterBattery}}, was used, as it is equipped with multiple environmental sensors, including an hygrometer, a thermometer and a barometer. 
 
 \begin{figure}[h!]
     \centering
@@ -182,7 +182,7 @@ The latter was placed together with the tracker module inside an airtight case i
 \end{figure}
 
 \par
-For this application, the Winter platform was programmed to transmit data every 15 minutes in a one minute-long stream in order to achieve the lowest possible energy consumption, while maintaining a sufficiently representative statistic of the internal state of the box. In fact, the device is kept in a \textit{sleep} state for the entire time interval during the course of which no data is transmitted, and virtually all peripherals on board the platform are kept switched off. In this state, the \texttt{STM32L475R} microcontroller that the device is equipped with counts the elapsed time through the Real-Time Clock (RTC) module. Once the 15-minute count is reached, the latter is used as an interrupt to bring the platform back from the sleep state to the \textit{idle} state. In this state, the device was programmed to transmit environmental data for 1 minute, then return to the sleep state. The complete firmware code can be found on GitHub at the following \href{https://github.com/lucaghislo/winterGAPS/tree/main}{\underline{link}}.
+For this application, the Winter platform was programmed to transmit data every 15 minutes in a one minute-long stream in order to achieve the lowest possible energy consumption, while maintaining a sufficiently representative statistic of the internal state of the box. In fact, the device is kept in a \textit{sleep} state for the entire time interval during the course of which no data is transmitted, and all peripherals on board the platform are kept switched off. In this state, the \texttt{STM32L475R} microcontroller that the device is equipped with is in a low power consumption mode called "stop mode 2" and counts the elapsed time through the Real-Time Clock (RTC) module. Once the 15-minute count is reached, the latter is used as an interrupt to bring the platform back from the sleep state to the \textit{idle} state. In this state, the device was programmed to transmit environmental data for 1 minute, then return to the sleep state. The complete firmware code can be found on GitHub at the following \href{https://github.com/lucaghislo/winterGAPS/tree/main}{\underline{link}}.
 
 \par
 In addition to humidity data, temperature, pressure and battery level values were also acquired. The latter parameter is of fundamental importance to check the state of the battery and determine in advance when to replace it for recharging, while the humidity data was used to check the status of the desiccant bags, thus allowing to know when to replace them in order to guarantee a constant humidity level as low as possible. The data acquired by the Winter platform via the Raspberry Pi device is finally sent to a PC, on which it is plotted, as shown in \hyperref[figWinterMATLABmonitor]{Figure \ref{figWinterMATLABmonitor}}.
@@ -260,7 +260,7 @@ peaking times with module at \SI{-40}{\celsius}, Si(Li) detectors biased at \SI{
 \end{figure}
 
 \par
-On the other hand, \hyperref[figWAVEmoduleALLPT]{Figure \ref{figWAVEmoduleALLPT}} shows the measured time response of the time-invariant filter for an emulated input particle energy of \SI{841}{\kilo\electronvolt}. The response was derived for all 8 selectable peaking times. Again, the response of the shaper filter is consistent with the simulations and with the measurements carried out first on the ASIC alone via test board, illustrated in \hyperref[ch1]{Chapter \ref{ch1}}, and then on the FEB tested in \hyperref[ch2]{Chapter \ref{ch2}}.
+\hyperref[figWAVEmoduleALLPT]{Figure \ref{figWAVEmoduleALLPT}} shows the measured time response of the time-invariant filter for an emulated input particle energy of \SI{841}{\kilo\electronvolt}. The response was derived for all 8 selectable peaking times. Again, the response of the shaper filter is consistent with the simulations and with the measurements carried out first on the ASIC alone via test board, illustrated in \hyperref[ch1]{Chapter \ref{ch1}}, and then on the FEB tested in \hyperref[ch2]{Chapter \ref{ch2}}.
 
 \par
 \hyperref[figENCmodule]{Figure \ref{figENCmodule}} shows the ENC graph evaluated for all 32 channels at each of the 8 selectable peaking times. From the measurements made on the ASIC alone and illustrated in \hyperref[figENCwomean]{Figure \ref{figENCwomean}} (on the right), it can be seen that the 8 channels on which an equivalent number of \SI{40}{\pico\farad} capacitors were mounted to simulate the detector strips, demonstrate a lower ENC value than that measured on the assembled module. This could be related to the measurement setup, which for the tests on the ASIC involved the use of a metal box to shield electromagnetic interference present in the test environment. In contrast, the module was tested by placing it in the climatic chamber without any shielding, as it will be during flight.
@@ -306,12 +306,12 @@ This behaviour can be explained by taking into account the fact that each of the
 
 % ESPERIMENTO RILEVAZIONE AMERICIO
 \par
-As a final procedure for characterising the module, an experiment was carried out using a sample of Americium 241, commonly referred to as \ce{^{241}Am}.  The latter is a man made radioactive isotope with a half-life of 432.2 years and is usually found in smoke detectors. The source is an alpha emitter, and in the decay process it also kicks out gamma radiation at \SI{59.54}{\kilo\electronvolt}, with secondary peaks at \SI{26.34}{\kilo\electronvolt} and \SI{33.19}{\kilo\electronvolt} \cite{agencyfortoxicsubstancesanddiseaseregistry_2004_chemical}. A sample of Americium 241 was placed below Si(Li) detector \#0 (channels 0 to 7) and in order to determine the best threshold level to be set on these channels with the aim of detecting at least the \SI{59.54}{\kilo\electronvolt} peak, a charge scan was first performed and it is presented in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} on the left. 
+As a final procedure for characterising the module, an experiment was carried out using a sample of Americium 241, commonly referred to as \ce{^{241}Am}.  The latter is a man-made radioactive isotope with a half-life of 432.2 years and is usually found in smoke detectors. The source is an alpha emitter, and in the decay process it also kicks out gamma radiation at \SI{59.54}{\kilo\electronvolt} and \SI{26.34}{\kilo\electronvolt} \cite{agencyfortoxicsubstancesanddiseaseregistry_2004_chemical}. A sample of Americium 241 was placed below Si(Li) detector \#0 (channels 0 to 7) and in order to determine the best threshold level to be set on these channels with the aim of detecting at least the \SI{59.54}{\kilo\electronvolt} peak, a charge scan was first performed and it is presented in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} on the left. 
 
 \par
-During this test, the threshold value is kept constant and the value of the injected charge is varied in order to determine the channel's trigger profile, expressed in trigger probability from \SI{0}{\percent} to \SI{100}{\percent}. This test was performed using the \textit{manual test} of the \texttt{GAPS\_ModuleTester} software already described in \hyperref[sec21]{Section \ref{sec21}}, in which the injected charge range and step can be specified. For this specific test, the range was set from a minimum of \SI{0}{DAC_{units}} to a maximum of \SI{300}{DAC_{units}} with steps of \SI{1}{DAC_{units}}. Repeated tests led to the selection of a threshold value of \texttt{214}, whose equivalent energy value can be seen in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} (on the right) for channels 0 to 7 and is equivalent to \SI{29.28}{\kilo\electronvolt} on average. On the same graph, the ENC trend evaluated on the corresponding channels is shown in blue. 
+During this test, the threshold value is kept constant and the value of the injected charge is varied in order to determine the channel's trigger profile, expressed in trigger probability from \SI{0}{\percent} to \SI{100}{\percent}. This test was performed using the \textit{manual test} of the \texttt{GAPS\_ModuleTester} software already described in \hyperref[sec21]{Section \ref{sec21}}, in which the injected charge range and step can be specified. For this specific test, the range was set from a minimum of \SI{0}{DAC_{units}} to a maximum of \SI{300}{DAC_{units}} with steps of \SI{1}{DAC_{units}}. Repeated tests led to the selection of a threshold value of \texttt{214}, whose equivalent energy value can be seen in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} (on the right) for channels 0 to 7 and is equivalent to \SI{22.65}{\kilo\electronvolt} on average. On the same graph, the ENC trend evaluated on the corresponding channels is shown in blue. 
 
-\begin{figure}[h!]
+\begin{figure}[h!] % 0.505 % 0.44
     \centering
     \begin{tabular}{cc}
         \includegraphics[width=0.505\textwidth]{Images/chap3/results/americio/Threshold Scan - Detector 0 - TH214.pdf} & \includegraphics[width=0.44\textwidth]{Images/chap3/results/americio/ENC_channels.pdf}\\
@@ -345,8 +345,23 @@ The acquisition was carried out for a duration of 1 hour in self-trigger mode wi
     \label{figAmericioTHR214}
 \end{figure}
 
+\par
+As highlighted by the estimation of the threshold value associated with channels 0 to 7 (detector \#0), it is possible to show how this latter parameter varies around the mean value reaching values higher than the lowest energy peak recorded around \SI{26.34}{\kilo\electronvolt}, which would ideally make it impossible to measure. The explanation for this is linked to the presence of channels firing at lower energies, such as channel 6, whose threshold is \SI{10.29}{\kilo\electronvolt}, thus making it possible to measure this second peak as well.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.47\textwidth]{Images/chap3/results/americio/ch4_americio_log_ch6.pdf} & \includegraphics[width=0.47\textwidth]{Images/chap3/results/americio/ch4_americio_log_ch7.pdf}\\
+    \end{tabular}
+    \caption{Self trigger acquisition carried out using the \ce{^{241}Am} sample with global threshold set to \texttt{214} on channel 6 (on the left) and on channel 7 (on the right).}
+    \label{figAmericioCH6-7}
+\end{figure}
+
+\par
+This phenomenon can be seen in \hyperref[figAmericioCH6-7]{Figure \ref{figAmericioCH6-7}}, which shows on the left the measurement made on channel 6 alone, in which the peak at \SI{26.34}{\kilo\electronvolt} is visible. On the contrary, the energy spectrum recorded on channel 7 is presented on the left, which, having a threshold of \SI{32.98}{\kilo\electronvolt}, does not record the lowest energy peak, measuring only that at \SI{59.54}{\kilo\electronvolt}.
+
 % rilevazione muoni
-\subsection{Muon detection}
+\subsection{Cosmic muon detection}
 \label{secMuonDetectionResults}
 
 This Section reports the results obtained during the muon detection experiment. Data acquisition was performed both in self-trigger mode, in which the sampling signal is generated internally starting from the information provided by the zero-crossing discriminator output signal, and in external trigger mode. In the latter mode, the trigger signal is provided by the \textit{ArduiSiPM} device, previously illustrated in \hyperref[secArduSiPM]{Section \ref{secArduSiPM}}, at the moment when an interaction event is recorded in the scintillator located below one of the sensors.
@@ -421,5 +436,12 @@ A second hypothesis could be related to the time required for the ArduSiPM detec
 \par
 Unfortunately, it was not possible to measure by means of an oscilloscope the delay between the recording of the interaction event on the scintillator and the moment when the trigger signal is generated by the ArduSiPM device, shown in \hyperref[figArduiSiPMtrigger]{Figure \ref{figArduiSiPMtrigger}}. It is also possible that even a zero trigger hold delay value is not sufficient to ensure that the channel output is sampled at the correct instant, consistent with the set peak time \#4 ($\tau_{p} = \SI{0.98}{\micro\second}$), if the trigger generation delay is excessively high.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/ext_self_muons_THR_130_delay_34_ch0-7.pdf}
+    \caption{Comparison between the measurement made in self-trigger mode (in blue) and that made in external trigger mode by placing the scintillator at a close distance from the Si(Li) detector (in red).}
+    \label{figMUONselfExtComparativaCH0-7}
+\end{figure}
+
 \par
-Further tests showed how the variation of the delay around the value used for the previous measurements varies the position of the muon peak in the external trigger measurements only slightly. On the contrary, it was ascertained how bringing the scintillator closer to the Si(Li) detector, in the order of a few millimetres instead of a few centimetres, resulted in the peak being shifted to higher energy, bringing it closer to that detected in the self-triggered acquisitions. This leads to the conclusion that the phenomenon is mainly attributable to a geometric rather than a timing issue.
+Further tests showed how the variation of the delay around the value used for the previous measurements varies the position of the muon peak in the external trigger measurements only slightly. On the contrary, it was ascertained how bringing the scintillator closer to the Si(Li) detector, in the order of a few millimetres instead of a few centimetres, resulted in the peak being shifted to higher energy, bringing it closer to that detected in the self-triggered acquisitions, as shown in the histogram presented in \hyperref[figMUONselfExtComparativaCH0-7]{Figure \ref{figMUONselfExtComparativaCH0-7}}. This leads to the conclusion that the phenomenon is mainly attributable to a geometric rather than a timing issue.

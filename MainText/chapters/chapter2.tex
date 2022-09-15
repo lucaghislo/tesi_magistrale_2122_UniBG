@@ -6,7 +6,7 @@ This Chapter provides a detailed description of the test setup and the test proc
 Tests were conducted in order to verify the integrity and proper functioning of the following components:
 
 \begin{enumerate}
-    \bfseries
+    %\bfseries
     \itemsep0em 
     \item Front-End Board (FEB).
     \item Dummy-1 front-end board.
@@ -58,7 +58,7 @@ The Front-End Board (FEB) that houses the SLIDER32 ASIC is shown in \hyperref[fi
 \end{figure}
 
 \par
-Each FEB houses the components necessary for the operation of the ASIC and Si(Li) sensors, including the power supplies, divided into High Voltage Power Supply (HVPW) required for the four detectors, and Low Voltage Power Supply (LVPS) necessary for the polarisation of the ASIC and its internal components. Each FEB is also equipped with a current reference for the Charge Sensitive Amplifier (CSA) input transistor, pull-up and pull-down resistors used in the transmission of the control signals, a 3-bit switch to set the address of the FEB and a 16-bit DAC for calibration and a temperature sensor. Within the tracker of the GAPS experiment, the FEBs will be connected to each other via an ERNI connector and flex-rigid board, later described in \hyperref[flexrigids]{Section \ref{flexrigids}}. Each FEB is equipped with a male (model \texttt{254877}) and female (model \texttt{354178}) ERNI high-speed micro connectors, one used to connect the front-end board to the previous one and the other used to connect it to the following FEB.
+Each FEB houses the components necessary for the operation of the ASIC and Si(Li) sensors, including the power supplies, divided into High Voltage Power Supply (HVPS) required for the four detectors, and Low Voltage Power Supply (LVPS) necessary for the polarisation of the ASIC and its internal components. Each FEB is also equipped with a current reference for the Charge Sensitive Amplifier (CSA) input transistor, pull-up and pull-down resistors used in the transmission of the control signals, a 3-bit switch to set the address of the FEB and a 16-bit DAC for calibration and a temperature sensor. Within the tracker of the GAPS experiment, the FEBs will be connected to each other via an ERNI connector and flex-rigid board, later described in \hyperref[flexrigids]{Section \ref{flexrigids}}. Each FEB is equipped with a male (model \texttt{254877}) and female (model \texttt{354178}) ERNI high-speed micro connectors, one used to connect the front-end board to the previous one and the other used to connect it to the following FEB.
 
 \par
 
@@ -71,7 +71,7 @@ The test of the front-end boards has been performed at ambient temperature and w
     \item By running a purposely developed automated validation test controlled by a terasIC OpenVino Toolkit based on an ALTERA Cyclone V Field Programmable Gate Array (FPGA) board. This procedure performs several types of tests, which are summarised in the following list:
     
     \begin{enumerate}
-        \bfseries
+        %\bfseries
         \itemsep0em 
         \item Noise (ENC).
         \item Pedestal.
@@ -133,7 +133,7 @@ In order for the FPGA to be programmed, the software Intel Quartus Prime is used
 \end{figure}
 
 \par
-The first interface, called \textit{ASIC configuration}, is dedicated to the configuration of the ASIC, namely its addresse, registers and configuration bits, specifically:
+The first interface, called \textit{ASIC configuration}, is dedicated to the configuration of the ASIC, namely its address, registers and configuration bits, specifically:
 
 \begin{enumerate}
     \itemsep0em 

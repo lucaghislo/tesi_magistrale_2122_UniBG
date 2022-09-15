@@ -3,10 +3,10 @@
 This Chapter describes the characterisation activity that has been carried out on the SLIDER32 ASIC employed for the readout of the lithium-drifted silicon, Si(Li), detectors of the GAPS inner tracker, described in \hyperref[gapsTrackingSystem]{Appendix \ref{gapsTrackingSystem}}. Specifically, the measurements were taken with a purposely developed test board described in \hyperref[testboardsetup]{Section \ref{testboardsetup}} and were aimed at the evaluation of thermal effects on:
 
 \begin{enumerate}
-    \bfseries
+    %\bfseries
     \itemsep0em 
-    \item Channel input-output characteristic.
     \item Bandgap reference current.
+    \item Channel input-output characteristic.
     \item Digital-to-Analog Converter (DAC) used to set the global threshold voltage.
 \end{enumerate}
 
@@ -44,7 +44,7 @@ Both variants comprise the components discussed in the following.
 \begin{itemize}
     \itemsep0em 
     \item A custom designed test board that allows tests to be performed on the ASIC without having to solder it to the board and then desolder it. This is made possible by a specific socket that allows the ASIC to be mounted and removed without having to solder it to the test board. This solution also allows several ASICs to be tested using a single board, although being not being the case of the proposed measurements, that involved only ASIC No. \texttt{536}.
-    \item A Keysight N6705C DC Power analyser providing both analog and digital voltages to the FEB. \hyperref[figKeysightFEBtb]{Figure \ref{figKeysightFEBtb}} shows a screen capture of the power supply. Specifically, channel \texttt{1} provides the analog supply voltage (\SI{2.4}{\volt}), channel \texttt{3} provides the digital supply voltage (\SI{2.4}{\volt}) and channel \texttt{4} the 16-bit calibration DAC supply voltage (\SI{3.6}{\volt}).
+    \item A Keysight N6705C DC Power analyser providing both analog and digital voltages to the test board. \hyperref[figKeysightFEBtb]{Figure \ref{figKeysightFEBtb}} shows a screen capture of the power supply. Specifically, channel \texttt{1} provides the analog supply voltage (\SI{2.4}{\volt}), channel \texttt{3} provides the digital supply voltage (\SI{2.4}{\volt}) and channel \texttt{4} the 16-bit calibration DAC supply voltage (\SI{3.6}{\volt}).
     
     \begin{minipage}{\linewidth}
     \vspace{0.4cm}
@@ -70,7 +70,7 @@ Specific to version \texttt{1} of the test setup is the Agilent 34461A digital m
 Version \texttt{2} of the test setup employs a Keysight E3631A DC power supply \texttt{(d)} in order to force the \texttt{CSAVrefGM} voltage to a fixed \SI{530}{\milli\volt} value. This voltage corresponds to the one provided by the bandgap at a temperature of \SI{-40}{\celsius}.
 
 \par
-The test board has been placed in a climate chamber (model ACS DY110) at temperatures spanning from \SI{-40}{\celsius} to \SI{30}{\celsius} with \SI{10}{\celsius} increments. The \SI{-40}{\celsius} to \SI{-30}{\celsius} region has been spanned with \SI{2}{\celsius} increments. In each test, before performing a test session, the climate chamber has been maintained at the desired temperature for 15 minutes in order to ensure that the electronics reach the correct temperature.
+The test board has been placed in a climate chamber (model ACS DY110) at temperatures spanning from \SI{-40}{\celsius} to \SI{30}{\celsius} with \SI{10}{\celsius} increments. The \SI{-40}{\celsius} to \SI{-30}{\celsius} region has been spanned with \SI{2}{\celsius} increments. In each test, before performing a test session, the climate chamber has been maintained at the desired temperature for 15 minutes in order to ensure that the electronics reached the correct temperature.
 
 %-------------------------------------------------------------------------------
 %	Current reference analysis
@@ -195,7 +195,7 @@ In the specific case of the presented measurements and simulations, the temperat
 In this Section a description of the temperature effects on the channel input-output characteristic is given. The curve trend is due to the Charge Sensitive Amplifier (CSA) circuit block, which is responsible for converting the incident charge on the Si(Li) detector into a voltage signal that is subsequently supplied to the shaper, described in \hyperref[shaper]{Section \ref{shaper}}. 
 
 \par
-The CSA is based on an inverting gain stage and a feedback capacitor where charge restoration is achieved by a continuous-time Krummenacher network \cite{krummenacher_1991_pixel}. The main feature of the CSA is the dynamic signal compression that is achieved by implementing the the feedback capacitor with an NMOSFET operating in the inversion mode \cite{manghisoni_2018_dynamic}. In this transistor, source and drain are shorted to form the capacitor terminal connected to the amplifier input, while the gate terminal is connected to the output. At small signal amplitudes, the gate-to-channel voltage is smaller than the transistor threshold voltage and the capacitance is equal to the sum of gate-source and gate-drain overlap capacitances. At larger signal amplitudes, the gate-to-channel voltage becomes larger than the the transistor threshold and the capacitance increases including also the gate-to-channel capacitance. According to this mechanism, the feedback capacitance increases from \SI{175}{\femto\farad} at small input signal amplitudes to \SI{14.7}{\pico\farad} at large signal amplitudes. \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} shows the schematic of the CSA, with the nonlinear MOSFET feedback capacitance.
+The CSA is based on an inverting gain stage and a feedback capacitor where charge restoration is achieved by a continuous-time Krummenacher network \cite{krummenacher_1991_pixel}. The main feature of the CSA is the dynamic signal compression that is achieved by implementing the feedback capacitor with an NMOSFET operating in the inversion mode \cite{manghisoni_2018_dynamic}. In this transistor, source and drain are shorted to form the capacitor terminal connected to the amplifier input, while the gate terminal is connected to the output. At small signal amplitudes, the gate-to-channel voltage is smaller than the transistor threshold voltage and the capacitance is equal to the sum of gate-source and gate-drain overlap capacitances. At larger signal amplitudes, the gate-to-channel voltage becomes larger than the the transistor threshold and the capacitance increases including also the gate-to-channel capacitance. According to this mechanism, the feedback capacitance increases from \SI{175}{\femto\farad} at small input signal amplitudes to \SI{14.7}{\pico\farad} at large signal amplitudes. \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} shows the schematic of the CSA, with the nonlinear MOSFET feedback capacitance.
 
 \begin{figure}[h!]
     \centering
@@ -205,7 +205,7 @@ The CSA is based on an inverting gain stage and a feedback capacitor where charg
 \end{figure}
 
 \par
-A reference voltage in the Krummenacher feedback network, denoted as $V_{ref}$ in \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} and referred to as \texttt{CSAVrefGM} in the following, makes it possible to adjust the amplifier output voltage, so that the signal amplitude at which the CSA switches from high to low gain can be finely tuned, also compensating for process and temperature variations. In the nominal setting, the kink in the input-output characteristic occurs at an energy deposited on the detector of about \SI{1}{\mega\electronvolt}.
+A reference voltage in the Krummenacher feedback network, denoted as $V_{ref}$ in \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} and referred to as \texttt{CSAVrefGM} in the following, makes it possible to adjust the amplifier output voltage, so that the signal amplitude at which the CSA switches from high to low gain can be finely tuned, compensating for process and temperature variations. In the nominal setting, the kink in the input-output characteristic occurs at an energy deposited on the detector of about \SI{1}{\mega\electronvolt}.
 
 \par
 In order to obtain the input-output characteristic of the CSA, the channel output must be sampled precisely at the peaking time, set by bit configuration \texttt{TTT}, that for the presented measurements has been chosen to be $\tau_{p} = \SI{0.98}{\micro\second}$ (peaking time 4, meaning \texttt{TTT} equal to \texttt{100}). The value of the injected charge ranges from 0 to \SI{60000}{DACu} (DAC unit) and it can be converted in the equivalent energy value using the conversion factor of \SI{1}{DACu} = \SI{0.841}{\kilo\electronvolt}, whose value is later derived in \hyperref[eqConversionFactor]{Equation \ref{eqConversionFactor}}, therefore the range can be equivalently expressed as spanning from 0 to \SI{50.46}{\mega\electronvolt}.
@@ -282,7 +282,7 @@ where
     \item \textbf{x} [\SI{}{\kilo\electronvolt}] is the input energy.
 \end{itemize}
 
-The effect of temperature variation on the channel transfer function has been studied by evaluating gain and pedestal in both X-ray and muon detection regions. For each of the two parameters, a linear regression model has been defined in order to study the trend on both gain and pedestal with respect to temperature ranging from \SI{-40}{\celsius} to \SI{30}{\celsius}, which has been demonstrated having an almost perfect linear trend. For the gain analysis, the following linear regression model has been defined.
+The effect of temperature variation on the channel transfer function has been studied by evaluating gain and pedestal in both X-ray and muon detection regions. For each of the two parameters, a linear regression model has been defined in order to study the trend on both gain and pedestal with respect to temperature ranging from \SI{-40}{\celsius} to \SI{30}{\celsius}, which has been demonstrated to have an almost perfect linear trend. For the gain analysis, the following linear regression model has been defined.
 
 \begin{equation}
     g = g_{\textit{0}} + g_{\textit{1}} \cdot (T - T_{\textit{0}})
@@ -647,7 +647,7 @@ For every sample $x$ we evaluate the mean value $p_{m}$ of the 32 channels sampl
 where
 
 \begin{equation}
-     \frac{1}{32} \sum_{y=0}^{31} p_0[y] = p_{m_0}
+     \frac{1}{32} \sum_{y=0}^{31} p_0[y] = p_{m, 0}
 \end{equation}
 
 \noindent

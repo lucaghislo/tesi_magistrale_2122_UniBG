@@ -45,10 +45,10 @@ Because of their unusual sensitivity to annihilating and decaying Dark Matter, c
 
 \section{The GAPS experiment}
 \label{appendixGAPSexperiment}
-The primary goal of the General Antiparticle Spectrometer (GAPS) experiment is the indirect detection of low-energy cosmic-ray antinuclei (below \SI{0.25}{\giga\electronvolt}) \cite{doetinchem_2020_cosmicray}. The experiment consists of 10 layers of semiconducting Si(Li) strip detectors surrounded by a Time Of Flight (TOF) plastic scintillator system on all sides. GAPS is based on a unique particle identification approach based on exotic atom production and decay \cite{re_2022_a}\cite{re_2022_b}. A low-energy antiparticle, slowed by the environment, first travels through the TOF. This enables the collection of preliminary data on particle velocity and energy. When an antiparticle goes through the detector, it loses energy in the Si(Li) detector tracking system and slows down until it stops inside the device. If this occurs, the antiparticle replaces a silicon shell electron, resulting in the formation of an exotic atom in an excited state with a probability close to one. The exotic atom de-excites via auto-ionization and radiative transitions that produce X-rays before annihilating with the silicon nucleus, forming a nuclear star of pions and protons. The antiparticle and silicon decreased mass and atomic numbers determine the X-ray energy in a unique way.
+The primary goal of the General Antiparticle Spectrometer (GAPS) experiment is the indirect detection of low-energy cosmic-ray antinuclei (below \SI{0.25}{\giga\electronvolt}) \cite{doetinchem_2020_cosmicray}. The experiment consists of 10 layers of semiconducting Si(Li) strip detectors surrounded by a Time Of Flight (TOF) plastic scintillator system on all sides. GAPS is supported by a unique particle identification approach based on exotic atom production and decay \cite{re_2022_a}\cite{re_2022_b}. A low-energy antiparticle, slowed by the environment, first travels through the TOF. This enables the collection of preliminary data on particle velocity and energy. When an antiparticle goes through the detector, it loses energy in the Si(Li) detector tracking system and slows down until it stops inside the device. If this occurs, the antiparticle replaces a silicon shell electron, resulting in the formation of an exotic atom in an excited state with a probability close to one. The exotic atom de-excites via auto-ionization and radiative transitions that produce X-rays before annihilating with the silicon nucleus, forming a nuclear star of pions and protons. The antiparticle and silicon decreased mass and atomic numbers determine the X-ray energy in a unique way.
 
 \par
-The rejection of the dominating antiproton backdrop is the most difficult challenge in finding antideuterons. The GAPS detector design, on the other hand, allows for the detection of either antiproton or antideuteron cosmic rays. Antihelium signatures can be easily recognised even if the equipment is optimised for antideuteron detection \cite{aramaki_2014_potential}. Because antihelium has a larger charge than antideuterons and antiprotons, its analysis is significantly simpler than the antideuterion-antiproton one.
+The rejection of the dominating antiproton backdrop is the most difficult challenge in finding antideuterons. The GAPS detector design, on the other hand, allows for the detection of either antiproton or antideuteron cosmic rays. Antihelium signatures can be easily recognised even if the equipment is optimised for antideuteron detection \cite{aramaki_2014_potential}. Because antihelium has a larger charge than antideuterons and antiprotons, its analysis is significantly simpler than the antideuteron-antiproton one.
 
 \begin{figure}[ht]
     \centering
@@ -67,7 +67,7 @@ The GAPS instrument, shown in \hyperref[figGAPStrackerstructure]{Figure \ref{fig
     \itemsep0em
     \item Two external layers of TOF plastic scintillators that surround the inner tracker. The outer TOF dimension are $3.5 \times \SI{3.5}{\metre\squared}$, with an height of \SI{1.5}{\metre}. The inner TOF dimension are $1.5 \times \SI{1.5}{\metre\squared}$, with height of \SI{1}{\metre}. The distance between the outer TOF and the inner TOF is \SI{1}{\metre}. The entire TOF time resolution is about \SI{300}{\pico\second} \cite{doetinchem_2020_cosmicray}.
     \item The inner tracker is subdivided in 10 layers with \SI{10}{\cm} separation in order to achieve 3D particle tracking. Each layer is composed of $12 \times 12$ Si(Li) detectors \cite{spieler_2014_semiconductor}. Each detector has a diameter of \SI{10}{\cm} and a thickness of \SI{2.5}{\mm}. Moreover, each detector is segmented in 8 strips in order to improve the spatial resolution enough to distinguish tracks from incident particles and exotic atom annihilation products. Each strip is then connected to a front-end channel which processes the charge released by the passing particle. The GAPS detectors are capable to detect X-rays ranging from \SI{20}{\kilo\electronvolt} to \SI{80}{\kilo\electronvolt} and charged particles up to \SI{50}{\mega\electronvolt}, at an operating temperature of \SI{-40}{\celsius}, with a FWHM energy resolution lower than \SI{4}{\kilo\electronvolt}. During flight, the cooling operation will be executed by a passive oscillating heat pipe approach, tested on two prototype test flights \cite{okazaki_2014_development}.
-    \item Each layer of the inner tracker's circuitry is made up of $6 \times 6$ modules. Each module consists of a readout ASIC and a front-end board. Four detectors are linked to a single module. Each ASIC has 32 front-end channels capable of processing signals from 32 strips. The front-end board contains all of the components required to ensure the ASIC's proper operation. A flex-rigid board, particularly intended for this duty, may link two front-end boards for a total of six front-end boards connected on the same line.
+    \item Each layer of the inner tracker's circuitry is made up of $6 \times 6$ modules. Each module consists of a readout ASIC and a front-end board. Four detectors are linked to a single module. Each ASIC has 32 front-end channels capable of processing signals from 32 strips. The front-end board contains all of the components required to ensure the ASIC's proper operation. A flex-rigid board, particularly intended for this duty, links two front-end boards for a total of six front-end boards connected on the same line.
 \end{itemize}
 
 %-------------------------------------------------------------------------------
@@ -77,13 +77,13 @@ The GAPS instrument, shown in \hyperref[figGAPStrackerstructure]{Figure \ref{fig
 \section{GAPS front-end}
 \label{secGAPSfrontend}
 
-SLIDER32, the final ASIC for the GAPS experiment, contains 32 channels. Each channel is linked to a different detector strip. When an antiparticle goes through one of the GAPS instrument's strips, it loses energy in each of the Si(Li) detector layers. When it has expended enough energy, it comes to a halt and creates an exotic excited atom. The atom then de-excites and produces X-rays. The nucleus that remains annihilates, producing pions and protons. When an antiparticle travels over a detector strip, it emits a little quantity of charge.
+SLIDER32 (32 channels Si-LI DEtector Readout) is the final ASIC for the GAPS experiment and contains 32 channels. Each channel is linked to a different detector strip. When an antiparticle goes through one of the GAPS instrument's strips, it loses energy in each of the Si(Li) detector layers. When it has expended enough energy, it comes to a halt and creates an exotic excited atom. The atom then de-excites and produces X-rays. The nucleus that remains annihilates, producing pions and protons. When an antiparticle travels over a detector strip, it releases a little quantity of charge.
 
 \par
 The antiparticle annihilation causes a little quantity of charge to be released in the detector strips. The main purpose of the channel front-end is to analyse the quantity of charge coming from the associated detector strip. This is accomplished by collecting current pulses at the channel's input and turning them into an analog voltage, which is then digitised using an analog-to-digital converter. It is feasible to deduce which particle travelled through the detector based on these digitised values.
 
 \par
-The GAPS front-end channel has been designed with a \SI{180}{\nano\meter} CMOS technology and its schematic is shown in \hyperref[figGAPSchannel]{Figure \ref{figGAPSchannel}}. The design has been carried out to target the experiment requirements reported in \hyperref[tabGAPSrequirements]{Table \ref{tabGAPSrequirements}}.
+The GAPS front-end channel has been designed with a commercial \SI{180}{\nano\meter} CMOS technology and its block schematic is shown in \hyperref[figGAPSchannel]{Figure \ref{figGAPSchannel}}. The design targets the experiment requirements reported in \hyperref[tabGAPSrequirements]{Table \ref{tabGAPSrequirements}}.
 
 \begin{table}[ht]
     \centering
@@ -115,14 +115,14 @@ An injection capacitor $C_{inj}$, shown in \hyperref[figGAPSchannel]{Figure \ref
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.98\textwidth]{Images/appendGAPSintro/readoutchannelADC.pdf}
-    \caption{Front-end channel schematic.}
+    \caption{Front-end channel block schematic.}
     \label{figGAPSchannel}
 \end{figure}
 
 %-------------------------------------------------------------------------------
 
 \subsection[Charge Sensitive Amplifier with dynamic signal compression]{Charge Sensitive Amplifier with dynamic signal \\compression}
-The Charge Sensitive Amplifier is the channel's initial block. The goal of this block is to transform the detector's current pulses into a voltage step whose amplitude is proportional to the area of the current pulse. This block's key feature is its input-output trans-characteristic, which is defined by  dynamic signal compression. This is a critical feature of the CSA because, due to the high supply voltage and large number of bits required for this solution, a linear gain was not an option for covering the large energy dynamic range required by the project specifications and maintaining a high resolution in the low energy range.
+The Charge Sensitive Amplifier is the channel's initial block. The goal of this block is to transform the detector's current pulses into a voltage step whose amplitude is proportional to the area of the current pulse, namely the charge induced by the current pulse. This block's key feature is its input-output trans-characteristic, which is defined by  dynamic signal compression. This is a critical feature of the CSA because, due to the low supply voltage and large number of bits required for this solution, a linear gain was not an option for covering the large energy dynamic range required by the project specifications and maintaining a high resolution in the low energy range.
 
 \par
 The CSA is built around an active folded cascode (with local feedback) that is loaded using an active cascode architecture. A continuous time feedback implemented using a Krummenacher network does the reset. The dynamic compression has been performed using the nMOS capacitor $C_f$.
@@ -131,14 +131,14 @@ The CSA is built around an active folded cascode (with local feedback) that is l
 
 \subsection{Time-invariant filter (CR-(RC)\textsuperscript{2})}
 \label{shaper}
-The shaper is the second GAPS channel block. The primary purpose of this block is to enhance the Signal-to-Noise ratio in order to achieve the requisite high energy resolution. It consists of two stages: one CR (high-pass filter) and two RC (low-pass filter). This block's Transfer Function is
+The shaper is the second GAPS channel block. The primary purpose of this block is to enhance the Signal-to-Noise ratio in order to achieve the low energy resolution (of \SI{4}{\kilo\electronvolt} FWHM). It consists of two stages: One CR (high-pass filter) and two RC (low-pass filters). This block's transfer function is
 
 \begin{equation}
     H(s) = \frac{R_2}{R_1} \cdot \frac{1}{1+s\tau} \cdot \frac{C_2}{C_1} \cdot \frac{s\tau}{(1+s\tau)^2}
 \end{equation}
 
 \noindent
-The shaper output is a unipolar semi-Gaussian function, characterized by a peaking time $t_p = 2 \cdot \tau$, where $\tau$ is the time constant of the circuit. The peaking time selection (3 bit) is obtained by switching four capacitors. The shaper output introduces a gain of 1.5 almost independent of the peaking time.
+The shaper output is a unipolar semi-Gaussian waveform, characterized by a peaking time $t_p = 2 \cdot \tau$, where $\tau$ is the time constant of the circuit. The peaking time selection (3 bit) is obtained by switching specific capacitors in the architecture. The shaper output introduces a gain of 1.5 almost independent of the peaking time.
 
 %-------------------------------------------------------------------------------
 
@@ -163,7 +163,7 @@ where $V_{sh}$ is the shaper output voltage and $v_{s0}$ is a threshold generato
     \end{split}
 \end{equation}
 
-The difference $(V_{tp} - V_{tn})$ can be expressed as $V_{th}$, which is the SOT comparator threshold. The two generated voltages are, in fact, connected to the SOT comparator. Its main goal is to suppress false event caused by noise or disturbances. The comparator fires when
+The difference $(V_{tp} - V_{tn})$ can be expressed as $V_{th}$, which is the SOT comparator differential threshold. The two generated voltages are, in fact, connected to the SOT comparator. Its main goal is to suppress false event caused by noise or disturbances. The comparator fires when
 
 \begin{equation}
     V_{th, out2} > V_{th, out1}
@@ -177,7 +177,7 @@ or, more easily, when
 \end{equation}
 
 \noindent
-$V_{tp}$ and $V_{tn}$ are created via an 8-bit DAC external to the channels of the SLIDER32 ASIC. These voltages are then linked to each channel's threshold generator. To compensate for process parameter fluctuations in each channel threshold, a 3-bit DAC for fine threshold trimming is added to each of these.
+$V_{tp}$ and $V_{tn}$ are created via an 8-bit DAC external to the channels of the SLIDER32 ASIC. These voltages are then routed to each channel's threshold generator. To compensate for process parameter fluctuations in each channel threshold, a 3-bit DAC for fine threshold trimming is added to each of these.
 
 %-------------------------------------------------------------------------------
 
@@ -185,7 +185,7 @@ $V_{tp}$ and $V_{tn}$ are created via an 8-bit DAC external to the channels of t
 \label{zeroCrossing}
 The differentiator goal is to use a CR filter to extract the shaper output in order to discover the precise shaper peaking moment. When the shaper signal derivative equals zero, the shaper output is at its maximum voltage, i.e. it has reached its peaking time. This block negates the differentiator output and adds a constant voltage of $V_{dd}/2$ to the derivative signal in the process.
 
-This voltage increase avoids the differentiator output from always being \SI{0}{V} if the derivative is less than \SI{0}{V}. This block's output is then linked to the ZC comparator and compared to $V_{dd}/2$ voltage: if it is larger than $V_{dd}/2$, the ZC output becomes a logic 1. This is the point at which the shaper output must be sampled continuously throughout the \texttt{CONV} signal in order to determine the precise injected charge.
+This voltage increase avoids the differentiator output from always being \SI{0}{V} if the derivative is less than \SI{0}{V}. This block's output is then connected to the ZC comparator and compared to $V_{dd}/2$ voltage: If it is larger than $V_{dd}/2$, the ZC output becomes a logic 1. This is the point at which the shaper output must be sampled continuously throughout the \texttt{CONV} signal in order to determine the precise injected charge.
 
 \par
 The ZC comparator operates only when the SOT comparator voltage is set to logic 1. This is done to readily eliminate erroneous events generated by noise or external disturbances.
