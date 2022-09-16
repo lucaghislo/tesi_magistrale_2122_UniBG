@@ -173,7 +173,7 @@
         \vspace{0.15cm}
         Time-of-flight system measures velocity and dE/dx \\
         \vspace{0.2cm}
-        Si(Li) Tracker functions as
+        Si(Li) Tracker functions as:
         \begin{itemize}
             \item \textbf{target} to slow an incoming antiparticle and capture it into an exotic atom in an excited state
             \item \textbf{spectrometer} for de-excitation X-rays
@@ -237,7 +237,7 @@
 
 \section{Evaluation of temperature effects on ASIC performance}
 
-\begin{frame}{\vspace{-0.3cm} Evaluation of temperature effects \\ \vskip-0.15cm on ASIC performance}
+\begin{frame}{Evaluation of temperature effects \\ \vskip-0.15cm on ASIC performance}
 \fontsize{8.5pt}{1}\selectfont
     \begin{columns}[T]
     \column{0.475\textwidth}
@@ -249,7 +249,7 @@
         \begin{enumerate}
             \item Bandgap reference current
             \item Channel input-output characteristic
-            \item DAC used to set the global threshold voltage
+            \item DAC for setting the global threshold voltage
         \end{enumerate}
 
         \vskip0.05cm
@@ -258,7 +258,7 @@
 
         Temperature range: 
         \begin{itemize}
-            \item $\SI{-40}{\celsius} \div \SI{30}{\celsius}$ with \SI{10}{\celsius} steps
+            \item $\SI{-40}{\celsius} \div +\SI{30}{\celsius}$ with \SI{10}{\celsius} steps
             \item $\SI{-40}{\celsius} \div \SI{-30}{\celsius}$ with \SI{2}{\celsius} steps
         \end{itemize}
  
@@ -294,10 +294,10 @@
         \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
         \addtolength{\leftmargini}{\labelsep}
         \vskip0.3cm
-        \textbf{Bandgap reference current}\\
+        \textbf{Automatically regulated \texttt{CSAVrefGM} voltage}\\
         \vskip0.15cm
     
-        Adjustable current reference by means of 3 bits (\texttt{BBB}) and \SI{5}{\micro\ampere} nominal value
+        txt
 
         \vskip-0.4cm
         \begin{center}
@@ -306,16 +306,122 @@
 
         \vskip-0.2cm
         \begin{itemize}
-            \item \SI{5}{\micro\ampere} nominal value obtained with \texttt{BBB} = $(\texttt{101})_{2}$ \greencheck
-            \item $< \SI{1}{\percent}$ variation over the whole temperature range \greencheck
-            \item $\thicksim \SI{1.8}{\micro\ampere}$ range @ \SI{-40}{\celsius} by adjusting \texttt{BBB} bits \greencheck 
+            \item txt
         \end{itemize}
 
         \column{0.475\textwidth}
+            \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+            \addtolength{\leftmargini}{\labelsep}
+            \vskip0.3cm
+            \textbf{\texttt{CSAVrefGM} voltage set to \SI{530}{\milli\volt}}\\
+            \vskip0.15cm
+        
+            txt
+    
+            \vskip-0.4cm
+            \begin{center}
+                \includegraphics[height=0.48\textheight]{images/temperature_effects/fdt_csavrefgm_530mV_tau6_keV.pdf}
+            \end{center}
+    
+            \vskip-0.2cm
+            \begin{itemize}
+                \item txt
+            \end{itemize}
     
     \end{columns}
 \end{frame}
 }
+
+
+\begin{frame}{Kink trend as function of temperature}
+\fontsize{8.5pt}{1}\selectfont
+    \begin{columns}[T]
+    \column{0.475\textwidth}
+        \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+        \addtolength{\leftmargini}{\labelsep}
+        \vskip0.3cm
+        \textbf{Automatically regulated \texttt{CSAVrefGM} voltage}\\
+        \vskip0.15cm
+    
+        txt
+
+        \vskip-0.4cm
+        \begin{center}
+            \includegraphics[height=0.48\textheight]{images/temperature_effects/fdt_calcolo_kink.pdf}
+        \end{center}
+
+        \vskip-0.2cm
+        \begin{itemize}
+            \item txt
+        \end{itemize}
+
+        \column{0.475\textwidth}
+            \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+            \addtolength{\leftmargini}{\labelsep}
+            \vskip0.3cm
+            \textbf{\texttt{CSAVrefGM} voltage set to \SI{530}{\milli\volt}}\\
+            \vskip0.15cm
+        
+            txt
+    
+            \vskip-0.4cm
+            \begin{center}
+                \includegraphics[height=0.48\textheight]{images/temperature_effects/plot_pedestal_gain_auto_530mV.pdf}
+            \end{center}
+    
+            \vskip-0.2cm
+            \begin{itemize}
+                \item txt
+            \end{itemize}
+    
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}{DAC for setting the global\\ \vskip-0.15cm threshold voltage}
+\fontsize{8.5pt}{1}\selectfont
+    \begin{columns}[T]
+    \column{0.475\textwidth}
+        \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+        \addtolength{\leftmargini}{\labelsep}
+        \vskip0.3cm
+        \textbf{Automatically regulated \texttt{CSAVrefGM} voltage}\\
+        \vskip0.15cm
+    
+        txt
+
+        \vskip-0.4cm
+        \begin{center}
+            \includegraphics[height=0.48\textheight]{images/temperature_effects/fdt_csavrefgm_auto_tau6_keV_0011.pdf}
+        \end{center}
+
+        \vskip-0.2cm
+        \begin{itemize}
+            \item txt
+        \end{itemize}
+
+        \column{0.475\textwidth}
+            \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+            \addtolength{\leftmargini}{\labelsep}
+            \vskip0.3cm
+            \textbf{\texttt{CSAVrefGM} voltage set to \SI{530}{\milli\volt}}\\
+            \vskip0.15cm
+        
+            txt
+    
+            \vskip-0.4cm
+            \begin{center}
+                \includegraphics[height=0.48\textheight]{images/temperature_effects/fdt_csavrefgm_530mV_tau6_keV.pdf}
+            \end{center}
+    
+            \vskip-0.2cm
+            \begin{itemize}
+                \item txt
+            \end{itemize}
+    
+    \end{columns}
+\end{frame}
+
 
 %----------------------------------------------------------------------------------------
 %	Si(Li) tracker flight components validation
@@ -332,7 +438,7 @@
     The test of the front-end boards has been performed at ambient temperature and was aimed at verifying the proper functioning of the board and at looking for damages to the board or improperly soldered components.
 
     \vskip0.3cm
-    \begin{columns}
+    \begin{columns}[T]
         \column{0.3\textwidth}
             \begin{figure}
                 \centering
