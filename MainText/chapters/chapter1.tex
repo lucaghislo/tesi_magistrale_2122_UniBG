@@ -220,6 +220,8 @@ In order to obtain the input-output characteristic of the CSA, the channel outpu
     \label{figFDTplotauto0011}
 \end{figure}
 
+The first bit, \texttt{H}, is set to \texttt{0} when the ASIC is operated at \SI{-40}{\celsius} and to \texttt{1} when operated at room temperature. The last three bits, \texttt{RRR}, allow to set the charge sensitive amplifier reference.
+
 \noindent
 The \texttt{CSAVrefGM} values measured at each temperature are presented in \hyperref[tablecsavref]{Table \ref{tablecsavref}}. It comprises measurements taken with \texttt{HRRR} respectively set to \texttt{0011} and \texttt{0111} and the relative percentage variation between the two. It is of immediate comprehension that neither configuration is capable of reaching the desired \SI{530}{\milli\volt} at \SI{-40}{\celsius}. It is in fact necessary to set \texttt{RRR} to \texttt{111} in order to get the closest possible to the reference value.
 
