@@ -38,7 +38,7 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
-    
+  
 
 %----------------------------------------------------------------------------------------
 %	ADD YOUR PACKAGES (be careful of package interaction)
@@ -82,6 +82,7 @@
 \usepackage{titlesec}
 \usepackage{mhchem}
 \usepackage{svg}
+
 
 %----------------------------------------------------------------------------------------
 %	PDF METADATA
@@ -130,8 +131,18 @@
 %\usepackage[square, numbers, sort&compress]{natbib}
 %\bibliographystyle{plainurl} 
 
-\usepackage[numbers,sort&compress]{natbib}
-\bibliographystyle{unsrtnat}
+%\usepackage[numbers,sort&compress]{natbib}
+%\bibliographystyle{unsrtnat}
+
+\usepackage[
+backend=biber,
+style=numeric,
+sorting=none,
+maxnames=99,
+]{biblatex}
+
+\addbibresource{thesis_bibliography.bib}
+\appto{\bibsetup}{\sloppy}
 
 %-------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -206,7 +217,8 @@
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \unnumberedchapter{Bibliography} % Title of the unnumbered chapter % Bibliography
-\bibliography{thesis_bibliography}
+%\bibliography{thesis_bibliography}
+\printbibliography[]
 
 \input{MainText/note} % nota
 

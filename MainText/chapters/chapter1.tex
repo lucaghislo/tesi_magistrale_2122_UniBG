@@ -1,6 +1,6 @@
 \chapter{Evaluation of temperature effects on ASIC performance} \label{ch1}
 
-This Chapter describes the characterisation activity that has been carried out on the SLIDER32 ASIC employed for the readout of the lithium-drifted silicon, Si(Li), detectors of the GAPS inner tracker, described in \hyperref[gapsTrackingSystem]{Appendix \ref{gapsTrackingSystem}}. Specifically, the measurements were taken with a purposely developed test board described in \hyperref[testboardsetup]{Section \ref{testboardsetup}} and were aimed at the evaluation of thermal effects on:
+This Chapter describes the characterisation activity that has been carried out on the SLIDER32 ASIC, described in \hyperref[gapsTrackingSystem]{Appendix \ref{gapsTrackingSystem}}. Specifically, the measurements were taken with a purposely developed test board described in \hyperref[testboardsetup]{Section \ref{testboardsetup}} and were aimed at the evaluation of thermal effects on:
 
 \begin{enumerate}
     %\bfseries
@@ -21,16 +21,14 @@ The characterisation activity has also been focused on the evaluation of electro
 
 The setup used for the temperature characterisation of the SLIDER32 ASIC has been designed in two variants, which only differ on one component, namely an Agilent 34461A digital multimeter in version \texttt{1}, shown in \hyperref[figTESTBOARDsetup1]{Figure \ref{figTESTBOARDsetup1}}, in place of a Keysight E3631A DC power supply in version \texttt{2}, shown in \hyperref[figTESTBOARDsetup2]{Figure \ref{figTESTBOARDsetup2}}.
 
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{Images/chap1/test_setup_test_board_csavrefgm_auto.png}
     \caption{SLIDER32 ASIC test board setup \texttt{1}.}
     \label{figTESTBOARDsetup1}
 \end{figure}
 
-\vspace{-1cm}
-
-\begin{figure}[ht]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=1\textwidth]{Images/chap1/test_setup_test_board_csavrefgm_530mv.png}
     \caption{SLIDER32 ASIC test board setup \texttt{2}.}
@@ -43,7 +41,7 @@ Both variants comprise the components discussed in the following.
 
 \begin{itemize}
     \itemsep0em 
-    \item A custom designed test board that allows tests to be performed on the ASIC without having to solder it to the board and then desolder it. This is made possible by a specific socket that allows the ASIC to be mounted and removed without having to solder it to the test board. This solution also allows several ASICs to be tested using a single board, although being not being the case of the proposed measurements, that involved only ASIC No. \texttt{536}.
+    \item A custom designed test board that allows tests to be performed on the ASIC without having to solder it to the board and then desolder it. This is made possible by a specific test socket that allows the ASIC to be mounted and removed without having to solder it to the test board. This solution also allows several ASICs to be tested using a single board, although being not being the case of the proposed measurements, that involved only ASIC No. \texttt{536}.
     \item A Keysight N6705C DC Power analyser providing both analog and digital voltages to the test board. \hyperref[figKeysightFEBtb]{Figure \ref{figKeysightFEBtb}} shows a screen capture of the power supply. Specifically, channel \texttt{1} provides the analog supply voltage (\SI{2.4}{\volt}), channel \texttt{3} provides the digital supply voltage (\SI{2.4}{\volt}) and channel \texttt{4} the 16-bit calibration DAC supply voltage (\SI{3.6}{\volt}).
     
     \begin{minipage}{\linewidth}
@@ -88,7 +86,7 @@ The analog front-end channel designed for the readout of the Si(Li) detectors of
 \end{figure}
 
 \par
-A complete set of measurements of the reference current is shown in \hyperref[figBGRplotsXtempall]{Figure \ref{figBGRplotsXtempall}}. It has been taken by varying both the temperature from \SI{-40}{\celsius} to \SI{30}{\celsius} and the bias setting on all the $2^{3}$ possible values. It can be seen that, for a given bias setting expressed as a combination of 3 bits (\texttt{BBB}), the reference current remains almost constant with the temperature and experiences a variation that is presented in \hyperref[tableBGRvariation]{Table \ref{tableBGRvariation}}. The plot also shows the trend of the reference current as predicted by simulations in 3 different CMOS process corners, namely \textit{Typical-Typical} (TT), \textit{Fast-Fast} (FF) and \textit{Slow-Slow} (SS).
+A complete set of measurements of the reference current is shown in \hyperref[figBGRplotsXtempall]{Figure \ref{figBGRplotsXtempall}}. It has been taken by varying both the temperature from \SI{-40}{\celsius} to \SI{30}{\celsius} and the bias setting on all the 8 possible values. It can be seen that, for a given bias setting expressed as a combination of 3 bits (\texttt{BBB}), the reference current remains almost constant with the temperature and experiences a variation that is presented in \hyperref[tableBGRvariation]{Table \ref{tableBGRvariation}}. The plot also shows the trend of the reference current as predicted by simulations in 3 different CMOS process corners, namely \textit{Typical-Typical} (TT), \textit{Fast-Fast} (FF) and \textit{Slow-Slow} (SS).
 
 \par
 The reference current has been evaluated by measuring the voltage drop across the resistor $R_{\textit{3}}$ on the test board, a 0603 SMD resistor with \SI{0.1}{\percent} tolerance and \SI{10}{ppm/\celsius} temperature coefficient. The current value has been calculated as
@@ -166,7 +164,7 @@ In the same way, $\Delta I$ represents the difference between the current measur
 \end{equation}
 
 \noindent
-In the specific case of the presented measurements and simulations, the temperature delta is equal to $\Delta T = \SI{70}{\celsius}$. The estimated temperature coefficients, expressed as \SI{}{ppm/\celsius}, are reported in \hyperref[tabtempcoefficients]{Table \ref{tabtempcoefficients}}. It is clear to see that the temperature coefficient of the measured reference current is above every one of the temperature coefficients evaluated over the readings coming from simulations in all of the 3 process corners. %This behaviour can be associated to [?].
+In the specific case of the presented measurements and simulations, the temperature delta is equal to $\Delta T = \SI{70}{\celsius}$. The estimated temperature coefficients, expressed as \SI{}{ppm/\celsius}, are reported in \hyperref[tabtempcoefficients]{Table \ref{tabtempcoefficients}}. It is clear to see that the temperature coefficient of the measured reference current is above every one of the temperature coefficients evaluated over the readings coming from simulations in all of the 3 process corners. Nevertheless, the performances are adequate to what is required by the experiment.
 
 \begin{table}[ht]
     \centering
@@ -192,10 +190,10 @@ In the specific case of the presented measurements and simulations, the temperat
 \section{Input-output channel trans-characteristic}
 \label{testboardFDT}
 
-In this Section a description of the temperature effects on the channel input-output characteristic is given. The curve trend is due to the Charge Sensitive Amplifier (CSA) circuit block, which is responsible for converting the incident charge on the Si(Li) detector into a voltage signal that is subsequently supplied to the shaper, described in \hyperref[shaper]{Section \ref{shaper}}. 
+In this Section an analysis of the temperature effects on the Si(Li) detector analog readout channel input-output characteristic is given. The curve trend is mainly due to the Charge Sensitive Amplifier (CSA) circuit block, which is responsible for converting the incident charge on the Si(Li) detector into a voltage step signal that is subsequently supplied to the shaper, described in \hyperref[shaper]{Section \ref{shaper}}. 
 
 \par
-The CSA is based on an inverting gain stage and a feedback capacitor where charge restoration is achieved by a continuous-time Krummenacher network \cite{krummenacher_1991_pixel}. The main feature of the CSA is the dynamic signal compression that is achieved by implementing the feedback capacitor with an NMOSFET operating in the inversion mode \cite{manghisoni_2018_dynamic}. In this transistor, source and drain are shorted to form the capacitor terminal connected to the amplifier input, while the gate terminal is connected to the output. At small signal amplitudes, the gate-to-channel voltage is smaller than the transistor threshold voltage and the capacitance is equal to the sum of gate-source and gate-drain overlap capacitances. At larger signal amplitudes, the gate-to-channel voltage becomes larger than the the transistor threshold and the capacitance increases including also the gate-to-channel capacitance. According to this mechanism, the feedback capacitance increases from \SI{175}{\femto\farad} at small input signal amplitudes to \SI{14.7}{\pico\farad} at large signal amplitudes. \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} shows the schematic of the CSA, with the nonlinear MOSFET feedback capacitance.
+The CSA, whose schematic is shwon in \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}}, is based on an inverting gain stage and a feedback capacitor where charge restoration is achieved by a continuous-time Krummenacher network \cite{krummenacher_1991_pixel}. 
 
 \begin{figure}[h!]
     \centering
@@ -205,13 +203,13 @@ The CSA is based on an inverting gain stage and a feedback capacitor where charg
 \end{figure}
 
 \par
-A reference voltage in the Krummenacher feedback network, denoted as $V_{ref}$ in \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} and referred to as \texttt{CSAVrefGM} in the following, makes it possible to adjust the amplifier output voltage, so that the signal amplitude at which the CSA switches from high to low gain can be finely tuned, compensating for process and temperature variations. In the nominal setting, the kink in the input-output characteristic occurs at an energy deposited on the detector of about \SI{1}{\mega\electronvolt}.
+The main feature of the CSA is the dynamic signal compression that is achieved by implementing the feedback capacitor with an NMOSFET operating in the inversion mode \cite{manghisoni_2018_dynamic}. In this transistor, source and drain are shorted to form the capacitor terminal connected to the amplifier input, while the gate terminal is connected to the output. At small signal amplitudes, the gate-to-channel voltage is smaller than the transistor threshold voltage and the capacitance is equal to the sum of gate-source and gate-drain overlap capacitances. At larger signal amplitudes, the gate-to-channel voltage becomes larger than the the transistor threshold and the capacitance increases including also the gate-to-channel capacitance. According to this mechanism, the feedback capacitance increases from \SI{175}{\femto\farad} at small input signal amplitudes to \SI{14.7}{\pico\farad} at large signal amplitudes. Since the gain of the CSA is proportional to the inverse of the capacitance this effect results in a gain that decreases with increase in the charge released in the detector.
 
 \par
-In order to obtain the input-output characteristic of the CSA, the channel output must be sampled precisely at the peaking time, set by bit configuration \texttt{TTT}, that for the presented measurements has been chosen to be $\tau_{p} = \SI{0.98}{\micro\second}$ (peaking time 4, meaning \texttt{TTT} equal to \texttt{100}). The value of the injected charge ranges from 0 to \SI{60000}{DACu} (DAC unit) and it can be converted in the equivalent energy value using the conversion factor of \SI{1}{DACu} = \SI{0.841}{\kilo\electronvolt}, whose value is later derived in \hyperref[eqConversionFactor]{Equation \ref{eqConversionFactor}}, therefore the range can be equivalently expressed as spanning from 0 to \SI{50.46}{\mega\electronvolt}.
+A reference voltage in the Krummenacher feedback network, denoted as $V_{ref}$ in \hyperref[figCSAschematic]{Figure \ref{figCSAschematic}} and referred to as \texttt{CSAVrefGM} in the following, makes it possible to adjust the amplifier output voltage, so that the signal amplitude at which the CSA switches from high to low gain can be finely tuned, compensating for process and temperature variations. In the nominal setting, the kink in the input-output characteristic occurs at an energy deposited in the detector of about \SI{1}{\mega\electronvolt}.
 
 \par
-\hyperref[figFDTplotauto0011]{Figure \ref{figFDTplotauto0011}} shows the input-output trans-characteristic obtained as the mean of the 32 channels of the ASIC with respect to temperature ranging from \SI{-40}{\celsius} to \SI{30}{\celsius}. In this case, the \texttt{CSAVrefGM} voltage has been left free to automatically adapt to the given temperature and has been measured using the test setup \texttt{1} described in \hyperref[figTESTBOARDsetup1]{Figure \ref{figTESTBOARDsetup1}}. The CSA REFERENCE REGULATION setting (\texttt{HRRR} bits) has been set to \texttt{0011}.
+In order to obtain the input-output characteristic of the CSA, the channel output must be sampled precisely at the peaking time, set by bit configuration \texttt{TTT}, that for the presented measurements has been chosen to be $\tau_{p} = \SI{0.98}{\micro\second}$ (peaking time 4, meaning \texttt{TTT} equal to \texttt{100}). The value of the injected charge is set by means of an external 16-bit DAC, therefore it ranges from 0 to \SI{65535}{DACu} (DAC unit). The code is converted in the equivalent energy value using the conversion factor of \SI{1}{DACu} = \SI{0.841}{\kilo\electronvolt}, whose value is later derived in \hyperref[eqConversionFactor]{Equation (\ref{eqConversionFactor})}, therefore the range can be equivalently expressed as spanning from 0 to \SI{50.46}{\mega\electronvolt}.
 
 \begin{figure}[h!]
     \centering
@@ -220,7 +218,8 @@ In order to obtain the input-output characteristic of the CSA, the channel outpu
     \label{figFDTplotauto0011}
 \end{figure}
 
-The first bit, \texttt{H}, is set to \texttt{0} when the ASIC is operated at \SI{-40}{\celsius} and to \texttt{1} when operated at room temperature. The last three bits, \texttt{RRR}, allow to set the charge sensitive amplifier reference.
+\par
+\hyperref[figFDTplotauto0011]{Figure \ref{figFDTplotauto0011}} shows the input-output trans-characteristic obtained as the mean of the 32 channels of the ASIC with respect to temperature ranging from \SI{-40}{\celsius} to \SI{30}{\celsius}. In this case, the \texttt{CSAVrefGM} voltage has been left free to automatically adapt to the given temperature and has been measured using the test setup \texttt{1} described in \hyperref[figTESTBOARDsetup1]{Figure \ref{figTESTBOARDsetup1}}. The CSA REFERENCE REGULATION setting (\texttt{HRRR} bits) has been set to \texttt{0011}. The first bit, \texttt{H}, is set to \texttt{0} when the ASIC is operated at \SI{-40}{\celsius} and to \texttt{1} when operated at room temperature. The last three bits, \texttt{RRR}, allow to set the charge sensitive amplifier reference.
 
 \noindent
 The \texttt{CSAVrefGM} values measured at each temperature are presented in \hyperref[tablecsavref]{Table \ref{tablecsavref}}. It comprises measurements taken with \texttt{HRRR} respectively set to \texttt{0011} and \texttt{0111} and the relative percentage variation between the two. It is of immediate comprehension that neither configuration is capable of reaching the desired \SI{530}{\milli\volt} at \SI{-40}{\celsius}. It is in fact necessary to set \texttt{RRR} to \texttt{111} in order to get the closest possible to the reference value.
@@ -306,13 +305,14 @@ The intercept $p_{\textit{0}}$ is measured in \SI{}{ADU}, the slope $p_{\textit{
 
 \begin{table}[ht]
     \centering
-    \def\arraystretch{1.1}
     \begin{tabular}{c c c c c c c} 
         \Xhline{2\arrayrulewidth}
         & \multicolumn{3}{c}{Gain} & \multicolumn{3}{c}{Pedestal} \T\B \\
+        
         \hline
-        & $g_{\textit{0}}$ & $g_{\textit{1}}$ & R$^{2}$ & $p_{\textit{0}}$ & $p_{\textit{1}}$ & R$^{2}$ \T\B \\
+        & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{0}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt}}]$\vspace{0.1cm}\B} & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt\celsius}}]$\B} & \multirow{2}{*}{R$^{2}$} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{0}}$\T \\\vspace{0.1cm} $\SI{}{[ADU]}$\B} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\celsius}}]$\B} &  \multirow{2}{*}{R$^{2}$} \T\B \\
         \hline
+        
         \multicolumn{1}{p{4.5cm}}{\centering X-ray detection region \T \\ (10$\div$\SI{100}{\kilo\electronvolt})} & \multirow{2}{*}{1.25} & \multirow{2}{*}{0.006} & \multirow{2}{*}{0.997} & \multirow{2}{*}{182.32} & \multirow{2}{*}{0.651} & \multirow{2}{*}{0.985} \\
         \multicolumn{1}{p{4.5cm}}{\centering Muon detection region \B \\ (40$\div$\SI{55}{\mega\electronvolt})} & \multirow{2}{*}{12.27} & \multirow{2}{*}{0.024} & \multirow{2}{*}{0.989} & \multirow{2}{*}{1738} & \multirow{2}{*}{6.778} & \multirow{2}{*}{0.999} \T\B \\
         \Xhline{2\arrayrulewidth}
@@ -332,9 +332,11 @@ The channel peaking time has been set to $\tau_{p} = \SI{0.98}{\micro\second}$ (
     \begin{tabular}{c c c c c c c} 
         \Xhline{2\arrayrulewidth}
         & \multicolumn{3}{c}{Gain} & \multicolumn{3}{c}{Pedestal} \T\B \\
-        \cline{1-7}
-        & $g_{\textit{0}}$ & $g_{\textit{1}}$ & R$^{2}$ & $p_{\textit{0}}$ & $p_{\textit{1}}$ & R$^{2}$ \T\B \\
+        
         \hline
+        & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{0}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt}}]$\vspace{0.1cm}\B} & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt\celsius}}]$\B} & \multirow{2}{*}{R$^{2}$} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{0}}$\T \\\vspace{0.1cm} $\SI{}{[ADU]}$\B} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\celsius}}]$\B} &  \multirow{2}{*}{R$^{2}$} \T\B \\
+        \hline
+        
         \multicolumn{1}{p{4.5cm}}{\centering X-ray detection region \T \\ (10$\div$\SI{100}{\kilo\electronvolt})} & \multirow{2}{*}{0.46} & \multirow{2}{*}{-0.012} & \multirow{2}{*}{0.992} & \multirow{2}{*}{128.66} & \multirow{2}{*}{-0.530} & \multirow{2}{*}{0.974} \T\B \\
         \multicolumn{1}{p{4.5cm}}{\centering Muon detection region \\ (40$\div$\SI{55}{\mega\electronvolt}) \B} & \multirow{2}{*}{12.61} & \multirow{2}{*}{0.033} & \multirow{2}{*}{0.997} & \multirow{2}{*}{1325.4} & \multirow{2}{*}{-2.406} & \multirow{2}{*}{0.988} \T\B \\
         \Xhline{2\arrayrulewidth}
@@ -394,7 +396,7 @@ It can be seen that, although $g_{0}$ assumes a value that is almost comparable 
 \end{figure}
 
 \par
-Pedestal and gain measurements were used to study the variation in the position of the transfer function kink as temperature changes. In particular, \hyperref[figFDTkinkVariation]{Figure \ref{figFDTkinkVariation}} shows the interpolation curves of the transfer function in the low and high energy regions, previously referred to as \textit{X-ray} and \textit{muon} detection regions respectively. In particular, their intersection determines the point, expressed in \SI{}{\mega\electronvolt}, at which the change of slope occurs in the channel's input-output characteristic, which, in the particular example case, refers to the measurement obtained at a temperature of \SI{-40}{\celsius}. The two curves refer to the model shown in \hyperref[FDTlinearModel]{Equation \ref{FDTlinearModel}} and the resolution of the system shown in \hyperref[FDTkinkSystem]{Equation \ref{FDTkinkSystem}} allows the value of the kink at each temperature step to be determined as the intersection of the two straight lines that linearly approximate the transfer function in the high and the low energy region.
+Pedestal and gain measurements were used to study the variation in the position of the transfer function kink as temperature changes. In particular, \hyperref[figFDTkinkVariation]{Figure \ref{figFDTkinkVariation}} shows the interpolation curves of the transfer function in the low and high energy regions, previously referred to as \textit{X-ray} and \textit{muon} detection regions respectively. In particular, their intersection determines the point, expressed in \SI{}{\mega\electronvolt}, at which the change of slope occurs in the channel's input-output characteristic, which, in the particular example case, refers to the measurement obtained at a temperature of \SI{-40}{\celsius}. The two curves refer to the model shown in \hyperref[FDTlinearModel]{Equation (\ref{FDTlinearModel})} and the resolution of the system shown in \hyperref[FDTkinkSystem]{Equation (\ref{FDTkinkSystem})} allows the value of the kink at each temperature step to be determined as the intersection of the two straight lines that linearly approximate the transfer function in the high and the low energy region.
 
 \begin{equation}
     \begin{cases}
@@ -408,7 +410,7 @@ Pedestal and gain measurements were used to study the variation in the position 
 In particular, the subscript \textit{LE} refers to the model that describes the trend of the transfer function in the \textit{Low Energy} region, while the subscript \textit{HE} describes its trend in the \textit{High Energy} region. 
 
 \par
-Solving the system reported in \hyperref[FDTkinkSystem]{Equation \ref{FDTkinkSystem}} allows the kink value expressed in \SI{}{\mega\electronvolt} to be obtained:
+Solving the system reported in \hyperref[FDTkinkSystem]{Equation (\ref{FDTkinkSystem})} allows the kink value expressed in \SI{}{\mega\electronvolt} to be obtained:
 
 \begin{equation}
     x = \frac{p_{LE} - p_{HE}}{g_{HE} - g_{LE}}
@@ -442,7 +444,10 @@ It is easy to see that in the case where \texttt{CSAVrefGM} varies dynamically o
 \section{Global threshold voltage}
 \label{thresholdVoltageANALYSIS}
 
-This Section illustrates the measurements performed on the 8-bit DAC that provides two voltages $V_{\textit{tp}}$ and $V_{\textit{tn}}$ used by the threshold generator (described in \hyperref[secGAPSfrontend]{Appendix \ref{secGAPSfrontend}}) to generate the Signal-Over-Threshold (SOT) comparator voltage. In particular, the difference between the two voltages $\Delta V_{\textit{t}} = V_{\textit{tp}}-V_{\textit{tn}}$ is the meaningful quantity and will be referred to as \textit{global threshold voltage}: the higher $\Delta V_{\textit{t}}$, the higher the threshold of the SOT comparator. It has to be noted that the voltage $V_{\textit{tp}}$ remains constant by varying the DAC codes, whereas the voltage $V_{\textit{tn}}$ can vary from \SI{0}{\volt} to $(V_{\textit{tp}}+V_{\textit{s}})$, where $V_{\textit{s}}$ is a voltage margin which permits to obtain negative $\Delta V_{\textit{t}}$. During design of this circuit, the DAC voltage Least Significant Bit (LSB) has chosen to be
+This Section illustrates the measurements performed on the 8-bit DAC that provides two voltages $V_{\textit{tp}}$ and $V_{\textit{tn}}$ used by the threshold generator (described in \hyperref[secGAPSfrontend]{Appendix \ref{secGAPSfrontend}}) to generate the Signal-Over-Threshold (SOT) comparator voltage. In particular, the difference between the two voltages $\Delta V_{\textit{t}} = V_{\textit{tp}}-V_{\textit{tn}}$ is the meaningful quantity and will be referred to as \textit{global threshold voltage}: the higher $\Delta V_{\textit{t}}$, the higher the threshold of the SOT comparator. It has to be noted that the voltage $V_{\textit{tp}}$ remains constant by varying the DAC codes, whereas the voltage $V_{\textit{tn}}$ can vary from \SI{0}{\volt} to $(V_{\textit{tp}}+V_{\textit{s}})$, where $V_{\textit{s}}$ is a voltage margin which permits to obtain negative $\Delta V_{\textit{t}}$. 
+
+\par
+During design of this circuit, the DAC voltage Least Significant Bit (LSB) has chosen to be \cite{sonzogni_2021_design}
 
 \begin{equation}
     V_{\textit{tn, LSB}} = \SI{1.2}{\milli\volt}
@@ -463,9 +468,9 @@ Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$. This 
 \end{figure}
 
 \noindent
-\hyperref[figDACthrtemp]{Figure \ref{figDACthrtemp}} shows the $\Delta V_{\textit{t}}$ voltage with respect to DAC codes varying from 0 to 255 at temperatures comprised between \SI{-40}{\celsius} and \SI{30}{\celsius} on channel 31. 
+\hyperref[figDACthrtemp]{Figure \ref{figDACthrtemp}} shows the $\Delta V_{\textit{t}}$ voltage with respect to DAC codes varying from 0 to 255 measured at temperatures comprised between \SI{-40}{\celsius} and \SI{30}{\celsius} on channel 31. 
 
-\hyperref[tabDACmaxlsb]{Table \ref{tabDACmaxlsb}} shows the maximum value assumed by $V_{\textit{tn}}$ and the corresponding DAC voltage LSB measured at each temperature. Threshold voltage measurements have been evaluated by interpolating a linear regression model, whose Equation is illustrated below. Coefficient $a$ is expressed in \SI{}{\milli\volt} and coefficient $b$ in \SI{}{\milli\volt/\celsius}. The Root Mean Square Error (RMSE) is reported for each temperature.
+\hyperref[tabDACmaxlsb]{Table \ref{tabDACmaxlsb}} shows the maximum value assumed by $V_{\textit{tn}}$ and the corresponding DAC voltage LSB measured at each temperature.
 
 \begin{table}[ht]
     \centering
@@ -486,6 +491,9 @@ Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$. This 
     \caption{$V_{\textit{tn, max}}$ and $V_{\textit{tn, lsb}}$ measured at temperatures ranging from \SI{-40}{\celsius} to \SI{30}{\celsius}.}
     \label{tabDACmaxlsb}
 \end{table}
+
+\par
+Threshold voltage measurements have been evaluated by interpolating experimental results with the linear regression model shown in \hyperref[DAClinearmodel]{Equation (\ref{DAClinearmodel})}. Coefficient $a$ is expressed in \SI{}{\milli\volt} and coefficient $b$ in \SI{}{\milli\volt/\celsius}. The Root Mean Square Error (RMSE) is reported for each temperature.
 
 \begin{equation}
     y = a + b \cdot x
@@ -515,7 +523,7 @@ Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$. This 
 \end{table}
 
 \par
-\hyperref[figDACthrtemp4030]{Figure \ref{figDACthrtemp4030}} shows the global threshold voltage trend with respect to the DAC code for temperatures ranging from \SI{-40}{\celsius} to \SI{-30}{\celsius} and \SI{2}{\celsius} increments. As done previously, the global threshold voltage measurements have been evaluated by interpolating the same linear regression model described in \hyperref[DAClinearmodel]{Equation \ref{DAClinearmodel}}. The model coefficients are proposed in \hyperref[tabDAClinearmodel2]{Table \ref{tabDAClinearmodel2}}. It is immediate to see that in the \SI{-40}{\celsius} to \SI{-30}{\celsius} temperature range, the slope, $b$, of the DAC trans-characteristic remains constant with respect to temperature, while the intercept, $a$, slightly increases with an increase of temperature.
+\hyperref[figDACthrtemp4030]{Figure \ref{figDACthrtemp4030}} shows the global threshold voltage trend with respect to the DAC code for temperatures ranging from \SI{-40}{\celsius} to \SI{-30}{\celsius} and \SI{2}{\celsius} increments. As done previously, the global threshold voltage measurements have been evaluated by interpolating the same linear regression model described in \hyperref[DAClinearmodel]{Equation (\ref{DAClinearmodel})}. The model coefficients are proposed in \hyperref[tabDAClinearmodel2]{Table \ref{tabDAClinearmodel2}}. It is immediate to see that in the \SI{-40}{\celsius} to \SI{-30}{\celsius} temperature range, the slope, $b$, of the DAC trans-characteristic remains constant with respect to temperature, while the intercept, $a$, slightly increases with an increase of temperature.
 
 \begin{figure}[h!]
     \centering
@@ -578,10 +586,10 @@ Since the DAC bits are 8, the maximum value of the DAC codes is $2^{8}-1$. This 
 %-------------------------------------------------------------------------------
 
 \section{Equivalent Noise Charge (ENC) at \SI{-40}{\celsius}} \label{ENC} % -40$^{\circ}$C
-The measurement of the Equivalent Noise Charge (ENC) is of fundamental importance to evaluate the performance of the channel in terms of resolution and, therefore, of minimum detectable energy. The ENC represents the electronic noise generated by the front-end channel reported in the form of equivalent noise charge at the channel input. In the case of GAPS, the main requirement for the channel comes from the resolution, that must be less than \SI{4}{\kilo\electronvolt}: this is equivalent to saying that the ENC for each channel must be less than \SI{4}{\kilo\electronvolt} in order to consider the channel suitable for the experiment.
+The measurement of the Equivalent Noise Charge (ENC) is of fundamental importance to evaluate the performance of the channel in terms of resolution and, therefore, of minimum detectable energy. The ENC represents the electronic noise generated by the front-end channel reported in the form of equivalent noise charge at the channel input. In the case of GAPS, the main requirement for the channel comes from the resolution, that must be less than \SI{4}{\kilo\electronvolt}: this is equivalent to saying that the ENC (FWHM) for each channel must be less than \SI{4}{\kilo\electronvolt} in order to consider the channel suitable for the experiment.
 
 \par
-ENC is calculated by dividing the standard deviation of the noise, obtained from the pedestal measurement and measured in ADU, by the low energy gain of the channel transfer function, extracted from the input-output characteristic measurements and expressed in (ADU)/(DAC injection units):
+ENC is calculated by dividing the standard deviation of the noise, obtained from the pedestal measurement in ADU, by the low energy gain of the channel transfer function, extracted from the input-output characteristic measurements and expressed in (ADU)/(DAC injection units):
 
 \begin{equation}
     ENC = \frac{\sigma_{\textit{ped}} \cdot 2.35}{\mu_{\textit{ch}}} \cdot \SI{0.841}{\frac{\SI{}{\kilo\electronvolt}}{\SI{}{DAC\_inju}}} 
