@@ -1,9 +1,9 @@
 \chapter[Si(Li) tracker flight components validation]{Si(Li) tracker flight components \\validation} \label{ch2}
 
-This Chapter provides a detailed description of the test setup and the test procedure of the flight items that will be used for the assembly of the Si(Li) tracker of the GAPS detector. For each of the flight items, a report has been produced in order to detail all the most important parameters with their measured values. Every component has also been uniquely numbered following a specific alphanumeric pattern that can briefly sum up its most relevant characteristics, allowing it to be immediately recognised during the assembly process. This Chapter also provides a deep explanation of the results obtained during the testing activity on all the flight components.
+This Chapter provides a detailed description of the test setup and the test procedures followed to validated the flight items that will be used for the final assembly of the Si(Li) tracker of the GAPS detector. For each of the flight items, a report has been produced in order to detail all the most important parameters with their measured values. Every component has also been uniquely numbered following a specific alphanumeric pattern that can briefly sum up its most relevant characteristics, allowing it to be immediately recognised during the assembly process. This Chapter also provides a deep explanation of the results obtained during the testing activity on all the flight components.
 
 \par
-Tests were conducted in order to verify the integrity and proper functioning of the following components:
+Tests were conducted in order to verify the integrity and proper functioning of the following items:
 
 \begin{enumerate}
     %\bfseries
@@ -48,7 +48,7 @@ The items classified as \textbf{GOOD} have been shipped to \textit{Columbia Univ
 \section{Front-End Board (FEB)} \label{sec21}
 
 \par
-The Front-End Board (FEB) that houses the SLIDER32 ASIC is shown in \hyperref[figFEBimage]{Figure \ref{figFEBimage}}. The board was designed in a cross-like shape to make room for the four Si(Li) detectors which will be wire-bonded to the ASIC through the smooth vertical tracks running in the central section of the FEB.
+The Front-End Board (FEB) that houses the SLIDER32 ASIC is shown in \mbox{\hyperref[figFEBimage]{Figure \ref{figFEBimage}}}. The board was designed in a cross-like shape to make room for the four Si(Li) detectors which will be wire-bonded to the ASIC through the smooth vertical tracks running in the central section of the FEB.
 
 \begin{figure}[ht]
     \centering
@@ -58,7 +58,7 @@ The Front-End Board (FEB) that houses the SLIDER32 ASIC is shown in \hyperref[fi
 \end{figure}
 
 \par
-Each FEB houses the components necessary for the operation of the ASIC and Si(Li) sensors, including the power supplies, divided into High Voltage Power Supply (HVPS) required for the four detectors, and Low Voltage Power Supply (LVPS) necessary for the polarisation of the ASIC and its internal components. Each FEB is also equipped with a current reference for the Charge Sensitive Amplifier (CSA) input transistor, pull-up and pull-down resistors used in the transmission of the control signals, a 3-bit switch to set the address of the FEB and a 16-bit DAC for calibration and a temperature sensor. Within the tracker of the GAPS experiment, the FEBs will be connected to each other via an ERNI connector and flex-rigid board, later described in \hyperref[flexrigids]{Section \ref{flexrigids}}. Each FEB is equipped with a male (model \texttt{254877}) and female (model \texttt{354178}) ERNI high-speed micro connectors, one used to connect the front-end board to the previous one and the other used to connect it to the following FEB.
+Each FEB houses the components necessary for the operation of the ASIC and Si(Li) sensors, including the power supplies, divided into High Voltage Power Supply (HVPS) required for the four detectors, and Low Voltage Power Supply (LVPS) necessary for the polarisation of the ASIC and its internal components. Each FEB is also equipped with a current reference for the Charge Sensitive Amplifier (CSA) input transistor, pull-up and pull-down resistors used in the transmission of the control signals, a 3-bit switch to set the address of the FEB, a 16-bit DAC for calibration and a temperature sensor. Within the tracker of the GAPS experiment, the FEBs will be connected to each other via an ERNI connector and a flex-rigid board, later described in \hyperref[flexrigids]{Section \ref{flexrigids}}. Each FEB is equipped with a male (model \texttt{254877}) and female (model \texttt{354178}) ERNI high-speed micro connectors, one used to connect the front-end board to the previous one and the other used to connect it to the following FEB.
 
 \par
 
@@ -83,7 +83,7 @@ The test of the front-end boards has been performed at ambient temperature and w
 \end{itemize}
 
 \par
-A detailed representation of the setup used for the tests is reported in \hyperref[figFEBtest1]{Figure \ref{figFEBtest1}} and in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}}. At first, the setup depicted in \hyperref[figFEBtest1]{Figure \ref{figFEBtest1}} has been used. After having realised that with this configuration the proper soldering of the ERNI output connector could not be verified, the setup has been improved by including a second front-end board connected in series with the first one via a flex-rigid board (described in \hyperref[flexrigids]{Section \ref{flexrigids}}) as shown in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}}. This allowed to implement a communication test between the FEB under test and the FEB in series, thus verifying the correct functioning of the ERNI connector lodging the flex-rigid board connecting one FEB and the following. Specifically, the second version of the setup used is comprised of the following items:
+A detailed representation of the setup used for the tests is reported in \hyperref[figFEBtest1]{Figure \ref{figFEBtest1}} and in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}}. At first, the setup depicted in \hyperref[figFEBtest1]{Figure \ref{figFEBtest1}} has been used. After having realised that with this configuration the proper soldering of the ERNI output connector could not be verified, the setup has been improved by including a second front-end board connected in series with the first one via a flex-rigid board as shown in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}}. This allowed to implement a communication test between the FEB under test and the FEB in series, thus verifying the correct functioning of the ERNI connector lodging the flex-rigid board connecting one FEB and the following. Specifically, the second version of the setup used is comprised of the following items:
 
 \begin{figure}[h!]
     \centering
@@ -103,17 +103,7 @@ A detailed representation of the setup used for the tests is reported in \hyperr
     \itemsep0em 
     \item Two front-end boards, each of which has a SLIDER32 ASIC onboard, as described in \hyperref[secGAPSfrontend]{Appendix \ref{secGAPSfrontend}}.
     \item A flex-rigid board, later described in \hyperref[flexrigids]{Section \ref{flexrigids}}, connecting the two FEBs.
-    \item A Keysight N6705C DC Power analyser providing both analog and digital supply voltages to the FEB. \hyperref[figKeysightFEB]{Figure \ref{figKeysightFEB}} shows a screen capture of the power analyser. Specifically, channel \texttt{1} provides the analog supply voltage (\SI{2.4}{\volt}), channel \texttt{3} provides the digital supply voltage (\SI{2.4}{\volt}) and channel \texttt{4} the calibration 16-bit calibration DAC supply voltage (\SI{3.3}{\volt}).
-    
-        \begin{minipage}{\linewidth}
-        \vspace{0.4cm}
-            \centering
-            \includegraphics[width=0.5\textwidth]{Images/chap2/power_supply_screen.jpg}
-            \captionof{figure}{Keysight N6705C DC power analyser graphical interface, displaying set voltages and currents on channels \texttt{1}, \texttt{3} and \texttt{4}.}
-            \label{figKeysightFEB}
-            \vspace{0.4cm}
-        \end{minipage}
-    
+    \item A Keysight N6705C DC Power analyser providing both analog and digital supply voltages to the FEB, with the same configuration as the one already discussed in \mbox{\hyperref[testboardsetup]{Section \ref{testboardsetup}}}.
     \item A flex ribbon cable connecting the interface board to the main test board.
     \item An adapter board connecting the FEB trough its female ERNI connector (model \texttt{354178}) to the flex ribbon cable.
     \item An ALTERA Cyclone V Field Programmable Gate Array (FPGA) programmed using Verilog, an Hardware Description Language (HDL) that allows to describe digital electronic systems. The FPGA sends Serial Peripheral Interface (SPI) commands to the FEB according to those expected by the ASIC digital back-end, listed in \hyperref[tabSPIcommand]{Table \ref{tabSPIcommand}}, that are propagated through all the connected FEBs by means of the flex-rigid boards.
@@ -147,9 +137,10 @@ The first interface, called \textit{ASIC configuration}, is dedicated to the con
 \end{enumerate}
 
 \noindent
-Through this interface it is also possible to set the global threshold (DISCRIMINATOR THRESHOLD, 8 bit) and the fine threshold for each channel (FINE THRESHOLD, 3 bit). A detailed description of the aforementioned configuration bits can be found in \hyperref[tabSPIcommand]{Table \ref{tabSPIcommand}} that presents the SPI commands accepted by the digital section of the ASIC. %\hyperref[figSPIcommands]{Figure \ref{figSPIcommands}}
+Through this interface it is also possible to set the global threshold (DISCRIMINATOR THRESHOLD, 8 bit) and the fine threshold for each channel (FINE THRESHOLD, 3 bit). A detailed description of the aforementioned configuration bits can be found in \hyperref[tabSPIcommand]{Table \ref{tabSPIcommand}} that presents the SPI commands accepted by the digital section of the ASIC. 
 
-% inserire tabella con comandi
+\par
+The \textit{Manual test} interface allows to configure all parameters in order to perform a manual test, like the 16-bit DAC values range for injection (expressed in DAC units), the time interval between injections (expressed in FPGA clocks, where one FPGA clock is equivalent to $\approx \SI{20.83}{\nano\second}$, since the FPGA operates at a frequency of \SI{48}{\mega\hertz}) and the number of events to acquire. It is also necessary to set the output folder path which will contain the configuration parameters and the data generated by the test itself.
 
 \begin{table}[h!]
     \centering
@@ -187,11 +178,9 @@ Through this interface it is also possible to set the global threshold (DISCRIMI
 \end{table}
 
 \par
-The \textit{Manual test} interface allows to configure all parameters in order to perform a manual test, like the 16-bit DAC values range for injection (expressed in DAC units), the time interval between injections (expressed in FPGA clocks) and the number of events to acquire. It is also necessary to set the output folder path which will contain the configuration parameters and the data generated by the test itself.
-
-\par
 The last section concerns the \textit{Automated test} that has been used in order to perform the validation of the front-end boards. The automated test carried out on each FEB generates a folder containing the raw data acquired from the board, in the form of \texttt{.dat} files, and it has the following structure.\\
 
+\vspace{-0.3cm}
 \dirtree{%
 .1 MODULE\_000\_fast/.
 .2 1/.
@@ -205,7 +194,6 @@ The last section concerns the \textit{Automated test} that has been used in orde
 .3 WaveformScan\_fast\_tauY.dat.
 } 
 
-\vspace{0.5cm}
 \noindent
 where \texttt{X} represents the channel identifier number that spans from 0 to 31, while \texttt{Y} represents the peaking time, that goes from 0 to 7. Specifically, the content of each of the files is defined as follows.
 
@@ -221,9 +209,9 @@ where \texttt{X} represents the channel identifier number that spans from 0 to 3
 \end{enumerate}
 
 \noindent
-After the data acquisition process, a MATLAB script is run in order to analyse and plot all the tests results. In particular, the MATLAB script output folder has the following structure.\\
+After the data acquisition process, a MATLAB script is run in order to analyse and plot all the tests results, and the output folder has the following structure.\\
 
-\vspace{-0.1cm}
+\vspace{-0.3cm}
 \dirtree{%
 .1 MODULE\_000/.
 .2 1/.
@@ -234,10 +222,8 @@ After the data acquisition process, a MATLAB script is run in order to analyse a
 .4 ThresholdScan/.
 .4 TransferFunction/.
 .4 WaveformScan/.
-.3 data/.
 } 
 
-\vspace{0.5cm}
 \noindent
 Each sub-directory contains the following:
 
@@ -265,10 +251,7 @@ A manual visual inspection has been performed on each FEB by looking over the bo
 \end{figure}
 
 \par
-It is important to emphasise the fact that the visual analysis to search for defects on the board or the components installed on it was of paramount importance in identifying problems that could have altered the proper functioning of the FEB. For example, if there was exposed copper in contact with other metals on the board, short circuits could possibly occur. Furthermore, in the event that a defect in one of the metal layers of the board was very large, this could result in a change in the resistance value of the entire metal layer (e.g. a power supply or a ground), thereby affecting the power consumption and thus altering the nominal operation of the board.
-
-\par
-In the event that one of the aforementioned defects led to the partial or total non-functioning of the board, the latter was categorised as "reworked" and separated from the others. A total of 8 FEBs of Italian production and 2 of the US production were classified in this way and are intended to be used for testing purposes only.
+It is important to emphasise the fact that the visual analysis to search for defects on the board or the components installed on it was of paramount importance in identifying problems that could have altered the proper functioning of the FEB. For example, if there was exposed copper in contact with other metals on the board, short circuits could possibly occur. Furthermore, in the event that a defect in one of the metal layers of the board was very large, this could result in a change in the resistance value of the entire metal layer (e.g. a power supply or a ground), thereby affecting the power consumption and thus altering the nominal operation of the board. In the event that one of the aforementioned defects led to the partial or total non-functioning of the board, the latter was categorised as "reworked" and separated from the others. %A total of 8 FEBs of Italian production and 2 of the US production were classified in this way and are intended to be used for testing purposes only.
 
 %-------------------------------------------------------------------------------
 
@@ -344,10 +327,7 @@ The results reported in this Section of the test report document are relevant to
 \paragraph{Pedestal dispersion} The distribution of the pedestal of the 32 readout channels is reported in this Section.\\
 
 \par
-For each FEB tested, a test report has been generated in order to sum up all the information regarding the whole testing activity carried out on the front-end board. An example of the aforementioned test report is shown in \hyperref[figF065I]{Figure \ref{figF065I}}. 
-
-\par
-Each FEB has also been numbered using an alphanumerical identifier, allowing the board to be uniquely recognised during the assembly of the tracker. The identifier number is composed of three parts, as shown below.
+Each FEB has been numbered using an alphanumerical identifier, allowing the board to be uniquely recognised during the assembly of the tracker. The identifier number is composed of three parts, as shown below.
 
 \begin{gather*}
     %\useshortskip
@@ -367,12 +347,15 @@ Specifically, each part of the alphanumerical sequence serves the purpose of:
     \item \textbf{I}: It identifies the country of the manufacturer of the board ("I" for the Italian-made FEBs and "U" for the US-made ones).
 \end{enumerate}
 
+\par
+For each FEB tested, a test report has been generated in order to sum up all the information regarding the whole testing activity carried out on the front-end board. An example of the aforementioned test report is shown in \hyperref[figF065I]{Figure \ref{figF065I}}. 
+
 \normalsize
+
+%-------------------------------------------------------------------------------
 
 \subsection{GAPS-FEB-Report-Generator}
 This Section provides a brief description of the Python software that has been developed in order to automatically generate the test reports for the FEBs, as the one shown in \hyperref[figF065I]{Figure \ref{figF065I}}. The code can be found on GitHub at the following \href{https://github.com/lucaghislo/GAPS-FEB-report-generator}{\underline{link}}.
-
-%-------------------------------------------------------------------------------
 
 \subsubsection{Software functionalities} \label{GAPSrepfun}
 The software works by taking as input two Comma Separated Values (CSV) files reporting the voltage and current measurements taken on the FEBs and the corresponding defects that have been found during the visual inspection, including optional notes, and producing a report summarising all the data both as a Microsoft Word document and a Portable Document Format (PDF) file, the contents of which are shown in \hyperref[figF065I]{Figure \ref{figF065I}}.\\
@@ -391,6 +374,7 @@ The Python code is basically organised in two parts:
 \subsubsection{Software structure}
 The software is organised into different sub-folders, each one containing specific input or output files, as described in the following directory tree:\\
 
+\vspace{-0.3cm}
 \dirtree{%
 .1 GAPS-FEB-report-generator/.
 .2 configuration/.
@@ -437,7 +421,6 @@ Moreover, each individual item serves the following function.
     \item \texttt{test\_report\_FEB.docx}: Word template used to produce the final test reports in Word and PDF format.
     \item \texttt{report\_word/} folder: Folder containing the Word version of the reports generated by the software.
     \item \texttt{script\_files} folder: Folder containing the two main Python files used to implement the program, as described in \hyperref[GAPSrepfun]{section \ref{GAPSrepfun}}.
-    
 \end{enumerate}
 
 \begin{figure}[h!]
@@ -454,7 +437,7 @@ The program can be launched with Python 3 installed on the PC by double-clicking
 
 %-------------------------------------------------------------------------------
 
-\subsection{Test results} \label{FEBresults}
+\subsection{Analysis of test results} \label{FEBresults}
 
 This Section describes the results of the measurements carried out during the validation phase of the front-end boards. Each graph shows the data distribution for the Italian-made front-end boards (in blue) and US-made ones (in red) separately for comparison purposes. 
 
@@ -512,7 +495,7 @@ This Section describes the results of the measurements carried out during the va
 
 \paragraph{VCMSH, VCM and RVCM} \hyperref[figVCMSHVCMRVCM]{Figure \ref{figVCMSHVCMRVCM}} shows the distributions of voltages used as references for the S\&H, shaper and ADC respectively. In the case of VCMSH and RVCM, the average values for both distributions are comparable with the reference value of \SI{1.20}{\volt} and \SI{0.90}{\volt} respectively. In the specific case of the VCM voltage, the Italian and American productions present an average value that differs by approximately \SI{10}{\milli\volt} from each other, while maintaining a comparable standard deviation.
 
-\paragraph{Temperature} The temperature measurements shown in \hyperref[figFEBtemp]{Figure \ref{figFEBtemp}} allows to verify the correct operation of the temperature sensor installed on the front-end board. It can be seen that the average temperature measured on the American-made FEBs is higher than that measured on the Italian-made FEBs. This is purely attributable to the period of the year in which the tests were carried out, that is, summer, therefore an increase in the average measured temperature can be expected. Furthermore, the fact that the tests on the American production were completed within approximately two weeks can be seen in the lower standard deviation, which can be attributed to a smaller fluctuation in ambient temperature. In order to obtain the temperature measurement from the temperature sensor installed on the front-end board (Texas Instruments LMT84), it is first necessary to obtain the output voltage value $V_{T}$, which for the specific temperature sensor model is evaluated as:
+\paragraph{Temperature} The temperature measurements shown in \hyperref[figFEBtemp]{Figure \ref{figFEBtemp}} allows to verify the correct operation of the temperature sensor installed on the front-end board. It can be seen that the average temperature measured on the American-made FEBs is higher than that measured on the Italian-made FEBs. This is purely attributable to the period of the year in which the tests were carried out, that is, summer, therefore an increase in the average measured temperature can be expected. Furthermore, the fact that the tests on the American production were completed within approximately two weeks can be seen in the lower standard deviation, which can be attributed to a smaller fluctuation in ambient temperature. In order to obtain the temperature measurement from the sensor installed on the front-end board (Texas Instruments LMT84), it is first necessary to obtain the output voltage value $V_{T}$, which considering the sensor readout network implemented on the ASIC is evaluated as:
 
 \begin{figure}[h!]
     \centering
@@ -561,12 +544,15 @@ From this Equation the temperature T can be obtained (expressed in \SI{}{\celsiu
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.475\textwidth]{Images/chap2/results/ped_disp.pdf}
+    \includegraphics[width=0.6\textwidth]{Images/chap2/results/ped_disp.pdf}
     \caption{Pedestal dispersion distribution. The histogram reports the mean value and standard deviation for both Italian and US productions.}
     \label{figFEBpedestal}
 \end{figure}
 
-\paragraph{Threshold dispersion} \hyperref[figFEBthreshold]{Figure \ref{figFEBthreshold}} presents the distributions of threshold dispersion before fine threshold optimisation (on the left) and after (on the right). It can be seen that, after optimisation using the 3-bit DAC, both distributions have a reduced dispersion as well as a compatible mean and standard deviation since the minimisation process focuses on obtaining a threshold voltage value consistent across all the modules integrated in the tracker. Fine threshold tuning via the aforementioned 3-bit DAC in fact allows the threshold voltage to be optimised directly on the individual channel, thus making it possible to bring the threshold value of the channel closer to the global threshold value. This is made necessary by the fact that, due to variations in the manufacturing process of the transistors constituting the channel circuit blocks, each channel has a threshold value slightly different from one another and not necessarily equal to the set global threshold value. This method therefore allows one to act at a "fine" level in order to reduce the overall threshold dispersion over all 32 channels. The result of applying this method is immediately visible by comparing the standard deviations of the distributions shown in \hyperref[figFEBthreshold]{Figure \ref{figFEBthreshold}}, which highlights how the dispersion value after optimisation is on average reduced by half on both productions.
+\paragraph{Threshold dispersion} \hyperref[figFEBthreshold]{Figure \ref{figFEBthreshold}} presents the distributions of threshold dispersion before fine threshold optimisation (on the left) and after (on the right). It can be seen that, after optimisation using the 3-bit DAC, both distributions from Italian and US production, have a reduced dispersion as well as a compatible mean and standard deviation since the minimisation process focuses on obtaining a threshold voltage value consistent across all the modules integrated in the tracker. Fine threshold tuning via the aforementioned 3-bit DAC in fact allows the threshold voltage to be optimised directly on the individual channel, thus making it possible to bring the threshold value of the channel closer to the global threshold value. This is made necessary by the fact that, due to variations in the manufacturing process of the transistors constituting the channel circuit blocks, each channel has a threshold value slightly different from one another and not necessarily equal to the set global threshold value. This method therefore allows one to act at a "fine" level in order to reduce the overall threshold dispersion over all 32 channels. 
+
+\par
+The result of applying this method is immediately visible by comparing the standard deviations of the distributions shown in \hyperref[figFEBthreshold]{Figure \ref{figFEBthreshold}}, which highlights how the dispersion value after optimisation is on average reduced by half on both productions.
 
 \begin{figure}[h!]
     \centering
@@ -600,9 +586,9 @@ In particular, the displayed measurements were carried out by placing the front-
 
 \section{Dummy-1 front-end board} \label{sec22}
 
-The Dummy board type 1, also known as \textit{Dummy-1}, is a front-end board without the components that front-end boards are equipped with (including the ASIC) and will be used in the first launch of the experiment, scheduled for the end of 2023, in order to replace the missing FEBs in some of the detector layers, as these are currently in a smaller number than required to fill all the tracker slots.
+The Dummy board type 1, also known as \textit{Dummy-1}, is a not populated board that will be used in the first launch of the experiment, scheduled for the end of 2023, in order to replace the missing FEBs in some of the detector layers, as these are currently in a smaller number than required to fill all the tracker slots.
 
-The validation tests of the Dummy-1 front-end boards has been performed at ambient temperature after having soldered the resistors emulating the analog power consumption of the FEB. Specifically, two \SI{40}{\ohm} resistors and a \SI{4.7}{\micro\farad} capacitor 0805 SMD have been installed on the board, along with a short piece of wire ($\approx\SI{1}{\cm}$ in length) in order to connect the newly installed components to the analog voltage supply line, as shown in \hyperref[figDummySoldering]{Figure \ref{figDummySoldering}}. 
+The validation tests of the Dummy-1 front-end boards has been performed at ambient temperature after having soldered only a couple of resistors emulating the analog power consumption of the FEB. Specifically, two \SI{40}{\ohm} resistors and a \SI{4.7}{\micro\farad} capacitor 0805 SMD have been installed on the board, along with a short piece of wire ($\approx\SI{1}{\cm}$ in length) in order to connect the newly installed components to the analog voltage supply line, as shown in \hyperref[figDummySoldering]{Figure \ref{figDummySoldering}}. 
 
 \begin{figure}[h!]
     \centering
@@ -611,7 +597,7 @@ The validation tests of the Dummy-1 front-end boards has been performed at ambie
     \label{figDummySoldering}
 \end{figure}
 
-This configuration has been in chosen as the one better suited to emulate the thermal behaviour of the active components installed on the real FEB. Initial trials were based on a single \SI{20}{\ohm} 0805 SMD resistor directly connected to the AVDD supply voltage, but this configuration was soon discarded as the dissipated power by the resistor was very near to its \SI{0.5}{\watt} maximum power rating. In fact, the current flowing through the resistor was evaluated as
+This configuration was chosen as the one better suited to emulate the thermal behaviour of the active components installed on a fully populated FEB. Initial trials were based on a single \SI{20}{\ohm} 0805 SMD resistor directly connected to the AVDD supply voltage, but this configuration was soon discarded as the power dissipated by the resistor was very near to its \SI{0.5}{\watt} maximum power rating. In fact, the current flowing through the resistor is evaluated as
 
 \begin{equation}
     I_{R} = \frac{\SI{2.8}{\volt}}{\SI{20}{\ohm}} = \SI{0.14}{\ampere} = \SI{140}{\milli\ampere} 
@@ -632,7 +618,7 @@ which confirms the aforementioned. A common rule of thumb requires the power rat
 \end{equation}
 
 \noindent
-thus ensuring compliance to the aforementioned rule of thumb. \hyperref[figDummyThermal]{Figure \ref{figDummyThermal}} shows the thermal image for the configuration with a single resistor (on the left) and with two resistors (on the right). In both cases, the analog voltage supply (AVDD) was set to \SI{2.8}{\volt}, as a worst case scenario. It can be seen the temperature difference between the two configurations is of approximately \SI{9.8}{\celsius} for the same dissipated power.
+thus ensuring compliance to the aforementioned rule of thumb. \hyperref[figDummyThermal]{Figure \ref{figDummyThermal}} shows the thermal image for the configuration with a single resistor (on the left) and with two resistors (on the right). In both cases, the analog supply voltage (AVDD) was set to \SI{2.8}{\volt}, as a worst case scenario. It can be seen the temperature difference between the two configurations is of approximately \SI{9.8}{\celsius} for the same dissipated power.
 
 \begin{figure}[h!]
     \centering
@@ -642,6 +628,7 @@ thus ensuring compliance to the aforementioned rule of thumb. \hyperref[figDummy
 \end{figure}
 
 \par
+\noindent
 Tests carried out on the Dummy-1 FEBs have the purpose of:
 
 \begin{itemize}
@@ -688,14 +675,7 @@ In this test a nominal voltage of \SI{2.8}{\volt} was applied to the board. The 
 %-------------------------------------------------------------------------------
 
 \subsection{Bias and Digital}
-The purpose of this test is to validate the soldering of the input and output ERNI connectors. The board under test has been placed in series with a fully populated FEB as shown in \hyperref[figDUMMYtest]{Figure \ref{figDUMMYtest}} and a configuration test was run on the FEB. If it responded correctly, it means that ERNI connectors on the Dummy-1 board are properly soldered and \texttt{[YES]} has been reported in the \textit{Communication test} field of the test report.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=1\textwidth]{Images/chap2/test_setup_FEB_2.jpg}
-    \caption{Depiction of the setup adopted for the tests on the Dummy-1 front-end boards.}
-    \label{figDUMMYtest}
-\end{figure}
+The purpose of this test is to validate the soldering of the input and output ERNI connectors. The board under test has been placed in series with a fully populated FEB as shown in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}} and a configuration test was run on the FEB. If it responded correctly, it means that ERNI connectors on the Dummy-1 board are properly soldered and \texttt{[YES]} has been reported in the \textit{Communication test} field of the test report.
 
 \par
 As done for the front-end boards, a test report is generated, whose first page is shown in \hyperref[figDUMMYreport]{Figure \ref{figDUMMYreport}}. In the case of the Dummy-1 front-end boards, a single multi-page document has been created, having the structure described in \hyperref[tabDUMMYstruct]{Table \ref{tabDUMMYstruct}}.
@@ -736,7 +716,10 @@ This Section reports the results of current (IAVDD) and power (PAVDD) measuremen
 
 \section{Flex-Rigid Board} \label{flexrigids}
 
-Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power voltage supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents a picture of a flex-rigid board.
+Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power voltage supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. 
+
+\par
+The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents a picture of a flex-rigid board.
 
 \begin{figure}[h!]
     \centering
