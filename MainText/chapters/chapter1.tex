@@ -310,7 +310,7 @@ The intercept $p_{\textit{0}}$ is measured in \SI{}{ADU}, the slope $p_{\textit{
         & \multicolumn{3}{c}{Gain} & \multicolumn{3}{c}{Pedestal} \T\B \\
         
         \hline
-        & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{0}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt}}]$\vspace{0.1cm}\B} & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt\celsius}}]$\B} & \multirow{2}{*}{R$^{2}$} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{0}}$\T \\\vspace{0.1cm} $\SI{}{[ADU]}$\B} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\celsius}}]$\B} &  \multirow{2}{*}{R$^{2}$} \T\B \\
+        & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{0}}$\T \\\vspace{0.1cm} $\left[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt}}\right]$\vspace{0.1cm}\B} & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{1}}$\T \\\vspace{0.1cm} $\left[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt\celsius}}\right]$\B} & \multirow{2}{*}{R$^{2}$} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{0}}$\T \\\vspace{0.1cm} $\SI{}{[ADU]}$\B} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{1}}$\T \\\vspace{0.1cm} $\left[\frac{\SI{}{ADU}}{\SI{}{\celsius}}\right]$\B} &  \multirow{2}{*}{R$^{2}$} \T\B \\
         \hline
         
         \multicolumn{1}{p{4.5cm}}{\centering X-ray detection region \T \\ (10$\div$\SI{100}{\kilo\electronvolt})} & \multirow{2}{*}{1.25} & \multirow{2}{*}{0.006} & \multirow{2}{*}{0.997} & \multirow{2}{*}{182.32} & \multirow{2}{*}{0.651} & \multirow{2}{*}{0.985} \\
@@ -334,7 +334,7 @@ The channel peaking time has been set to $\tau_{p} = \SI{0.98}{\micro\second}$ (
         & \multicolumn{3}{c}{Gain} & \multicolumn{3}{c}{Pedestal} \T\B \\
         
         \hline
-        & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{0}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt}}]$\vspace{0.1cm}\B} & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt\celsius}}]$\B} & \multirow{2}{*}{R$^{2}$} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{0}}$\T \\\vspace{0.1cm} $\SI{}{[ADU]}$\B} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{1}}$\T \\\vspace{0.1cm} $[\frac{\SI{}{ADU}}{\SI{}{\celsius}}]$\B} &  \multirow{2}{*}{R$^{2}$} \T\B \\
+        & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{0}}$\T \\\vspace{0.1cm} $\left[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt}}\right]$\vspace{0.1cm}\B} & \multicolumn{1}{p{1.3cm}}{\centering $g_{\textit{1}}$\T \\\vspace{0.1cm} $\left[\frac{\SI{}{ADU}}{\SI{}{\kilo\electronvolt\celsius}}\right]$\B} & \multirow{2}{*}{R$^{2}$} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{0}}$\T \\\vspace{0.1cm} $\SI{}{[ADU]}$\B} & \multicolumn{1}{p{1.3cm}}{\centering $p_{\textit{1}}$\T \\\vspace{0.1cm} $\left[\frac{\SI{}{ADU}}{\SI{}{\celsius}}\right]$\B} &  \multirow{2}{*}{R$^{2}$} \T\B \\
         \hline
         
         \multicolumn{1}{p{4.5cm}}{\centering X-ray detection region \T \\ (10$\div$\SI{100}{\kilo\electronvolt})} & \multirow{2}{*}{0.46} & \multirow{2}{*}{-0.012} & \multirow{2}{*}{0.992} & \multirow{2}{*}{128.66} & \multirow{2}{*}{-0.530} & \multirow{2}{*}{0.974} \T\B \\
@@ -447,7 +447,7 @@ It is easy to see that in the case where \texttt{CSAVrefGM} varies dynamically o
 This Section illustrates the measurements performed on the 8-bit DAC that provides two voltages $V_{\textit{tp}}$ and $V_{\textit{tn}}$ used by the threshold generator (described in \hyperref[secGAPSfrontend]{Appendix \ref{secGAPSfrontend}}) to generate the Signal-Over-Threshold (SOT) comparator voltage. In particular, the difference between the two voltages $\Delta V_{\textit{t}} = V_{\textit{tp}}-V_{\textit{tn}}$ is the meaningful quantity and will be referred to as \textit{global threshold voltage}: the higher $\Delta V_{\textit{t}}$, the higher the threshold of the SOT comparator. It has to be noted that the voltage $V_{\textit{tp}}$ remains constant by varying the DAC codes, whereas the voltage $V_{\textit{tn}}$ can vary from \SI{0}{\volt} to $(V_{\textit{tp}}+V_{\textit{s}})$, where $V_{\textit{s}}$ is a voltage margin which permits to obtain negative $\Delta V_{\textit{t}}$. 
 
 \par
-During design of this circuit, the DAC voltage Least Significant Bit (LSB) has chosen to be \cite{sonzogni_2021_design}
+During design of this circuit, the DAC voltage Least Significant Bit (LSB) has been chosen to be \cite{sonzogni_2021_design}
 
 \begin{equation}
     V_{\textit{tn, LSB}} = \SI{1.2}{\milli\volt}
@@ -763,7 +763,7 @@ As done previously, it is now necessary to remove the contribution of external d
 \end{equation}
 
 \noindent
-This results in the removal of the deterministic interference component from the equation of the pedestal of each channel, reducing it entirely to the ideal contribution to which the purely stochastic component is added. Therefore, the distribution of $p'[x,y]$ depends only on the stochastic noise $n[x,y]$ for a given channel $y$.
+This results in the removal of the deterministic interference component from the Equation of the pedestal of each channel, reducing it entirely to the ideal contribution to which the purely stochastic component is added. Therefore, the distribution of $p'[x,y]$ depends only on the stochastic noise $n[x,y]$ for a given channel $y$.
 
 \par
 The result of the application of the latter method can be seen in \hyperref[figENCwofit]{Figure \ref{figENCwofit}}. It should be noted that, due to the limited sample size that characterises the dataset acquired during the measurements, this method is unable to provide an effective removal of the disturbance component, even resulting in a higher ENC contribution with respect to the initial one.

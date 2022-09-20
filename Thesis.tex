@@ -9,8 +9,6 @@
 \setcounter{tocdepth}{2}
 \setcounter{secnumdepth}{2}
 
-% The documentclass oist_thesis includes the following packages: geometry, caption, xkeyval
-
 \usepackage[english]{babel} % The document is in English
 \usepackage[utf8]{inputenc} % UTF8 encoding
 \usepackage[T1]{fontenc} % Font encoding
@@ -40,9 +38,9 @@
     \newpage}
   
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	ADD YOUR PACKAGES (be careful of package interaction)
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \usepackage{xcolor}
 \usepackage{amsthm,amsmath,amssymb,amsfonts,bbm}% Math symbols
@@ -65,8 +63,7 @@
 \usepackage{comment}
 \usepackage{multirow}
 \usepackage[colorinlistoftodos]{todonotes}
-%\usepackage[Glenn]{fncychap}
-%\ChTitleVar{\Huge\bfseries}
+\usepackage{textcomp}
 \usepackage{gensymb}
 \usepackage{makecell}
 \hypersetup{
@@ -80,13 +77,14 @@
 \usepackage{nccmath}
 \usepackage[absolute,overlay]{textpos}
 \usepackage{titlesec}
-\usepackage{mhchem}
+\usepackage[version=4]{mhchem}
 \usepackage{svg}
+\usepackage{csquotes}
 
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	PDF METADATA
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \hypersetup{
     pdfauthor={Luca Ghislotti},
@@ -97,9 +95,10 @@
     pdfcreator={PdfTeX}
 }
 
-%----------------------------------------------------------------------------------------
+
+%-------------------------------------------------------------------------------
 %	ADD YOUR DEFINITIONS AND COMMANDS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \makeatletter
 \def\smallunderbrace#1{\mathop{\vtop{\m@th\ialign{##\crcr
@@ -113,36 +112,28 @@
 
 \newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
-
 \newcommand{\minus}{\scalebox{0.75}[1.5]{$-$}}
 \sisetup{detect-weight=true, detect-family=true}
-%\setlength{\belowcaptionskip}{-10pt}
-%\setcounter{chapter}{2}
 
-% Titolo capitolo fancy
-%\definecolor{gray75}{gray}{0.75}
-%\newcommand{\hsp}{\hspace{20pt}}
-%\titleformat{\chapter}[hang]{\Huge\bfseries}{\thechapter\hsp\textcolor{gray75}{|}\hsp}{0pt}{\Huge\bfseries}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY STYLE
-%----------------------------------------------------------------------------------------
-
-%\usepackage[square, numbers, sort&compress]{natbib}
-%\bibliographystyle{plainurl} 
-
-%\usepackage[numbers,sort&compress]{natbib}
-%\bibliographystyle{unsrtnat}
+%-------------------------------------------------------------------------------
 
 \usepackage[
-backend=biber,
-style=numeric,
-sorting=none,
-maxnames=99,
+    backend=biber,
+    style=numeric,
+    sorting=none,
+    maxnames=99,
 ]{biblatex}
 
 \addbibresource{thesis_bibliography.bib}
 \appto{\bibsetup}{\sloppy}
+\AtEveryBibitem{
+    \clearfield{urlyear}
+    \clearfield{urlmonth}
+}
+
 
 %-------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -153,20 +144,17 @@ maxnames=99,
 \input{Preamble/titlepage/titlepage_EN_logo.tex}
 \blankpage
 
+
 %-------------------------------------------------------------------------------
-%	PREAMBLE PAGES (delete unnecessary pages)
+%	PREAMBLE PAGES
 %-------------------------------------------------------------------------------
 
 \startpreamble
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 
-% UNCOMMENT FOR FULL CONTENT
-%\input{Preamble/abstract} % NO
 \input{Preamble/acknowledgments}
-%\input{Preamble/abbreviations} % NO
-%\input{Preamble/glossary} % NO
-%\input{Preamble/nomenclature} % NO
 \input{Preamble/dedication}
+
 
 %-------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES
@@ -178,6 +166,7 @@ maxnames=99,
 \listoffigures % Write out the List of Figures 
 \unnumberedchapter{List of Tables} % List of Tables
 \listoftables % Write out the List of Tables
+
 
 %-------------------------------------------------------------------------------
 %	THESIS MAIN TEXT
@@ -198,6 +187,7 @@ maxnames=99,
 \unnumberedchapter{Conclusions} % Title of the unnumbered chapter % Conclusion
 \input{MainText/conclusion} % Conclusion (unnumbered)
 
+
 %-------------------------------------------------------------------------------
 %	APPENDICES
 %-------------------------------------------------------------------------------
@@ -206,10 +196,10 @@ maxnames=99,
 \appendix
 \numberedchapter % Regular chapters following
 \input{MainText/appendix/appendixGAPSintro}
-%\input{MainText/appendix/appendixPyReportGenerator} % NON AGGIUNGERE!!!
 \input{MainText/appendix/appendixItemsReport}
 \input{MainText/appendix/appendix32CHmuons.tex}
 \input{MainText/appendix/appendixPCB}
+
 
 %-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
@@ -217,8 +207,12 @@ maxnames=99,
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \unnumberedchapter{Bibliography} % Title of the unnumbered chapter % Bibliography
-%\bibliography{thesis_bibliography}
 \printbibliography[]
+
+
+%-------------------------------------------------------------------------------
+%	NOTE
+%-------------------------------------------------------------------------------
 
 \input{MainText/note} % nota
 
