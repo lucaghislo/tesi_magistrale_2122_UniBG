@@ -423,6 +423,9 @@ Moreover, each individual item serves the following function.
     \item \texttt{script\_files} folder: Folder containing the two main Python files used to implement the program, as described in \hyperref[GAPSrepfun]{section \ref{GAPSrepfun}}.
 \end{enumerate}
 
+\subsubsection{Software usage}
+The program can be launched with Python 3 installed on the PC by double-clicking on the \texttt{FEB\_report\_out.py} Python file and by interacting with the command-line interface shown in \hyperref[figReportTerminal]{Figure \ref{figReportTerminal}}.
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{Images/chap2/rep_gen_terminal.jpg}
@@ -430,10 +433,9 @@ Moreover, each individual item serves the following function.
     \label{figReportTerminal}
 \end{figure}
 
-%-------------------------------------------------------------------------------
+\par
+At first, the software asks to input the minimum and maximum values of the FEB identifier numbers for which the user wants to generate a report. It has to be noted that for the program to be correctly executed, \texttt{FEB\_testing - Defects.csv} and \texttt{FEB\_testing - Mutltimeter.csv} have to be present in their corresponding folders. The report generation can be tracked through the loading bars showing the total time taken to compile each report. Once the generation of the reports is complete, the files can be found in \texttt{report\_word/} and \texttt{report\_PDF/} folders respectively.
 
-\subsubsection{Software usage}
-The program can be launched with Python 3 installed on the PC by double-clicking on the \texttt{FEB\_report\_out.py} Python file and by interacting with the command-line interface shown in \hyperref[figReportTerminal]{Figure \ref{figReportTerminal}}. At first, the software asks to input the minimum and maximum values of the FEB identifier numbers for which the user wants to generate a report. It has to be noted that for the program to be correctly executed, \texttt{FEB\_testing - Defects.csv} and \texttt{FEB\_testing - Mutltimeter.csv} have to be present in their corresponding folders. The report generation can be tracked through the loading bars showing the total time taken to compile each report. Once the generation of the reports is complete, the files can be found in \texttt{report\_word/} and \texttt{report\_PDF/} folders respectively.
 
 %-------------------------------------------------------------------------------
 
@@ -544,7 +546,7 @@ From this Equation the temperature T can be obtained (expressed in \SI{}{\celsiu
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.6\textwidth]{Images/chap2/results/ped_disp.pdf}
+    \includegraphics[width=0.55\textwidth]{Images/chap2/results/ped_disp.pdf}
     \caption{Pedestal dispersion distribution. The histogram reports the mean value and standard deviation for both Italian and US productions.}
     \label{figFEBpedestal}
 \end{figure}
@@ -563,7 +565,7 @@ The result of applying this method is immediately visible by comparing the stand
     \label{figFEBthreshold}
 \end{figure}
 
-\paragraph{Noise} The noise measurements carried out on 135 of the 150 American-made FEBs are shown in \hyperref[figFEBNoise]{Figure \ref{figFEBNoise}} for channels No. 0, 7, 15, 16, 23, 31.
+\paragraph{Noise} The noise measurements carried out on 135 of the 150 American-made FEBs are shown in \hyperref[figFEBNoise]{Figure \ref{figFEBNoise}} for channels No. 0, 7, 15, 16, 23, 31. In particular, the displayed measurements were carried out by placing the front-end board under test inside a metal box in order to shield it from the electromagnetic interferences present in the test environment. This made it possible to obtain noise measurements, in the form of ENC, that could effectively reflect the real noise performance of the boards, free of alterations due to the surrounding environment. The remaining FEBs, including those of Italian manufacture, were tested without any shielding and demonstrated ENC values even in the hundreds of \SI{}{\kilo\electronvolt} range.
 
 \begin{figure}[h!]
     \centering
@@ -575,9 +577,6 @@ The result of applying this method is immediately visible by comparing the stand
     \caption{Statistical distributions of measured ENC FWHM for a limited set of boards belonging to the US production. Each histogram also reports the distribution mean value and standard deviation.}
     \label{figFEBNoise}
 \end{figure}
-
-\noindent
-In particular, the displayed measurements were carried out by placing the front-end board under test inside a metal box in order to shield it from the electromagnetic interferences present in the test environment. This made it possible to obtain noise measurements, in the form of ENC, that could effectively reflect the real noise performance of the boards, free of alterations due to the surrounding environment. The remaining FEBs, including those of Italian manufacture, were tested without any shielding and demonstrated ENC values even in the hundreds of \SI{}{\kilo\electronvolt} range.
 
 
 %-------------------------------------------------------------------------------
@@ -716,16 +715,20 @@ This Section reports the results of current (IAVDD) and power (PAVDD) measuremen
 
 \section{Flex-Rigid Board} \label{flexrigids}
 
-Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power voltage supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. 
-
-\par
-The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents a picture of a flex-rigid board.
+Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power voltage supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents a picture of a flex-rigid board.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.45\textwidth]{Images/chap2/flex_rigid_pic.pdf}
     \caption{Flex-rigid board.}
     \label{figDflexrigidPIC}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Images/chap2/flex_rigid_pic2.pdf}
+    \caption{Flex-rigid board.}
+    \label{figDflexrigidPICconnection}
 \end{figure}
 
 \subsection{Visual inspection}
@@ -812,6 +815,13 @@ The purpose of the front-end board shields, shown in \hyperref[figShieldsAB]{Fig
     \includegraphics[width=0.6\textwidth]{Images/chap2/shieldsPDFtwo.pdf}
     \caption{Type A front-end board shield (on the left) and type B front-end board shield (on the right).}
     \label{figShieldsAB}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Images/chap2/shieldsOnBoard.pdf}
+    \caption{Type A front-end board shield (on the left) and type B front-end board shield (on the right).}
+    \label{figShieldsMounted}
 \end{figure}
 
 \subsection{Visual inspection}
