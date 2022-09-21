@@ -715,21 +715,7 @@ This Section reports the results of current (IAVDD) and power (PAVDD) measuremen
 
 \section{Flex-Rigid Board} \label{flexrigids}
 
-Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power voltage supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents a picture of a flex-rigid board.
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.45\textwidth]{Images/chap2/flex_rigid_pic.pdf}
-    \caption{Flex-rigid board.}
-    \label{figDflexrigidPIC}
-\end{figure}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.45\textwidth]{Images/chap2/flex_rigid_pic2.pdf}
-    \caption{Flex-rigid board.}
-    \label{figDflexrigidPICconnection}
-\end{figure}
+Flex-rigid boards are intended to connect one front-end board with the next in the chain. They are by design flexible and allow digital signals and low power voltage supplies to be transported from one module to the next. The flexibility is given both by the material they are made of, polyamide, and by the presence of ground networks instead of rigid ground planes. The dielectric used in these boards is FR4 and they consist of 7 layers for the rigid zone, at the extremes, where the connectors are located, and 3 for the flexible interconnection zone. \hyperref[figDflexrigidPIC]{Figure \ref{figDflexrigidPIC}} presents on the left a picture of a flex-rigid board next to a photograph in which the flex-rigid board is used to connect two front-end boards, where the flexibility of the flex-rigid board can be appreciated.
 
 \subsection{Visual inspection}
 A manual visual inspection has been performed for each sample by looking over the board either with the naked eye or through magnification. Visual inspection is applied before and after the thermal cycle. The purpose of this activity was to look for missing or bad-soldered ERNI connectors and defects (pits, dents, scratches, pinholes and other defects on printing traces and pads). If no or negligible defects were found, \texttt{[YES]} has been reported in the \textit{Visual Inspection} field of the test report. If a missing or bad-soldered component was found, the board is rejected since it is not possible to manually solder the ERNI connectors.
@@ -739,6 +725,15 @@ The flex-rigid boards underwent one thermal cycle in a climate chamber (model AC
 
 \subsection{Communication test}
 The purpose of this test is to validate the soldering of the two ERNI connectors. The board under test was placed in series with two fully populated FEBs as shown in \hyperref[figFEBtest2]{Figure \ref{figFEBtest2}} and a configuration test was run on the second board in the chain. If it responded correctly, it means that ERNI connectors on the Flex-rigid board are properly soldered and \texttt{[YES]} has been reported in the \textit{Communication test} field of the test report. \\
+
+\begin{figure}[h!]
+    \centering
+    \begin{tabular}{cc}
+        \includegraphics[width=0.38\textwidth]{Images/chap2/flex_rigid_pic.pdf} & \includegraphics[width=0.475\textwidth]{Images/chap2/flex_rigid_two_FEBs.pdf}\\
+    \end{tabular}
+    \caption{Flex-rigid board (on the left) connected to two front-end board in series, where its flexibility can be appreciated.}
+    \label{figDflexrigidPIC}
+\end{figure}
 
 \par
 As done for the front-end boards, a test report has been generated, whose first page is shown in \hyperref[figFLEXreport]{Figure \ref{figFLEXreport}}. In the case of the flex-rigid boards, a single multi-page document has been produced, having the following structure:
@@ -810,25 +805,39 @@ As done for the front-end boards, a test report has been generated, whose first 
 
 The purpose of the front-end board shields, shown in \hyperref[figShieldsAB]{Figure \ref{figShieldsAB}}, is to cover the tracks connecting the Si(Li) sensor strips with the pins of the readout integrated circuit, thereby reducing the impact of electromagnetic induced noise on each of the 32 channels of the readout ASIC.
 
+\subsection{Visual inspection}
+Visual inspection has been carried out to check the surface quality, then look for the existence of pits, dents, scratches, pinholes and other defects. Visual inspection was performed before and after the thermal cycle. If no or negligible defects were found, \texttt{[YES]} has been reported in the \textit{Visual Inspection} field of the test report.
+
+\subsection{Thermal cycle}
+The boards underwent one thermal cycle in a climate chamber (model ACS DY110). Thermal cycle has the same characteristics described in \hyperref[subsection-thermal]{section \ref{subsection-thermal}}. For the front-end board shields that underwent the thermal cycle, \texttt{[YES]} has been reported in the \textit{Thermal Cycle} field of the test report.
+
+\begin{comment}
+    \begin{figure}[h!]
+        \centering
+        \begin{tabular}{cc}
+            \includegraphics[width=0.5\textwidth]{Images/chap2/shieldsPDFtwo.pdf} & \includegraphics[width=0.3\textwidth]{Images/chap2/Mengjiao_IT_status_PIC.jpg}\\
+        \end{tabular}
+        \caption{Type A front-end board shield (on the left) and type B front-end board shield (on the right).}
+        \label{figShieldsAB}
+    \end{figure}
+\end{comment}
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth]{Images/chap2/shieldsPDFtwo.pdf}
     \caption{Type A front-end board shield (on the left) and type B front-end board shield (on the right).}
     \label{figShieldsAB}
 \end{figure}
+    
 
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.6\textwidth]{Images/chap2/shieldsOnBoard.pdf}
-    \caption{Type A front-end board shield (on the left) and type B front-end board shield (on the right).}
-    \label{figShieldsMounted}
-\end{figure}
-
-\subsection{Visual inspection}
-Visual inspection has been carried out to check the surface quality, then look for the existence of pits, dents, scratches, pinholes and other defects. Visual inspection was performed before and after the thermal cycle. If no or negligible defects were found, \texttt{[YES]} has been reported in the \textit{Visual Inspection} field of the test report.
-
-\subsection{Thermal cycle}
-The boards underwent one thermal cycle in a climate chamber (model ACS DY110). Thermal cycle has the same characteristics described in \hyperref[subsection-thermal]{section \ref{subsection-thermal}}. For the front-end board shields that underwent the thermal cycle, \texttt{[YES]} has been reported in the \textit{Thermal Cycle} field of the test report.
+\begin{comment}
+    \begin{figure}[h!]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Images/chap2/FEB_with_shieldsNO.pdf}
+        \caption{Type A and type B front-end board shields mounted on a front-end board.}
+        \label{figShieldsMounted}
+    \end{figure}
+\end{comment}
 
 \par
 As done for the front-end boards, a test report has been generated, whose first page is shown in \hyperref[figSHIELDreport]{Figure \ref{figSHIELDreport}}. In the case of the front-end board shields, a single multi-page document has been produced, having the structure reported below.

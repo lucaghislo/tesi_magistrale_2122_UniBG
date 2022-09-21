@@ -1,9 +1,9 @@
-\chapter{Cosmic muon detection using an assembled Si(Li) tracker module} \label{ch3}
+\chapter{X-ray and particle detection with an assembled Si(Li) tracker module} \label{ch3}
 
-The following Chapter describes the test setup and the consequent experimental results concerning the search and detection of cosmic muons by means of an assembled Si(Li) tracker module of the GAPS experiment.
+This Chapter describes the test setup and the experimental results concerning the detection of X-rays from a \ce{^{241}Am} source and cosmic muons by means of an assembled Si(Li) tracker module of the GAPS experiment.
 
 \par
-The Chapter is structured as follows. Initially, the physical background concerning cosmic muons, their nature and detection possibilities on planet Earth is given. Next, a description of the test setup adopted to carry out the measurements is provided, which is comprised of an assembled Si(Li) tracker module and an ArduSiPM ionising radiation detector, used as a trigger for the readout electronics. Finally, the experimental results obtained from the detection are reported, with an explanation of their usefulness in the context of flight item characterisation. This Section also reports the results obtained during the characterisation activity that has been performed on the fully assemble Si(Li) tracker module.
+The Chapter is structured as follows. Initially, the physical background concerning cosmic muons, their nature and detection possibilities on planet Earth is given. Next, a description of the test setup adopted to carry out the measurements is provided, which is comprised of an assembled Si(Li) tracker module and an ArduSiPM ionising radiation detector, used as a trigger for the readout electronics. Finally, the experimental results obtained from the detection are reported, with an explanation of their usefulness in the context of flight item characterisation. This Section also reports the results obtained during the characterisation activity that has been performed on the fully assemble Si(Li) tracker module and the results obtained with an Americium source..
 
 %-------------------------------------------------------------------------------
 %   Cosmic muons
@@ -176,7 +176,7 @@ The latter was placed together with the tracker module inside an airtight case i
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Images/chap3/winter_plot.pdf} 
+    \includegraphics[width=0.9\textwidth]{Images/chap3/winter_plot.pdf} 
     \caption{GAPS Module Monitor dashboard.}
     \label{figWinterMATLABmonitor}
 \end{figure}
@@ -225,7 +225,14 @@ This Section presents the experimental results obtained during the readout elect
 \subsection{Module characterisation}
 \label{secResultsMuonASIC}
 
-In this Section, the tests performed on the readout electronics of the Si(Li) tracker module using the \textit{Automated test} of the \texttt{GAPS\_ModuleTester} software are presented. The purpose of these measurements, which were carried out prior to the muon detection experiment, is to verify the correct functioning of the readout electronics installed inside the assembled module equipped with Si(Li) detectors and it represents the last step in the process of testing the Si(Li) tracker readout electronics illustrated in this thesis work. In this regard, \hyperref[ch1]{Chapter \ref{ch1}} proposes the results of tests carried out on the SLIDER32 ASIC alone at different temperature steps. Consequently, \hyperref[ch2]{Chapter \ref{ch2}} proposes the tests carried out on the FEB without Si(Li) detectors and \hyperref[ch3]{Chapter \ref{ch3}} finally provides the results of the tests on the assembled module in the version intended for flight. All tests were carried out by keeping the module at a controlled temperature of \SI{-40}{\celsius} and \SI{10}{\percent} relative humidity. The Si(Li) detectors were biased with a voltage of \SI{-250}{\volt} and bit \texttt{H} was set to \texttt{0}.
+In this Section, the tests performed on the readout electronics of the Si(Li) tracker module using the \textit{Automated test} of the \texttt{GAPS\_ModuleTester} software are presented. The purpose of these measurements, which were carried out prior to the muon detection experiment, is to verify the correct functioning of the readout electronics installed inside the assembled module equipped with Si(Li) detectors and it represents the last step in the process of testing the Si(Li) tracker readout electronics illustrated in this thesis work. The Si(Li) detectors were biased with a voltage of \SI{-250}{\volt} and bit \texttt{H} was set to \texttt{0}.
+
+\begin{comment}
+    In this regard, \hyperref[ch1]{Chapter \ref{ch1}} proposes the results of tests carried out on the SLIDER32 ASIC alone at different temperature steps. Consequently, \hyperref[ch2]{Chapter \ref{ch2}} proposes the tests carried out on the FEB without Si(Li) detectors and \hyperref[ch3]{Chapter \ref{ch3}} finally provides the results of the tests on the assembled module in the version intended for flight. All tests were carried out by keeping the module at a controlled temperature of \SI{-40}{\celsius} and \SI{10}{\percent} relative humidity.
+\end{comment}
+
+\par
+\hyperref[figFDTmodule40C250V]{Figure \ref{figFDTmodule40C250V}} shows the input-output trans-characteristics of all channels at peak time \#6 ($\tau_{p} = \SI{1.48}{\micro\second}$). It can be seen that all channels respond correctly and follow the desired trend defined by the dynamic signal compression feature already illustrated in \hyperref[testboardFDT]{Section \ref{testboardFDT}}.
 
 % modulo a -40C con sensori a -250V H=0, tau6
 \begin{figure}[h!]
@@ -234,10 +241,6 @@ In this Section, the tests performed on the readout electronics of the Si(Li) tr
     \caption{Input-output trans-characteristics of all channels at peaking time \#6 ($\tau_{p} = \SI{1.48}{\micro\second}$) with module at \SI{-40}{\celsius}, Si(Li) detectors biased at \SI{-250}{\volt} and bit \texttt{H} set to \texttt{0}.}
     \label{figFDTmodule40C250V}
 \end{figure}
-
-
-\par
-\hyperref[figFDTmodule40C250V]{Figure \ref{figFDTmodule40C250V}} shows the input-output trans-characteristics of all channels at peak time \#6 ($\tau_{p} = \SI{1.48}{\micro\second}$). It can be seen that all channels respond correctly and follow the desired trend defined by the dynamic signal compression feature already illustrated in \hyperref[testboardFDT]{Section \ref{testboardFDT}}.
 
 % modulo a -40C con sensori a -250V tutti i PT H=0
 \begin{figure}[h!]
@@ -280,7 +283,7 @@ The leakage current associated with Si(Li) detectors was also evaluated. The mea
 \end{equation}
 
 \noindent
-where $ADC_{code}$ is comprised between 0 and 2047 ADU, \SI{1.76}{\milli\volt} represents the ADC \textit{Least Significant Bit} (LSB), $3.87$ is the gain of the S\&H, $10$ is the gain of the current mirror implemented in the measuring circuit and $R$ equals to $\SI{223.7}{\kilo\ohm}$. The latter parameter represents the value of the resistor employed for the conversion from current to voltage that is then sampled by the S\&H and later digitised by the ADC.
+where $ADC_{code}$ is comprised between 0 and 2047 ADU, \SI{1.72}{\milli\volt} represents the ADC \textit{Least Significant Bit} (LSB), $3.87$ is the gain of the S\&H, $10$ is the gain of the current mirror implemented in the measuring circuit and $R$ equals to $\SI{223.7}{\kilo\ohm}$. The latter parameter represents the value of the resistor employed for the conversion from current to voltage that is then sampled by the S\&H and later digitised by the ADC.
 
 \begin{figure}[h!]
     \centering
@@ -305,11 +308,12 @@ In order to better study the leakage current value of each of the 32 channels at
 This behaviour can be explained by taking into account the fact that each of the detectors mounted within the Si(Li) tracker module under investigation has its own peculiar characteristics that can induce quite natural variations in the leakage current value. Overall, the total leakage current on all 32 channels was evaluated at \SI{746.11}{\nano\ampere} and is comparable to the value read directly from the high voltage power supply used during the test.
 
 % ESPERIMENTO RILEVAZIONE AMERICIO
+\subsection{X-ray detection}
 \par
-As a final procedure for characterising the module, an experiment was carried out using a sample of Americium 241, commonly referred to as \ce{^{241}Am}.  The latter is a man-made radioactive isotope with a half-life of 432.2 years and is usually found in smoke detectors. The source is an alpha emitter, and in the decay process it also kicks out gamma radiation at \SI{59.54}{\kilo\electronvolt} and \SI{26.34}{\kilo\electronvolt} \cite{agencyfortoxicsubstancesanddiseaseregistry_2004_chemical}. A sample of Americium 241 was placed below Si(Li) detector \#0 (channels 0 to 7) and in order to determine the best threshold level to be set on these channels with the aim of detecting at least the \SI{59.54}{\kilo\electronvolt} peak, a charge scan was first performed and it is presented in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} on the left. 
+As a final procedure for characterising the module, an experiment was carried out using a sample of Americium 241, commonly referred to as \ce{^{241}Am}.  The latter is a man-made radioactive isotope with a half-life of 432.2 years and is usually found in smoke detectors. The source is an alpha emitter, and in the decay process it also kicks out gamma radiation at \SI{59.54}{\kilo\electronvolt} and \SI{26.34}{\kilo\electronvolt} \cite{agencyfortoxicsubstancesanddiseaseregistry_2004_chemical}. A sample of Americium 241 was placed below Si(Li) detector \#0 (channels 0 to 7). 
 
 \par
-During this test, the threshold value is kept constant and the value of the injected charge is varied in order to determine the channel's trigger profile, expressed in trigger probability from \SI{0}{\percent} to \SI{100}{\percent}. This test was performed using the \textit{manual test} of the \texttt{GAPS\_ModuleTester} software already described in \hyperref[sec21]{Section \ref{sec21}}, in which the injected charge range and step can be specified. For this specific test, the range was set from a minimum of \SI{0}{DAC_{units}} to a maximum of \SI{300}{DAC_{units}} with steps of \SI{1}{DAC_{units}}. Repeated tests led to the selection of a threshold value of \texttt{214}, whose equivalent energy value can be seen in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} (on the right) for channels 0 to 7 and is equivalent to \SI{22.65}{\kilo\electronvolt} on average. On the same graph, the ENC trend evaluated on the corresponding channels is shown in blue. 
+In order to determine the best threshold level to be set on these channels with the aim of detecting at least the \SI{59.54}{\kilo\electronvolt} peak, a charge scan was first performed and it is presented in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} on the left. During this test, the threshold value is kept constant and the value of the injected charge is varied in order to determine the channel's trigger profile, expressed in trigger probability from \SI{0}{\percent} to \SI{100}{\percent}. This test was performed using the \textit{manual test} of the \texttt{GAPS\_ModuleTester} software already described in \hyperref[sec21]{Section \ref{sec21}}, in which the injected charge range and step can be specified. For this specific test, the range was set from a minimum of \SI{0}{DAC_{units}} to a maximum of \SI{300}{DAC_{units}} with steps of \SI{1}{DAC_{units}}. Repeated tests led to the selection of a threshold value of \texttt{214}, whose equivalent energy value can be seen in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} (on the right) for channels 0 to 7 and is equivalent to \SI{22.65}{\kilo\electronvolt} on average. On the same graph, the ENC trend evaluated on the corresponding channels is shown in blue. 
 
 \begin{figure}[h!] % 0.505 % 0.44
     \centering
@@ -340,7 +344,7 @@ The acquisition was carried out for a duration of 1 hour in self-trigger mode wi
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.8\textwidth]{Images/chap3/results/americio/ch4_americio_log.pdf}
+        \includegraphics[width=0.8\textwidth]{Images/chap3/results/americio/ch4_americio_log.pdf}
     \caption{Self trigger acquisition carried out using the \ce{^{241}Am} sample with global threshold set to \texttt{214} and channels 0 to 7 enabled (detector \#0).}
     \label{figAmericioTHR214}
 \end{figure}
@@ -364,10 +368,10 @@ This phenomenon can be seen in \hyperref[figAmericioCH6-7]{Figure \ref{figAmeric
 \subsection{Cosmic muon detection}
 \label{secMuonDetectionResults}
 
-This Section reports the results obtained during the muon detection experiment. Data acquisition was performed both in self-trigger mode, in which the sampling signal is generated internally starting from the information provided by the zero-crossing discriminator output signal, and in external trigger mode. In the latter mode, the trigger signal is provided by the \textit{ArduiSiPM} device, previously illustrated in \hyperref[secArduSiPM]{Section \ref{secArduSiPM}}, at the moment when an interaction event is recorded in the scintillator located below one of the sensors.
+This Section reports the results obtained during the muon detection experiment. Data acquisition was performed with the ASIC operated both in self-trigger mode, in which the sampling signal is generated internally starting from the information provided by the zero-crossing discriminator output signal, and in external trigger mode. In the latter mode, the trigger signal is provided by the \textit{ArduiSiPM} device, previously illustrated in \hyperref[secArduSiPM]{Section \ref{secArduSiPM}}, at the moment when an interaction event is recorded in the scintillator located below one of the sensors.
 
 \par
-\hyperref[figMUONSconfronto]{Figure \ref{figMUONSconfronto}} shows in blue the result of the acquisition performed for a duration of 1 hour in self-trigger mode with global threshold set to \texttt{100}. The plot also shows a comparison with the measurements carried out by INFN Napoli (in red) and MIT (in green). It can be seen that both the low and high energy peaks, representing noise and muons respectively, are in correspondence with those recorded by the first two measurements.
+\hyperref[figMUONSconfronto]{Figure \ref{figMUONSconfronto}} shows in blue the result of the acquisition performed for a duration of 1 hour in self-trigger mode with global threshold set to \texttt{100}. The plot also shows a comparison with the measurements carried out by INFN (\textit{Istituto Nazionale di Fisica Nucleare}) Napoli, in red, and MIT (\textit{Massachusetts Institute of Technology}) in green. It can be seen that both the low and high energy peaks, representing noise and muons respectively, are in correspondence with those recorded by the first two measurements.
 
 \begin{figure}[h!]
     \centering
@@ -379,7 +383,7 @@ This Section reports the results obtained during the muon detection experiment. 
 % muoni self trigger threshold 130 confronto zero suppression
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/incoming_energy_zero_suppr_thr130.pdf}
+    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/incoming_energy_zero_suppr_thr130_keV.pdf} % incoming_energy_zero_suppr_thr130.pdf
     \caption{Self trigger acquisition with global threshold set to \texttt{130} without zero suppression (in blue) and with zero suppression (in red).}
     \label{figMUONselfZS}
 \end{figure}
@@ -394,7 +398,7 @@ The same representation of the acquisition carried out in self trigger mode with
 % interpolazione landau threshold 130 self trigger zero suppression
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/incoming_energy_thr130_ZS_landau.pdf}
+    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/incoming_energy_thr130_ZS_landau_keV.pdf} % incoming_energy_thr130_ZS_landau.pdf
     \caption{Self trigger acquisition with global threshold set to \texttt{130} and zero suppression following the Landau distribution highlighted in green.}
     \label{figMUONlandau}
 \end{figure}
@@ -406,11 +410,15 @@ The most interesting result of the entire experiment is represented in \hyperref
 The acquisition represented by the plot was carried out in external trigger mode and lasted 2 hours. The global threshold was set to \texttt{130} and the trigger hold delay was set to 34 FPGA clocks. The latter parameter was estimated experimentally through tests, and is described below. It can be seen that in all 4 detectors there is a low-energy peak representing noise (the pedestal), as the detection was carried out without zero suppression. The interesting result, however, can be seen in channels 16 to 23 highlighted in red. In them, a higher energy peak is visible, roughly between 400 ADU and 800 ADU, representing the energy released by cosmic muons as they pass through the Si(Li) detector strips. This behaviour serves as a proof of concept of the operating principle on which the entire GAPS experiment is based, demonstrating how a scintillator placed at a known distance from the Si(Li) detector is able to intercept cosmic muons, allowing the energy released in the Si(Li) detector to be measured by the readout electronics, as implemented in the experiment with the Time Of Flight (TOF) system, described in \hyperref[appendixGAPSexperiment]{Appendix \ref{appendixGAPSexperiment}}. A 32-channel representation of the same acquisition in which the phenomenon can be observed for each individual channel is available in \hyperref[appendix32CHmuons]{Appendix \ref{appendix32CHmuons}}.
 
 % Plot per rimpiazzare visualizzazione a 32 canali singoli
+% incoming_energy34_2hr_sens2.pdf
+% incoming_energy34_2hr_sens3.pdf
+% incoming_energy34_2hr_sens1.pdf
+% incoming_energy34_2hr_sens4.pdf
 \begin{figure}[h!]
     \centering
     \begin{tabular}{c c}
-         \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens2.pdf} & \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens3.pdf} \\
-         \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens1.pdf} & \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens4.pdf}
+         \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens2_keV.pdf} & \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens3_keV.pdf} \\
+         \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens1_keV.pdf} & \includegraphics[width=0.475\textwidth]{Images/chap3/results/muons/ch_ext_trigger_4plots/incoming_energy34_2hr_sens4_keV.pdf}
     \end{tabular}
     \caption{4 Si(Li) detectors view of a two-hour acquisition performed in external trigger mode with global threshold set to \texttt{130} and trigger hold delay set to 34 FPGA clocks. Channels from 16 to 23 are highlighted in red.}
     \label{figMUON4sensors}
@@ -425,7 +433,7 @@ This phenomenon can be interpreted in two ways: first, the explanation could be 
 % comparativa self external che evidenza ridotto picco energia muoni per external trigger: problema posizionamento o ritardo campionamento del canale
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/incoming_energy_external34_self_100.pdf}
+    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/incoming_energy_external34_self_100_keV.pdf} % incoming_energy_external34_self_100.pdf
     \caption{Comparison between self trigger mode (in blue) and external trigger mode (in pink); both self and external trigger acquisitions were performed with global threshold set to \texttt{130} and trigger hold delay set to 34 FPGA clocks.}
     \label{figMUONselfExtComparativa}
 \end{figure}
@@ -438,7 +446,7 @@ Unfortunately, it was not possible to measure by means of an oscilloscope the de
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/ext_self_muons_THR_130_delay_34_ch0-7.pdf}
+    \includegraphics[width=0.75\textwidth]{Images/chap3/results/muons/ext_self_muons_THR_130_delay_34_ch0-7_keV.pdf} % ext_self_muons_THR_130_delay_34_ch0-7.pdf
     \caption{Comparison between the measurement made in self-trigger mode (in blue) and that made in external trigger mode by placing the scintillator at a close distance from the Si(Li) detector (in pink).}
     \label{figMUONselfExtComparativaCH0-7}
 \end{figure}
