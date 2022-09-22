@@ -1,9 +1,10 @@
-\chapter{X-ray and particle detection with an assembled Si(Li) tracker module} \label{ch3}
+\chapter[X-ray and particle detection with an assembled Si(Li) tracker\\ module]{X-ray and particle detection with an assembled Si(Li) tracker module} \label{ch3}
+\chaptermark{X-ray and particle detection with an assembled Si(Li) tracker module}
 
 This Chapter describes the test setup and the experimental results concerning the detection of X-rays from a \ce{^{241}Am} source and cosmic muons by means of an assembled Si(Li) tracker module of the GAPS experiment.
 
 \par
-The Chapter is structured as follows. Initially, the physical background concerning cosmic muons, their nature and detection possibilities on planet Earth is given. Next, a description of the test setup adopted to carry out the measurements is provided, which is comprised of an assembled Si(Li) tracker module and an ArduSiPM ionising radiation detector, used as a trigger for the readout electronics. Finally, the experimental results obtained from the detection are reported, with an explanation of their usefulness in the context of flight item characterisation. This Section also reports the results obtained during the characterisation activity that has been performed on the fully assemble Si(Li) tracker module and the results obtained with an Americium source..
+The Chapter is structured as follows. Initially, the physical background concerning cosmic muons, their nature and detection possibilities on planet Earth is given. Next, a description of the test setup adopted to carry out the measurements is provided, which is comprised of an assembled Si(Li) tracker module and an ArduSiPM ionising radiation detector, used as a trigger for the readout electronics. Finally, the experimental results obtained from the detection are reported, with an explanation of their usefulness in the context of flight item characterisation. This Section also reports the results obtained during the characterisation activity that has been performed on the fully assemble Si(Li) tracker module and the results obtained with an Americium source.
 
 %-------------------------------------------------------------------------------
 %   Cosmic muons
@@ -46,7 +47,7 @@ In order to carry out the tests on the module, the latter was powered by means o
 
 \begin{itemize}
     \itemsep0em
-    \item A Keysight N6705C DC Power Analyser providing both analog and digital supply voltages to the FEB, in the same configuration described in \hyperref[sec21]{Section \ref{sec21}} and shown in \hyperref[figKeysightFEB]{Figure \ref{figKeysightFEB}}.
+    \item A Keysight N6705C DC Power Analyser providing both analog and digital supply voltages to the FEB, in the same configuration described in \hyperref[testboardsetup]{Section \ref{testboardsetup}} and shown in \hyperref[figKeysightFEBtb]{Figure \ref{figKeysightFEBtb}}.
     \item A CAEN HiVolta DT1415ET high voltage power supply used in order to bias the Si(Li) detectors with a negative DC voltage of \SI{-250}{\volt}. 
 \end{itemize}
 
@@ -56,7 +57,7 @@ Both instruments were controlled by means of a specially developed Python applic
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.99\textwidth]{Images/chap3/test_setup_MODULE.jpg}
-    \caption{Complete muon detection experiment setup.}
+    \caption{Complete cosmic muon detection experiment setup.}
     \label{figModuleSetup}
 \end{figure}
 
@@ -124,7 +125,7 @@ The ArduSiPM device was used as a trigger for the readout electronics of the Si(
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.525\textwidth]{Images/chap3/ArduSiPM_trigger.pdf}
+    \includegraphics[width=0.55\textwidth]{Images/chap3/ArduSiPM_trigger.pdf}
     \caption{ArduSiPM trigger signal measured with a LeCroy WaveSurfer 454 oscilloscope.}
     \label{figArduiSiPMtrigger}
 \end{figure}
@@ -189,7 +190,7 @@ In addition to humidity data, temperature, pressure and battery level values wer
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{Images/chap3/GAPS_DAQ.pdf}
+    \includegraphics[width=0.8\textwidth]{Images/chap3/GAPS_DAQ.pdf}
     \caption{\texttt{GAPS\_DAQ} Python software GUI used to perform data acquisition from the Si(Li) tracker module.}
     \label{figGapsDAQpy}
 \end{figure}
@@ -313,7 +314,7 @@ This behaviour can be explained by taking into account the fact that each of the
 As a final procedure for characterising the module, an experiment was carried out using a sample of Americium 241, commonly referred to as \ce{^{241}Am}.  The latter is a man-made radioactive isotope with a half-life of 432.2 years and is usually found in smoke detectors. The source is an alpha emitter, and in the decay process it also kicks out gamma radiation at \SI{59.54}{\kilo\electronvolt} and \SI{26.34}{\kilo\electronvolt} \cite{agencyfortoxicsubstancesanddiseaseregistry_2004_chemical}. A sample of Americium 241 was placed below Si(Li) detector \#0 (channels 0 to 7). 
 
 \par
-In order to determine the best threshold level to be set on these channels with the aim of detecting at least the \SI{59.54}{\kilo\electronvolt} peak, a charge scan was first performed and it is presented in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} on the left. During this test, the threshold value is kept constant and the value of the injected charge is varied in order to determine the channel's trigger profile, expressed in trigger probability from \SI{0}{\percent} to \SI{100}{\percent}. This test was performed using the \textit{manual test} of the \texttt{GAPS\_ModuleTester} software already described in \hyperref[sec21]{Section \ref{sec21}}, in which the injected charge range and step can be specified. For this specific test, the range was set from a minimum of \SI{0}{DAC_{units}} to a maximum of \SI{300}{DAC_{units}} with steps of \SI{1}{DAC_{units}}. Repeated tests led to the selection of a threshold value of \texttt{214}, whose equivalent energy value can be seen in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} (on the right) for channels 0 to 7 and is equivalent to \SI{22.65}{\kilo\electronvolt} on average. On the same graph, the ENC trend evaluated on the corresponding channels is shown in blue. 
+In order to determine the best threshold level to be set on these channels with the aim of detecting at least the \SI{59.54}{\kilo\electronvolt} peak, a charge scan was first performed and it is presented in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} on the left. During this test, the threshold value is kept constant and the value of the injected charge is varied in order to determine the channel's trigger profile, expressed in trigger probability from \SI{0}{\percent} to \SI{100}{\percent}. This test was performed using the \textit{manual test} of the \texttt{GAPS\_ModuleTester} software already described in \hyperref[sec21]{Section \ref{sec21}}, in which the injected charge range and step can be specified. For this specific test, the range was set from a minimum of \SI{0}{DAC_{unit}} to a maximum of \SI{300}{DAC_{unit}} with steps of \SI{1}{DAC_{unit}}. Repeated tests led to the selection of a threshold value of \texttt{214}, whose equivalent energy value can be seen in \hyperref[figChargeScan]{Figure \ref{figChargeScan}} (on the right) for channels 0 to 7 and is equivalent to \SI{22.65}{\kilo\electronvolt} on average. On the same graph, the ENC trend evaluated on the corresponding channels is shown in blue. 
 
 \begin{figure}[h!] % 0.505 % 0.44
     \centering
