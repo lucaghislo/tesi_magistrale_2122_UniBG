@@ -1,20 +1,7 @@
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 %	PACKAGES AND THEMES
-%----------------------------------------------------------------------------------------
-\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
-\newcommand{\singlelinelogo}{\setbeamertemplate{logo}{
-    \begin{picture}(0,0)
-            \put(0,0){\makebox(-60,236)[rt]{\includegraphics[width=2.7cm]{images/logos/unibg-logo.png}}}
-             \put(0,0){\makebox(-20,236)[rt]{\includegraphics[width=0.83cm]{images/logos/gaps.png}}}
-        \end{picture}
-}}
-
-\newcommand{\sectiontitlelogo}{\setbeamertemplate{logo}{
-    \begin{picture}(0,0)
-            \put(0,0){\makebox(-205,220)[rt]{\includegraphics[width=2.8cm]{images/logos/unibg-logo.png}}}
-             \put(0,0){\makebox(-165,221)[rt]{\includegraphics[width=0.9cm]{images/logos/gaps.png}}}
-    \end{picture}
-}}
+%---------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames,handout]{beamer} % handout
 
 \newcommand{\backupbegin}{
    \newcounter{finalframe}
@@ -26,6 +13,10 @@
 
 \newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
 \newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
 
 \usetheme{SimplePlus}
 
@@ -41,21 +32,34 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{siunitx}
 \sisetup{detect-all}
 \usepackage{pifont}
 \newcommand{\xmark}{\ding{55}}
+\usepackage{svg}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{bm}
 
 \newcommand{\greencheck}{{\color{ForestGreen}\checkmark}}
 \newcommand{\redcross}{{\color{Red}\xmark}}
 
+% all pages logos
+\logo{
+    \begin{picture}(0,0)
+        \put(0,0){\makebox(-60,235)[rt]{\includesvg[width=1cm]{images/logos/unibg_logo_single.svg}}}
+         \put(0,0){\makebox(-25,235)[rt]{\includegraphics[width=0.7cm]{images/logos/gaps.png}}}
+    \end{picture}
+}
 
-%----------------------------------------------------------------------------------------
+\setbeamercovered{transparent}
+\setbeamertemplate{footline}[frame number]{}
+
+
+%---------------------------------------------------------------------------------------
 %	TITLE PAGE
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 
 \title[]{\large{Characterisation of the readout electronics of the Si(Li) tracker\\ for the first flight of the GAPS experiment}} % The short title appears at the bottom of every slide, the full title is only on the title page
 
@@ -72,185 +76,166 @@
 \titlegraphic { 
     \begin{picture}(0,0)
         % VERSION WITH UNIBG AND GAPS LOGOS
-        %\put(25,165){\makebox(0,0)[rt]{\includegraphics[width=4cm]{images/logos/unibg-logo.png}}}
-        %\put(90,168){\makebox(0,0)[rt]{\includegraphics[width=1.4cm]{images/logos/gaps.png}}}
-    
-        % VERSION WITH ALL LOGOS
-        \put(-110,165){\makebox(0,0)[rt]{\includegraphics[width=3.6cm]{images/logos/unibg-logo.png}}}
-        \put(-54,168){\makebox(0,0)[rt]{\includegraphics[width=1.3cm]{images/logos/gaps.png}}}
-        \put(16,168){\makebox(0,0)[rt]{\includegraphics[width=2cm]{images/logos/nasa-logo.png}}}
-        \put(79,163){\makebox(0,0)[rt]{\includegraphics[width=2cm]{images/logos/jaxa-logo.png}}}
-        \put(143,161){\makebox(0,0)[rt]{\includegraphics[width=1.8cm]{images/logos/infn-logo.png}}}
-        \put(210,161){\makebox(0,0)[rt]{\includegraphics[width=1.8cm]{images/logos/asi-logo.jpg}}}
+        \put(25,164){\makebox(0,0)[rt]{\includegraphics[width=4cm]{images/logos/unibg-logo.png}}}
+        \put(90,170){\makebox(0,0)[rt]{\includegraphics[width=1.4cm]{images/logos/gaps.png}}}
     \end{picture}
 }
 
-% all pages logos
-\logo{
-    \begin{picture}(0,0)
-        \put(0,0){\makebox(-60,230)[rt]{\includegraphics[width=2.8cm]{images/logos/unibg-logo.png}}}
-         \put(0,0){\makebox(-20,231)[rt]{\includegraphics[width=0.9cm]{images/logos/gaps.png}}}
-    \end{picture}
-}
-
-%----------------------------------------------------------------------------------------
-%	SLIDE: TITOLO, SOMMARIO e CONTENUTI
-%----------------------------------------------------------------------------------------
 
 \begin{document}
 
-% TITOLO
+%---------------------------------------------------------------------------------------
+%	TITLE PAGE
+%---------------------------------------------------------------------------------------
+
 \frame[plain]{
     \vspace{-0.5cm}
     \titlepage
 }
 
-% SOMMARIO
-{\singlelinelogo
-\begin{frame}{Overview}
-    \begin{columns}
-        \column{0.65\textwidth}
-        \setstretch{1.3}
-        \fontsize{9pt}{1}\selectfont
-        \tableofcontents
 
+%---------------------------------------------------------------------------------------
+%	General AntiParticle Spectrometer (GAPS)
+%---------------------------------------------------------------------------------------
+
+\begin{frame}{General AntiParticle Spectrometer (GAPS)}
+\fontsize{9pt}{1}\selectfont
+   \begin{columns}
+   \vspace{0.05cm}
+    \column{0.58\textwidth}
+        \pause
+        \vskip0.2cm
+        GAPS is an \textbf{Antarctic balloon experiment} designed to detect low-energy cosmic antinuclei as an indirect signature of \textbf{Dark Matter}\pause
+
+        \vspace{0.3cm}
+        \textbf{\large \textcolor{ForestGreen}{The instrument}}\\
+        \vspace{0.25cm}
+        \textbf{\textcolor{Red}{Time-of-Flight System (TOF)}}
+        \begin{itemize}
+            \item 220 plastic scintillator paddles with Si-PM readout
+        \end{itemize}\pause
+        \vspace{0.15cm}
+        \textbf{\textcolor{Red}{Si(Li) Tracker}}
+        \begin{itemize}
+            \item About 1000 lithium-drifted silicon (Si(Li)) detectors
+            \item 10 layers with 10 cm spacing
+            \item 12x12 Si(Li) detectors per layer
+            \item Modular structure (360 modules)
+        \end{itemize}\pause
+
+        \vspace{0.25cm}
+        The experiment is developed by an international collaboration that includes Japanese, US and Italian institutes, and it is funded by \textbf{NASA}, \textbf{INFN}, \textbf{ASI} and \textbf{JAXA}\pause
+        
+        \vspace{0.2cm}
+        The \textbf{first flight} is scheduled for late 2023 from McMurdo National Science Foundation (NSF) Station in Antarctica
+        
+    \column{0.38\textwidth}
+        \begin{figure}
+        \centering
+        \includegraphics[width=0.95\textwidth]{images/experiment_intro/tracker_menjiao.pdf}
+        \end{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{images/logos/loghi_presentazione.pdf}
+    \end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	Si(Li) tracker structure
+%---------------------------------------------------------------------------------------
+
+\begin{frame}{Si(Li) tracker structure}
+    \fontsize{9pt}{1}\selectfont
+    \settowidth{\leftmargini}{\usebeamertemplate{enumerate item}}
+    \addtolength{\leftmargini}{\labelsep}
+    \vspace{0.1cm}
+    \includegraphics[width=0.99\textwidth]{images/experiment_intro/manghisoni_SIE_ASSEMBLY.pdf}
+
+    \pause
+    \begin{textblock*}{0.35\textwidth}(0.5cm, 4.2cm)
+        \textbf{\textcolor{ForestGreen}{Module}}
+        \fontsize{8.5pt}{1}\selectfont
+        \vspace{0.05cm}
+        \begin{itemize}
+            \item 1 readout ASIC
+            \item 1 Front-End Board (FEB)
+            \item 4 Si(Li) detectors (8 strips each)
+        \end{itemize}\pause
+        \vspace{0.1cm}
+        \fontsize{9pt}{1}\selectfont
+        \textbf{\textcolor{ForestGreen}{Front-end electronics requirements}}
+        \fontsize{8.5pt}{1}\selectfont
+        \vspace{0.05cm}
+        \begin{itemize}
+            \item Channels per ASIC: \textbf{32}
+            \item Operating temperature: \textbf{\SI{-40}{\celsius}}
+            \item Power dissipation: $\leq$ \textbf{\SI{10}{\milli\watt/ch}}
+            \item Dynamic range: \textbf{\SI{10}{\kilo\electronvolt} - \SI{100}{\mega\electronvolt}}
+            \item Analog resolution: \textbf{\SI{4}{\kilo\electronvolt} (FWHM)}
+            \item Threshold: \textbf{\SI{20}{\kilo\electronvolt}}
+        \end{itemize}
+    \end{textblock*}
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	SOMMARIO
+%---------------------------------------------------------------------------------------
+
+% SOMMARIO
+\begin{frame}{Thesis work: overview}
+    \settowidth{\leftmargini}{\usebeamertemplate{enumerate item}}
+    \addtolength{\leftmargini}{\labelsep}
+    \begin{columns}
+        \column{0.6\textwidth}
+        \fontsize{11pt}{1}\selectfont
+        %\tableofcontents
+        \pause
+        \begin{enumerate}
+            \setlength\itemsep{1em}
+            \fontsize{10pt}{1}\selectfont
+            \item \textbf{Evaluation of temperature effects on ASIC performance}
+            \begin{itemize}
+                \fontsize{8.5pt}{1}\selectfont
+                \setlength\itemsep{0.3em}
+                \item Current reference
+                \item Input-output channel trans-characteristic
+                \item Global threshold voltage
+                \item Equivalent Noise Charge (ENC) at \SI{-40}{\celsius}
+            \end{itemize}\pause
+            \fontsize{10pt}{1}\selectfont
+            \item \textbf{Si(Li) tracker flight components validation}
+            \begin{itemize}
+                \fontsize{8.5pt}{1}\selectfont
+                \setlength\itemsep{0.3em}
+                \item Front-End Boards (FEBs)
+                \item Dummy-1 front-end boards
+                \item Flex-rigid boards
+                \item Connectors for termination
+                \item Front-end board shields
+            \end{itemize}\pause
+            \fontsize{10pt}{1}\selectfont
+            \item \textbf{X-ray and particle detection with an assembled Si(Li) tracker module}
+            \begin{itemize}
+                \fontsize{8.5pt}{1}\selectfont
+                \setlength\itemsep{0.3em}
+                \item X-ray detection with an Americium 241 source
+                \item Cosmic muon detection using an external scintillator
+            \end{itemize}
+        \end{enumerate}
         \column{0.3\textwidth}
         \centering
         \vskip0.1cm
         \includegraphics[height=0.85\textheight]{images/random/workflow.pdf}
     \end{columns}
-    
 \end{frame}
-}
 
-%----------------------------------------------------------------------------------------
-%	The GAPS Experiment
-%----------------------------------------------------------------------------------------
 
-\section{Introduction}
-\subsection{The GAPS experiment}
+%---------------------------------------------------------------------------------------
+%	ASIC characterisation at different temperatures
+%---------------------------------------------------------------------------------------   
 
-{\singlelinelogo
-\begin{frame}{The GAPS experiment}
-\vskip0.2cm
-\fontsize{9pt}{1}\selectfont
-   \begin{columns}
-   \vspace{0.05cm}
-    \column{0.55\textwidth}
-        \textbf{Scientific background}
-        \vspace{0.05cm}
-        \begin{itemize}
-            \item One of the great unanswered questions in physics and astronomy concerns the properties and composition of \textbf{Dark Matter}
-            \item Unlike normal matter, Dark Matter does not interact with the electromagnetic force. This means it does not absorb, reflect or emit light, making it extremely hard to spot
-            \item A very promising indirect signature of Dark Matter are \textit{cosmic ray antideuterons}
-        \end{itemize}
-        
-        \vspace{0.2cm}
-        \textbf{The experiment}
-        \vspace{0.05cm}
-        \begin{itemize}
-            \item The \textit{General AntiParticle Spectrometer} (GAPS) is an Antarctic balloon experiment designed to detect low-energy cosmic antinuclei as an indirect signature of Dark Matter
-            \item Prototype flight (pGAPS) in 2012 at the JAXA balloon facility in Taiki, Japan
-            \item First balloon flight from McMurdo Station in Antarctica in late 2023 (launch approved by NASA)
-        \end{itemize}
-        
-    \column{0.4\textwidth}
-        \begin{figure}
-        \centering
-        \includegraphics[height=0.64\textheight]{images/experiment_intro/gaps_ball.jpg}
-        \end{figure}
-    \end{columns}
-\end{frame}
-}
-
-\subsection{The GAPS instrument}
-
-{\singlelinelogo
-\begin{frame}{The GAPS instrument}
-\fontsize{9pt}{1}\selectfont
-   \begin{columns}
-    \column{0.65\textwidth}
-        \textbf{Time-of-Flight System (TOF)} 
-        \begin{itemize}
-            \item Composed of 220 plastic scintillator paddles
-        \end{itemize}
-        \textbf{Si(Li) Tracker}
-        \begin{itemize}
-            \item About 1440 Lithium-drifted Silicon, Si(Li), detectors
-            \item 10 layers with \SI{10}{\cm} spacing
-            \item 12x12 Si(Li) detectors per layer
-            \item Modular structure (360 modules)
-        \end{itemize}    
-        \vspace{0.2cm}
-        \textbf{Particle identification} \\
-        \vspace{0.15cm}
-        Time-of-flight system measures velocity and dE/dx \\
-        \vspace{0.2cm}
-        Si(Li) Tracker functions as:
-        \begin{itemize}
-            \item \textbf{target} to slow an incoming antiparticle and capture it into an exotic atom in an excited state
-            \item \textbf{spectrometer} for de-excitation X-rays
-            \item \textbf{tracker} to measure antinucleus dE/dx and stopping depth, and annihilation products from nuclear decay
-        \end{itemize}
-           
-    \column{0.3\textwidth}
-    \begin{picture}(0,0)
-        \put(120,95){\makebox(0, 0)[rt]{\includegraphics[width=5.8cm]{images/experiment_intro/GAPS_tracker_structure.jpg}}}
-        \put(115,-15){\makebox(0, 0)[rt]{\includegraphics[width=4.3cm]{images/experiment_intro/tracker_scheme_manghisoni.jpg}}}
-    \end{picture}
-    \end{columns}    
-\end{frame}
-}
-
-\subsection{Si(Li) tracker module\vspace{0.16cm}}
-
-{\singlelinelogo
-\begin{frame}{Si(Li) tracker module}
-\fontsize{9pt}{1}\selectfont
-   \begin{columns}
-    \column{0.6\textwidth}
-        \vskip0.2cm
-        \textbf{Si(Li) tracker module structure} \\
-        \vspace{0.15cm}
-        Each module is composed by 4 Si(Li) detectors divided in 8 strips, the ASIC for the readout electronics and the Front-End Board (FEB) that allows the communication between the ASIC and the detectors \\
-        \vspace{0.3cm}
-        \textbf{SLIDER32 ASIC} \\
-        \vspace{0.15cm}
-        The first flight of the GAPS experiment will feature the current version of the SLIDER32 readout ASIC, characterized by:
-        
-        \begin{itemize}
-            \item \SI{180}{\nano\meter} CMOS technology design
-            \item 32 channels per ASIC
-            \item -\SI{40}{\celsius} operating temperature
-            %\item $\leq$ \SI{10}{\milli\volt/ch} power dissipation
-            \item \SI{10}{\kilo\electronvolt}$\div$\SI{100}{\mega\electronvolt} dynamic range
-            \item a low-noise \textit{Charge Sensitive Amplifier} (CSA) performing dynamic signal compression
-            \item a unipolar second order semi-Gaussian \textit{time invariant filter}
-            \item a single-ended to differential \textit{Sample \& Hold} (S\&H)
-            \item an 11-bit \textit{Analog to Digital Converter} (ADC)
-        \end{itemize}
-        \vspace{0.5cm}
-  
-    \column{0.35\textwidth}
-        \begin{figure}
-        \centering
-        \vspace{-0.25cm}
-        \includegraphics[height=0.4\textheight]{images/experiment_intro/GAPS_FEB_ASIC_3.png}
-        \vspace{0.2cm}
-        \vskip0.001cm
-        \includegraphics[height=0.35\textheight]{images/experiment_intro/gaps_asic_circuit.jpg}
-        \end{figure}
-    \end{columns}
-\end{frame}
-}
-
-%----------------------------------------------------------------------------------------
-%	Evaluation of temperature effects on ASIC performance
-%----------------------------------------------------------------------------------------   
-
-\section{Evaluation of temperature effects on ASIC\\ \vskip-0.15cm performance}
-
-\begin{frame}{Evaluation of temperature effects \\ \vskip-0.15cm on ASIC performance}
+\begin{frame}{ASIC characterisation at different temperatures}
 \fontsize{8.5pt}{1}\selectfont
     \begin{columns}[T]
     \column{0.475\textwidth}
@@ -296,12 +281,14 @@
             \item $< \SI{1}{\percent}$ variation over the whole temperature range \greencheck
             \item $\thicksim \SI{1.8}{\micro\ampere}$ range @ \SI{-40}{\celsius} by adjusting \texttt{BBB} bits \greencheck
         \end{itemize}
-    
     \end{columns}
 \end{frame}
 
-\subsection{Channel input-output characteristic}
-{\singlelinelogo
+
+%---------------------------------------------------------------------------------------
+%	Channel input-output characteristic
+%---------------------------------------------------------------------------------------
+
 \begin{frame}{Channel input-output characteristic}
 \fontsize{8.5pt}{1}\selectfont
     \begin{columns}
@@ -348,16 +335,20 @@
             
     \end{columns}
 \end{frame}
-}
 
-\begin{frame}{Gain and kink trend as a function\\ \vskip-0.15cm of temperature}
+
+%---------------------------------------------------------------------------------------
+%	Gain and kink as function of temperature
+%---------------------------------------------------------------------------------------
+
+\begin{frame}{Gain and kink as function of temperature}
 \fontsize{8.5pt}{1}\selectfont
     \begin{columns}
     \column{0.475\textwidth}
         \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
         \addtolength{\leftmargini}{\labelsep}
 
-        \vspace{0.1cm}
+        \vspace{0.15cm}
         The channel transfer function has been studied in both energy regions by interpolating a linear model:
         \vskip0.2cm
         
@@ -376,18 +367,15 @@
             \item \textbf{x} [\SI{}{\kilo\electronvolt}] is the input energy
         \end{itemize}
 
-        \vspace{-0.3cm}
+        \vspace{-0.1cm}
         \begin{center}
-            \includegraphics[height=0.39\textheight]{images/temperature_effects/fdt_calcolo_kink.pdf}
+            \includegraphics[height=0.42\textheight]{images/temperature_effects/fdt_calcolo_kink.pdf}
         \end{center}
         \vspace{0.05cm}
 
         \column{0.475\textwidth}
-            \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
-            \addtolength{\leftmargini}{\labelsep}
-
             \textbf{Low and high energy regions gain trend}\\
-            \vspace{0.1cm}
+            \vspace{0.2cm}
             \texttt{CSAVrefGM} = \SI{530}{\milli\volt} @ \SI{-40}{\celsius} $\rightarrow$ low energy gain $\downarrow$
             \vspace{-0.2cm}
             \begin{center}
@@ -395,18 +383,14 @@
                 \includegraphics[height=0.32\textheight]{images/temperature_effects/high_energy_gain_auto_530mV.pdf}
             \end{center}
 
-            %\vspace{0.1cm}
-            \textbf{Kink trend as a function of temperature}
-
+            \textbf{Kink trend as function of temperature}
             \begin{columns}
                 \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
                 \addtolength{\leftmargini}{\labelsep}
-                
                 \column{0.4\textwidth}
                     \vskip0.1cm
                     \centering
                     \includegraphics[width=1.15\textwidth]{images/temperature_effects/plot_pedestal_gain_auto_530mV.pdf}
-
                 \column{0.5\textwidth}
                     \raggedleft
                     \begin{itemize}
@@ -414,36 +398,80 @@
                         \item \SI{429}{\percent} variation with \texttt{CSAVrefGM} voltage\\ fixed to \SI{530}{\milli\volt} \redcross
                     \end{itemize}
             \end{columns}
-    
+            \vspace{0.5cm}
     \end{columns}
 \end{frame}
 
-\subsection{DAC for setting the global threshold voltage\vspace{0.16cm}}
-\begin{frame}{DAC for setting the global\\ \vskip-0.15cm threshold voltage}
-\fontsize{8.5pt}{1}\selectfont
 
-\end{frame}
-
-
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 %	Si(Li) tracker flight components validation
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 
-\section{Si(Li) tracker flight components validation\vspace{0.16cm}}
-
-\begin{frame}{Si(Li) tracker flight components \\ \vskip-0.15cm validation}
-    \fontsize{9pt}{1}\selectfont
-    
+\begin{frame}{Si(Li) tracker flight components}
+    \fontsize{8.5pt}{1}\selectfont
+    \begin{columns}
+        \column{0.55\textwidth}
+            \begin{tabular}{M{3.8cm} M{3cm}}
+                \includegraphics[width=3cm]{images/flight_components_validation/FEB_immagine.pdf} & \shortstack{\textbf{Front-End Board}\vspace{0.2cm} \\ 300 tested} \\\vspace{0.5cm}
+                \includegraphics[width=3.8cm]{images/flight_components_validation/dummy_image.pdf} & \shortstack{\textbf{Dummy-1}\\ \textbf{Front-End Board}\vspace{0.2cm} \\ 70 assembled and tested}
+            \end{tabular}
+        
+        \column{0.45\textwidth}
+            \begin{tabular}{M{3cm} M{2.5cm}}
+                \includegraphics[width=3cm]{images/flight_components_validation/flex_rigid_pic.pdf} & \shortstack{\textbf{Flex-rigid board}\vspace{0.2cm} \\ 300 tested} \\\vspace{0.5cm}
+                \includegraphics[width=3cm]{images/flight_components_validation/term_conn.pdf} & \shortstack{\textbf{Connector for}\\ \textbf{termination}\vspace{0.2cm} \\ 300 tested} \\\vspace{0.5cm}
+                \includegraphics[width=3cm]{images/flight_components_validation/shieldsPDFtwo.pdf} & \shortstack{\textbf{Front-end board}\\ \textbf{shields}\vspace{0.2cm} \\ 300 tested}
+            \end{tabular}     
+    \end{columns}
 \end{frame}
 
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
+%	Si(Li) tracker flight components validation
+%---------------------------------------------------------------------------------------
+
+\begin{frame}{Si(Li) tracker flight components validation}
+    \fontsize{8.5pt}{1}\selectfont
+    \begin{columns}
+        \column{0.52\textwidth}
+        \textbf{\large \textcolor{ForestGreen}{Validation procedure}}\\
+        \vspace{0.15cm}
+        Each item has been subjected to a validation procedure that included:
+        \begin{itemize}
+            \item \textbf{\textcolor{Red}{Thermal cycle}} if not already performed by the manufacturer
+            \item \textbf{\textcolor{Red}{Visual inspection}} to search for defects and missing or bad soldered components
+            \item \textbf{\textcolor{Red}{Test}} that depends on the item (communication, bias, resistor soldering, ...)
+        \end{itemize}
+
+        \vspace{0.2cm}
+        At the end of the test procedure:
+        \begin{enumerate}
+            \item Test results have been saved in a database
+            \item An item report with test results has been generated
+            \item The item has been classified as
+            \begin{itemize}
+                \item \textcolor{LimeGreen}{GOOD}
+                \item \textcolor{BurntOrange}{USABLE for testing activity only}
+                \item \textcolor{OrangeRed}{UNUSABLE}
+            \end{itemize}
+        \end{enumerate}
+
+        \vspace{0.2cm}
+        GOOD and USABLE items have been shipped to \textit{Columbia University} to be used in the final assembly of the experiment at the \textit{MIT Bates} facility in Middleton, Massachusetts
+        
+        \column{0.42\textwidth}
+            \centering
+            \vskip0.1cm
+            \includegraphics[height=0.85\textheight]{images/flight_components_validation/flight_item_validation_procedure.drawio.pdf}
+    \end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------
 %	Muon detection using an assembled Si(Li) tracker module
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 
-\section{Experimental results from module test\vspace{0.16cm}}
-
-\begin{frame}{Experimental results from\\ \vskip-0.15cm module test}
+\begin{frame}{Experimental results from module test}
     \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
     \addtolength{\leftmargini}{\labelsep}
 
@@ -529,35 +557,31 @@
     
 \end{frame}
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 %	Conclusions
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 
 \section{Conclusions}
 
-{\singlelinelogo
 \begin{frame}{Conclusions}
     txt
 \end{frame}
-}
 
-%----------------------------------------------------------------------------------------
+
+%---------------------------------------------------------------------------------------
 %	Backup slides
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------
 
 \appendix
 \backupbegin
 
-{\sectiontitlelogo
-\begin{frame}{}
-    \fontsize{19pt}{1}\selectfont
+\begin{frame}[plain]{}
+    \fontsize{20pt}{1}\selectfont
     \centering
     \vspace{1.5cm}
     \textbf{Backup slides}
 \end{frame}
-}
 
-{\singlelinelogo
 \begin{frame}{Analog readout channel and ADC}
     \fontsize{8.5pt}{1}\selectfont
     \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
@@ -588,9 +612,48 @@
             \end{itemize}
     \end{columns}
 \end{frame}
-}
 
-{\singlelinelogo
+
+\begin{frame}{SLIDER32 ASIC}
+   \begin{columns}
+    \column{0.6\textwidth}
+        \fontsize{10pt}{1}\selectfont
+        \textbf{\textcolor{ForestGreen}{SLIDER: SiLI DEtector Readout}}\\
+        \vspace{0.3cm}
+        \fontsize{9.5pt}{1}\selectfont
+        \textbf{\textcolor{Red}{ASIC features}}
+        \vspace{0.1cm}
+        \begin{itemize}
+            \fontsize{9pt}{1}\selectfont
+            \setlength\itemsep{0.3em}
+            \item \SI{180}{\nano\meter} CMOS technology design
+            \item 32 channels per ASIC
+            \item -\SI{40}{\celsius} operating temperature
+            \item Digital Back End (registers control, SPI, ...)
+            \item BGR with 3-bit DAC regulation
+            \item 8-bit DAC for global threshold setting
+            \item 3-bit DAC for threshold fine trimming
+            \item Detector leakage current readout
+            \item Temperature sensor readout
+            \item low-noise \textbf{Charge Sensitive Amplifier} (CSA) performing dynamic signal compression
+            \item unipolar second order semi-Gaussian \textbf{time invariant filter}
+            \item single-ended to differential \textbf{Sample \& Hold} (S\&H)
+            \item 11-bit \textbf{Analog to Digital Converter} (ADC)
+        \end{itemize}
+  
+    \column{0.35\textwidth}
+        \begin{figure}
+        \centering
+        \vspace{-0.25cm}
+        \includegraphics[height=0.2\textheight]{images/backup_slides/SLIDER32_asic_package.jpg}
+        \vspace{0.2cm}
+        \vskip0.001cm
+        \includegraphics[height=0.5\textheight]{images/experiment_intro/gaps_asic_circuit.jpg}
+        \end{figure}
+    \end{columns}
+\end{frame}
+
+
 \begin{frame}{Dynamic Signal Compression}
     \fontsize{8.5pt}{1}\selectfont
     \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
@@ -632,9 +695,7 @@
     \end{columns}
     
 \end{frame}
-}
 
-{\singlelinelogo
 \begin{frame}{Front-end and Flex-rigid boards}
     \fontsize{8.5pt}{1}\selectfont
     \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
@@ -644,7 +705,7 @@
         \column{0.45\textwidth}
             \vskip0.1cm
             \fontsize{9.5pt}{1}\selectfont
-            \textbf{Front-end board}
+            \textbf{\textcolor{Red}{Front-end board}}
             \fontsize{8.5pt}{1}\selectfont
             \begin{itemize}
                 \setlength\itemsep{0.2em}
@@ -664,7 +725,7 @@
 
             \vspace{0.1cm}
             \fontsize{9.5pt}{1}\selectfont
-            \textbf{Flex-rigid board}
+            \textbf{\textcolor{Red}{Flex-rigid board}}
             \fontsize{8.5pt}{1}\selectfont
             \begin{itemize}
                 \setlength\itemsep{0.2em}
@@ -688,7 +749,6 @@
     \end{columns}
     
 \end{frame}
-}
 
 \backupend
 
