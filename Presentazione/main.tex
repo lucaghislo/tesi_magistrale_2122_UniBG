@@ -1,7 +1,7 @@
 %---------------------------------------------------------------------------------------
 %	PACKAGES AND THEMES
 %---------------------------------------------------------------------------------------
-\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer} % handout
+\documentclass[aspectratio=169,xcolor=dvipsnames,handout]{beamer} % handout
 
 \newcommand{\backupbegin}{
    \newcounter{finalframe}
@@ -115,7 +115,7 @@
     \column{0.58\textwidth}
         \vskip0.2cm
         \pause
-        GAPS is an \textbf{Antarctic balloon experiment} designed to detect low-energy cosmic antinuclei as an indirect signature of \textbf{Dark Matter}\pause
+        GAPS is an \textbf{Antarctic balloon experiment} designed to detect low-energy cosmic antinuclei as an indirect signature of \textbf{Dark Matter}\\\pause
         \vspace{0.3cm}
         \textbf{\large \textcolor{ForestGreen}{The instrument}}\\
         \vspace{0.25cm}
@@ -132,9 +132,9 @@
             \item Modular structure (360 modules)
         \end{itemize}\pause
         \vspace{0.25cm}
-        The experiment is developed by an international collaboration that includes Japanese, US and Italian institutes and it is funded by \textbf{NASA}, \textbf{INFN}, \textbf{ASI} and \textbf{JAXA}\pause
+        The experiment is developed by an international collaboration that includes Japanese, US and Italian institutes and it is funded by \textbf{NASA}, \textbf{INFN}, \textbf{ASI} and \textbf{JAXA}\\ \pause
         \vspace{0.2cm}
-        The \textbf{first flight} is scheduled for late 2023 from McMurdo National Science Foundation (NSF) Station in Antarctica     
+        The \textbf{first flight} is scheduled for late 2023 from the McMurdo National Science Foundation (NSF) Station in Antarctica     
     \column{0.38\textwidth}
         \begin{figure}
         \centering
@@ -192,6 +192,7 @@
     \addtolength{\leftmargini}{\labelsep}
     \begin{columns}
         \column{0.6\textwidth}
+        \vspace{-0.2cm}
         \fontsize{11pt}{1}\selectfont
         \pause
         \begin{enumerate}
@@ -204,14 +205,14 @@
                 \item Current reference
                 \item Input-output channel trans-characteristic
                 \item Global threshold voltage
-                \item Equivalent Noise Charge (ENC) at \SI{-40}{\celsius}
+                \item Equivalent Noise Charge at \SI{-40}{\celsius}
             \end{itemize}\pause
             \fontsize{10pt}{1}\selectfont
             \item \textbf{Si(Li) tracker flight components validation}
             \begin{itemize}
                 \fontsize{8.5pt}{1}\selectfont
                 \setlength\itemsep{0.3em}
-                \item Front-End Boards (FEBs)
+                \item Front-End Boards
                 \item Dummy-1 front-end boards
                 \item Flex-rigid boards
                 \item Connectors for termination
@@ -242,39 +243,41 @@
     \begin{columns}[T]
     \column{0.475\textwidth}
         \vskip0.3cm
-        \textbf{SLIDER32 ASIC test setup}\\
+        \fontsize{9pt}{1}\selectfont
+        \textbf{\textcolor{ForestGreen}{SLIDER32 ASIC test setup}}\\
         \vskip0.15cm
+        \fontsize{8.5pt}{1}\selectfont
         Tests conducted on the SLIDER32 readout ASIC with a purposely designed test board were aimed at evaluate temperature effects on:
         \begin{enumerate}
-            \item Bandgap reference current
-            \item Channel input-output characteristic
-            \item DAC for setting the global threshold voltage
+            \item \textcolor{Red}{\textbf{Bandgap reference current}}
+            \item \textcolor{Red}{\textbf{Channel input-output characteristic}}
+            \item \textcolor{Red}{\textbf{DAC for setting the global threshold voltage}}
         \end{enumerate}
         \vskip0.05cm
         \includegraphics[width=0.95\textwidth]{images/temperature_effects/test_setup_test_board_csavrefgm_530mv.png}
         \vskip0.2cm
-        Temperature range: 
+        Measurements performed in a temperature controlled environment and temperature range spanning:
         \begin{itemize}
             \item $\SI{-40}{\celsius} \div +\SI{30}{\celsius}$ with \SI{10}{\celsius} steps
             \item $\SI{-40}{\celsius} \div \SI{-30}{\celsius}$ with \SI{2}{\celsius} steps
         \end{itemize}
-    \subsection{Bandgap reference current}
     \column{0.475\textwidth}
         \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
         \addtolength{\leftmargini}{\labelsep}
         \vskip0.3cm
-        \textbf{Bandgap reference current}\\
+        \fontsize{9pt}{1}\selectfont
+        \textbf{\textcolor{ForestGreen}{Bandgap reference current}}\\
         \vskip0.15cm
-        Adjustable current reference by means of 3 bits (\texttt{BBB}) and \SI{5}{\micro\ampere} nominal value
+        \fontsize{8.5pt}{1}\selectfont
+        Adjustable current reference by means of 3 bits (\texttt{BBB}) and \textbf{\SI{5}{\micro\ampere}} nominal value
         \vskip-0.4cm
         \begin{center}
-            \includegraphics[height=0.48\textheight]{images/temperature_effects/BGR_current_Xtemp_all-BBB.pdf}
+            \includegraphics[height=0.5\textheight]{images/temperature_effects/BGR_current_Xtemp_all-BBB.pdf}
         \end{center}
         \vskip-0.2cm
         \begin{itemize}
-            \item \SI{5}{\micro\ampere} nominal value obtained with \texttt{BBB} = $(\texttt{101})_{2}$ \greencheck
-            \item $< \SI{1}{\percent}$ variation over the whole temperature range \greencheck
-            \item $\thicksim \SI{1.8}{\micro\ampere}$ range @ \SI{-40}{\celsius} by adjusting \texttt{BBB} bits \greencheck
+            \item \SI{5}{\micro\ampere} nominal value obtained with \texttt{BBB} = $(\texttt{101})_{2}$ with \textbf{$\approx\SI{1.86}{\percent}$} error on avarage \greencheck 
+            \item \textbf{$< \SI{1}{\percent}$} variation between \SI{-40}{\celsius} and \SI{30}{\celsius} for the same \texttt{BBB} bits configuration \greencheck
         \end{itemize}
     \end{columns}
 \end{frame}
@@ -286,41 +289,45 @@
 
 \begin{frame}{Channel input-output characteristic}
 \fontsize{8.5pt}{1}\selectfont
+    \vspace{-0.15cm}
     \begin{columns}
-    \column{0.375\textwidth}
+    \column{0.32\textwidth}
         \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
         \addtolength{\leftmargini}{\labelsep}
-        \vspace{-0.25cm}
-        \begin{center}
-             \includegraphics[height=0.55\textheight]{images/temperature_effects/CSA_schematic.pdf}
-        \end{center}
-        \vskip-0.2cm
+
         \begin{itemize}
             \item Charge Sensitive Amplifier (CSA) based on an inverting gain stage and a feedback capacitor
-            \item \textbf{Dynamic signal compression} achieved by implementing the feedback capacitor with an NMOSFET
+            \item \textbf{Dynamic signal compression} achieved by implementing the feedback capacitor with an NMOSFET $\rightarrow$ channel gain dependent on incoming energy
         \end{itemize}
-        \column{0.6\textwidth}
+
+        \begin{center}
+             \includegraphics[height=0.52\textheight]{images/temperature_effects/CSA_schematic.pdf}
+        \end{center}
+
+        \column{0.65\textwidth}
             \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
             \addtolength{\leftmargini}{\labelsep}
-            \vskip0.3cm
-            \textbf{\texttt{CSAVrefGM} voltage: automatically regulated vs fixed to \SI{530}{\milli\volt}}\\
-            \vskip-0.4cm
             \begin{center}
-                \includegraphics[height=0.37\textheight]{images/temperature_effects/fdt_csavrefgm_auto_tau6_keV_0011.pdf}
-                \includegraphics[height=0.37\textheight]{images/temperature_effects/fdt_csavrefgm_530mV_tau6_keV.pdf}
+                \fontsize{9pt}{1}\selectfont
+                \textcolor{ForestGreen}{\textbf{\texttt{CSAVrefGM} voltage: automatically regulated vs fixed to \SI{530}{\milli\volt}}}\\
+            \end{center}
+            \fontsize{8.5pt}{1}\selectfont
+            \begin{center}
+                \includegraphics[height=0.42\textheight]{images/temperature_effects/fdt_csavrefgm_auto_tau6_keV_0011.pdf}
+                \includegraphics[height=0.42\textheight]{images/temperature_effects/fdt_csavrefgm_530mV_tau6_keV.pdf}
             \end{center}    
             \vskip-0.2cm
             \begin{itemize}
-                \item Both configurations successfully tested \greencheck
-                \item Peaking time \#4: $\tau_{p} = \SI{0.98}{\micro\second}$, \texttt{TTT} bits set to $(\texttt{100})_{2}$
-                \item Injected charge spanning from 0 to \SI{50.46}{\mega\electronvolt}
+                \item Injected charge spanning from \textbf{0} to \textbf{\SI{55.11}{\mega\electronvolt}} \greencheck
+                \item Both configurations successfully tested and channel characteristic performing as expected at every temperature step \greencheck
             \end{itemize}
             \vskip0.3cm
             Channel gain studied in two energy regions:
             \begin{itemize}
-                \item \textit{Low energy region}: X-ray detection region ranging from 0 to \SI{100}{\kilo\electronvolt} \greencheck
-                \item \textit{High energy region}: Cosmic muon detection region, ranging from 40 to \SI{55}{\mega\electronvolt} \greencheck
-            \end{itemize}   
+                \item \textbf{\textcolor{Red}{Low energy region}}: X-ray detection region ranging from \textbf{0} to \textbf{\SI{100}{\kilo\electronvolt}}
+                \item \textbf{\textcolor{Red}{High energy region}}: Muon detection region, ranging from \textbf{40} to \textbf{\SI{55}{\mega\electronvolt}}
+            \end{itemize}
+            \vspace{0.4cm}
     \end{columns}
 \end{frame}
 
@@ -332,51 +339,66 @@
 \begin{frame}{Gain and kink as function of temperature}
 \fontsize{8.5pt}{1}\selectfont
     \begin{columns}
-    \column{0.475\textwidth}
+    \column{0.42\textwidth}
         \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
         \addtolength{\leftmargini}{\labelsep}
-        \vspace{0.15cm}
-        The channel transfer function has been studied in both energy regions by interpolating a linear model:
-        \vskip0.2cm
+
+        
+        Channel transfer function roughly approximated by two linear models:
+        
+        \vspace{0.3cm}
         \begin{equation*}
             y = p + g \cdot x
         \end{equation*}
+
         \vspace{-0.1cm}
         where:
+        \vspace{0.1cm}
+        
         \begin{itemize}
             \itemsep0em
-            \item \textbf{y} [\SI{}{ADU}] (Analog Digital Unit) is the channel output
-            \item \textbf{p} [\SI{}{ADU}] is the pedestal, which consists of a repeated sampling of the channel output without charge injected
-            \item \textbf{g} [\SI{}{ADU/\kilo\electronvolt}] is the channel gain
-            \item \textbf{x} [\SI{}{\kilo\electronvolt}] is the input energy
+            \item \textbf{y} [\SI{}{ADU}] (Analog Digital Unit): channel output
+            \item \textbf{p} [\SI{}{ADU}]: pedestal, repeated sampling of the channel output without charge injected
+            \item \textbf{g} [\SI{}{ADU/\kilo\electronvolt}]: channel gain
+            \item \textbf{x} [\SI{}{\kilo\electronvolt}]: input energy
         \end{itemize}
         \vspace{-0.1cm}
         \begin{center}
-            \includegraphics[height=0.42\textheight]{images/temperature_effects/fdt_calcolo_kink.pdf}
+            \includegraphics[height=0.4\textheight]{images/temperature_effects/fdt_calcolo_kink.pdf}
         \end{center}
         \vspace{0.05cm}
-        \column{0.475\textwidth}
-            \textbf{Low and high energy regions gain trend}\\
-            \vspace{0.2cm}
-            \texttt{CSAVrefGM} = \SI{530}{\milli\volt} @ \SI{-40}{\celsius} $\rightarrow$ low energy gain $\downarrow$
-            \vspace{-0.2cm}
+        
+        \column{0.55\textwidth}
+            \vspace{-0.3cm}
             \begin{center}
-                \includegraphics[height=0.32\textheight]{images/temperature_effects/low_energy_gain_auto_530mV.pdf}
-                \includegraphics[height=0.32\textheight]{images/temperature_effects/high_energy_gain_auto_530mV.pdf}
+                \includegraphics[width=0.49\textwidth]{images/temperature_effects/low_energy_gain_auto_530mV.pdf}
+                \includegraphics[width=0.49\textwidth]{images/temperature_effects/high_energy_gain_auto_530mV.pdf}
             \end{center}
-            \textbf{Kink trend as function of temperature}
+
+            \vskip-0.3cm
+            \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+            \addtolength{\leftmargini}{\labelsep}
+            \begin{itemize}
+                \item Low energy gain decreases with fixed reference voltage \redcross
+                \item Temperature effects compensated with variable voltage reference \greencheck
+            \end{itemize}
+            \vskip0.1cm
+
             \begin{columns}
                 \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
                 \addtolength{\leftmargini}{\labelsep}
                 \column{0.4\textwidth}
                     \vskip0.1cm
                     \centering
-                    \includegraphics[width=1.15\textwidth]{images/temperature_effects/plot_pedestal_gain_auto_530mV.pdf}
+                    \includegraphics[width=1.1\textwidth]{images/temperature_effects/plot_pedestal_gain_auto_530mV.pdf}
+                    
                 \column{0.5\textwidth}
-                    \raggedleft
+                    \textcolor{ForestGreen}{\textbf{Kink trend as function of temperature}}
+                    \vspace{0.1cm}
                     \begin{itemize}
-                        \item \SI{6.95}{\percent} variation around \SI{1.28}{\mega\electronvolt} mean value with auto regulated \texttt{CSAVrefGM} voltage \greencheck
-                        \item \SI{429}{\percent} variation with \texttt{CSAVrefGM} voltage\\ fixed to \SI{530}{\milli\volt} \redcross
+                        \item Kink in \textbf{\SI{1.28}{\mega\electronvolt}} @ \SI{-40}{\celsius}
+                        \item \textbf{\SI{6.95}{\percent}} variation with variable reference voltage \greencheck
+                        \item \textbf{\SI{429}{\percent}} variation with fixed reference voltage \redcross
                     \end{itemize}
             \end{columns}
             \vspace{0.5cm}
@@ -389,20 +411,9 @@
 %---------------------------------------------------------------------------------------
 
 \begin{frame}{Si(Li) tracker flight components}
-    \fontsize{8.5pt}{1}\selectfont
-    \begin{columns}
-        \column{0.55\textwidth}
-            \begin{tabular}{M{3.8cm} M{3cm}}
-                \includegraphics[width=3cm]{images/flight_components_validation/FEB_immagine.pdf} & \shortstack{\textbf{Front-end board}\vspace{0.15cm} \\ 300 tested\vspace{0.15cm}\\ bias, digital and analog\\tested with dedicated test\\ setup and software} \\\vspace{0.5cm}
-                \includegraphics[width=3.8cm]{images/flight_components_validation/dummy_image.pdf} & \shortstack{\textbf{Dummy-1}\\ \textbf{front-end board}\vspace{0.15cm} \\ 70 assembled and tested\vspace{0.15cm}\\not populated board\\emulate thermal\\ behaviour of the\\ front-end board}
-            \end{tabular}       
-        \column{0.45\textwidth}
-            \begin{tabular}{M{3cm} M{2.5cm}}
-                \includegraphics[width=3cm]{images/flight_components_validation/flex_rigid_pic.pdf} & \shortstack{\textbf{Flex-rigid board}\vspace{0.15cm} \\ 250 tested} \\\vspace{0.5cm}
-                \includegraphics[width=3cm]{images/flight_components_validation/term_conn.pdf} & \shortstack{\textbf{Connector for}\\ \textbf{termination}\vspace{0.15cm} \\ 60 tested} \\\vspace{0.5cm}
-                \includegraphics[width=3cm]{images/flight_components_validation/shieldsPDFtwo.pdf} & \shortstack{\textbf{Front-end board}\\ \textbf{shields}\vspace{0.15cm} \\ 270 tested\\per type}
-            \end{tabular}     
-    \end{columns}
+    \vskip0.1cm
+    \centering
+    \includegraphics[width=1.01\textwidth]{images/flight_components_validation/flight_items_recap.pdf}
 \end{frame}
 
 
@@ -420,13 +431,13 @@
         \begin{itemize}
             \item \textbf{\textcolor{Red}{Thermal cycle}} if not already performed by the manufacturer
             \item \textbf{\textcolor{Red}{Visual inspection}} to search for defects and missing or bad soldered components
-            \item \textbf{\textcolor{Red}{Test}} that depends on the item (communication, bias, resistor soldering, ...)
+            \item \textbf{\textcolor{Red}{Measurements}} that vary upon the specific flight item
         \end{itemize}
         \vspace{0.2cm}
         At the end of the test procedure:
         \begin{enumerate}
             \item Test results have been saved in a database
-            \item An item \textbf{report} with test results has been generated
+            \item An item \textbf{report} with test results has been generated \vspace{-0.18cm}
             \item The item has been classified as
             \begin{itemize}
                 \item \textcolor{LimeGreen}{GOOD}
@@ -438,8 +449,8 @@
         GOOD and USABLE items have been shipped to \textit{Columbia University} to be used in the final assembly of the experiment at the \textit{MIT Bates} facility in Middleton, Massachusetts
         \column{0.42\textwidth}
             \centering
-            \vskip0.1cm
-            \includegraphics[height=0.85\textheight]{images/flight_components_validation/flight_item_validation_procedure.drawio.pdf}
+            \vskip0.05cm
+            \includegraphics[height=0.86\textheight]{images/flight_components_validation/flight_item_validation_procedure.drawio.pdf}
     \end{columns}
 \end{frame}
 
@@ -453,7 +464,7 @@
     \begin{columns}
         \column{0.65\textwidth}
             \centering
-            \vspace{0.1cm}
+            \vspace{-0.1cm}
             \includegraphics[width=1.05\textwidth]{images/flight_components_validation/yield/item_pies.pdf}
         \column{0.35\textwidth}
             \centering
@@ -461,7 +472,7 @@
             \textbf{\textcolor{Red}{Test reports}}\\
             \vspace{0.2cm}
             \fontsize{8.5pt}{1}\selectfont
-            For every validated flight item,\\ a report has been generated,\\ detailing the most important\\ reference parameters to be later\\ used in the final assembly of the instrument
+            For every validated flight item,\\ a report has been generated,\\ detailing the most important\\ reference parameters to be later\\ used in the final assembly of the instrument\\
             \vspace{0.3cm}
             \frame{
                 \includegraphics[width=0.5\textwidth]{images/flight_components_validation/F065I.pdf}
@@ -487,18 +498,19 @@
             \vspace{0.15cm}
             \begin{itemize}
                 \item Experiment conducted in climate chamber at \textbf{\SI{-40}{\celsius}} and \textbf{\SI{10}{\percent}} relative humidity
-                \item Si(Li) detectors biased at \textbf{\SI{-250}{\volt}} using a \textit{CAEN HiVolta} high voltage power supply
+                \item Si(Li) detectors biased at \textbf{\SI{-250}{\volt}}
                 \item Purposely developed Python script employed to acquire data from readout electronics using an FPGA
+                \item Two tests conducted: \textcolor{Red}{\textbf{X-ray}} and \textcolor{Red}{\textbf{muon}} detection
             \end{itemize}
         \column{0.43\textwidth}
-            \includegraphics[width=0.95\textwidth]{images/muon_detection/foto_modulo_camera.pdf}
+            \includegraphics[width=0.97\textwidth]{images/muon_detection/foto_modulo_camera.pdf}
             \vspace{0.2cm}
             \begin{columns}
                 \column{0.5\textwidth}
                     \includegraphics[width=1\textwidth]{images/muon_detection/ardusipm_cropped.pdf}
                 \column{0.5\textwidth}
                     \begin{itemize}
-                        \item External trigger for\\ cosmic muon detection provided\\ by \textit{ArduSiPM} radiation detector\vspace{0.1cm}
+                        \item External trigger for\\ cosmic muon detection provided\\ by \textbf{ArduSiPM} radiation detector\vspace{0.1cm}
                         \item Scintillator/SiPM assembly placed underneath one\\ Si(Li) detector
                     \end{itemize}   
             \end{columns}
@@ -537,10 +549,62 @@
     \end{columns}
     \fontsize{8.5pt}{1}\selectfont
     \vspace{0.2cm}
-    \begin{tabular}{R{3cm} L{5.8cm} L{5cm}}
-         \textbf{\textcolor{Red}{Americium 241 source}}: & radioactive isotope with 432.2 years half-life & $\rightarrow$ \hspace{0.2cm} both peaks detected \greencheck \B \\
-         & emits $\gamma$ radiation at \textbf{\SI{59.54}{\kilo\electronvolt}} and \textbf{\SI{26.34}{\kilo\electronvolt}}
+    \begin{tabular}{R{3cm} L{6.2cm} L{5cm}}
+         \textbf{\textcolor{Red}{Americium 241 source:}} & radioactive isotope with 432.2 years half-life & $\rightarrow$ \hspace{0.2cm} both peaks detected \greencheck \B \\
+         & emits X-ray radiation at \textbf{\SI{59.54}{\kilo\electronvolt}} and \textbf{\SI{26.34}{\kilo\electronvolt}}
     \end{tabular}
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	Cosmic muon detection in self trigger mode
+%---------------------------------------------------------------------------------------
+
+\begin{frame}{Cosmic muon detection in self trigger mode}
+    %\settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+    %\addtolength{\leftmargini}{\labelsep}
+
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+            \centering
+            \fontsize{9pt}{1}\selectfont
+            \vskip-0.1cm
+            \textbf{Self trigger mode\\ with and without zero suppression}
+            \includegraphics[width=0.9\textwidth]{images/muon_detection/incoming_energy_zero_suppr_thr130_keV.pdf}
+
+            \fontsize{8.5pt}{1}\selectfont
+            \vspace{0.1cm}
+            \begin{itemize}
+                \item \textbf{Zero suppression}: channel output sampled by ADC only if signal over threshold comparator fires
+                \item 32 channels readout for 1 hour
+                \item Threshold set to \textbf{\SI{450}{\kilo\electronvolt}}
+            \end{itemize}
+
+            \begin{textblock*}{\textwidth}(0.7cm, 8.1cm)
+                \fontsize{6pt}{1}\selectfont
+                \raggedright
+                \textcolor{Black}{(*) F. Rogers et al., “Large-area Si(Li) detectors for X-ray spectrometry and particle tracking in the GAPS experiment” Journal of Instrumentation, vol. 14, Art. no. 10, 2019, doi: 10.1088/1748-0221/14/10/p10009}
+            \end{textblock*}
+       
+            
+            
+        \column{0.5\textwidth}
+            \centering
+            \fontsize{9pt}{1}\selectfont
+            \vskip-0.1cm
+            \textbf{Landau distribution\\ in zero suppression mode}
+            \includegraphics[width=0.9\textwidth]{images/muon_detection/incoming_energy_thr130_ZS_landau_keV.pdf}
+
+             \fontsize{8.5pt}{1}\selectfont
+            \vspace{0.1cm}
+            \begin{itemize}
+                \item Data acquisition performed in zero suppression mode
+                \item Data fitted with \textbf{Landau distribution}
+                \item Most probable value peaked in \textbf{$\approx \SI{691}{\kilo\electronvolt}$} \greencheck
+                \item Measurement is consistent with data acquired with the same type of Si(Li) detector and discrete electronics (*) \greencheck
+            \end{itemize}
+        
+    \end{columns}
 \end{frame}
 
 
@@ -553,24 +617,25 @@
     \addtolength{\leftmargini}{\labelsep}
     \fontsize{9pt}{1}\selectfont
     \begin{columns}
-        \column{0.3\textwidth}
+        \column{0.34\textwidth}
         \begin{itemize}
             \item Scintillator/SiPM assembly placed underneath Si(Li) detector \#2: channels 16 to 23 highlighted in red
             \vskip0.4cm
-            \includegraphics[width=1\textwidth]{images/muon_detection/scintillator_sensor_detail.png}
+            \includegraphics[width=0.9\textwidth]{images/muon_detection/scintillator_sensor_detail.png}
             \vskip0.4cm
-            \item \textit{ArduSiPM} device used as an external trigger source
+            \item \textbf{ArduSiPM} radiation detector used as an external trigger source
             \item 2 hours acquisition
-            \item Global threshold set to \texttt{130}
-            \item Trigger hold delay set to \texttt{34} FPGA clocks 
+            \item Global threshold set to \textbf{\SI{450}{\kilo\electronvolt}}
+            \item Peaking time \#4 ($\tau_{p} = \SI{980}{\nano\second}$)
+            \item Trigger hold delay set to \texttt{34} FPGA clocks ($\approx \SI{708}{\nano\second}$)
         \end{itemize}
-        \column{0.65\textwidth}
+        \column{0.6\textwidth}
             \vskip-0.2cm
             \begin{figure}[h!]
                 \centering
                 \begin{tabular}{c c}
-                    \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens2_keV.pdf} & \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens3_keV.pdf}\B \\
-                    \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens1_keV.pdf} & \includegraphics[width=0.44\textwidth]{images/muon_detection/incoming_energy34_2hr_sens4_keV.pdf}
+                    \includegraphics[width=0.47\textwidth]{images/muon_detection/incoming_energy34_2hr_sens2_keV_lin.pdf} & \includegraphics[width=0.47\textwidth]{images/muon_detection/incoming_energy34_2hr_sens3_keV_lin.pdf}\B \\
+                    \includegraphics[width=0.47\textwidth]{images/muon_detection/incoming_energy34_2hr_sens1_keV_lin.pdf} & \includegraphics[width=0.47\textwidth]{images/muon_detection/incoming_energy34_2hr_sens4_keV_lin.pdf}
                 \end{tabular}
             \end{figure}
     \end{columns}
@@ -581,8 +646,48 @@
 %	Conclusions
 %---------------------------------------------------------------------------------------
 
-\begin{frame}{Conclusions}
-    txt
+\begin{frame}{Conclusions and next steps}
+    \begin{columns}
+        \column{0.96\textwidth}
+            \fontsize{11pt}{1}\selectfont
+            \pause
+            \textbf{Conclusions}
+            \vspace{0.16cm}
+            \fontsize{10pt}{1}\selectfont
+            \begin{enumerate}
+                \setlength\itemsep{0.5em}
+                \item Readout electronics performing as expected under different temperature conditions and design requirements are met \pause
+                \item All flight items have been successfully tested and shipped to Columbia University for final assembly \pause
+                \item Demonstrated ability to detect cosmic muons and X-rays above \SI{20}{\kilo\electronvolt} with promising results \pause
+            \end{enumerate}
+        
+            \vspace{0.4cm}
+            \fontsize{11pt}{1}\selectfont
+            \textbf{Next steps}
+            \vspace{0.16cm}
+            \fontsize{10pt}{1}\selectfont
+            \begin{itemize}
+                \setlength\itemsep{0.5em}
+                \item Final assembly is ongoing at the Space Sciences Laboratory in Berkeley, California \pause
+                \item Thermal Vacuum Chamber test to be performed in \textbf{April 2023} at the NASA’s Neil Armstrong Test Facility in Cleveland, Ohio \pause
+                \item Pre-flight instrument setup at the Columbia Scientific Balloon Facility in Palestine, Texas in \textbf{August 2023} \pause
+                \item First flight from the National Science Foundation McMurdo station in Antarctica in \textbf{December 2023}
+            \end{itemize}
+            
+    \end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	Last picture
+%---------------------------------------------------------------------------------------
+
+\appendix
+\backupbegin
+
+\begin{frame}[plain,noframenumbering]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/random/immagine_finale_menjiao.jpg}
 \end{frame}
 
 
@@ -590,9 +695,7 @@
 %	Backup slides
 %---------------------------------------------------------------------------------------
 
-\appendix
-\backupbegin
-\begin{frame}[plain]{}
+\begin{frame}[plain,noframenumbering]{}
     \fontsize{20pt}{1}\selectfont
     \centering
     \vspace{1.5cm}
@@ -765,9 +868,36 @@
             \includegraphics[width=0.97\textwidth]{images/backup_slides/flex_rigid_description.pdf}  
         \column{0.5\textwidth}
             \includegraphics[width=1.05\textwidth]{images/backup_slides/feb_signals.pdf}
-            \vspace{-0.5cm}  
+            \vspace{0.4cm}  
     \end{columns}
 \end{frame}
+
+\begin{frame}{A row of 6 modules}
+    \begin{columns}
+        \column{0.4\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{images/backup_slides/flex_paolo.pdf}
+
+        \column{0.55\textwidth}
+            \centering
+            \includegraphics[width=1\textwidth]{images/backup_slides/row_feb_coppia.pdf}
+            \vskip0.2cm
+            \includegraphics[width=1\textwidth]{images/backup_slides/row_scheme_elisa.pdf}   
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Front-end board shields}
+    
+\end{frame}
+
+\begin{frame}{Front-end board test setup}
+    
+\end{frame}
+
+\begin{frame}{Threshold setting for X-ray detection}
+    
+\end{frame}
+
 \backupend
 
 \end{document}
