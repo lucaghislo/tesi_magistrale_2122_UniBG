@@ -1,7 +1,7 @@
 %---------------------------------------------------------------------------------------
 %	PACKAGES AND THEMES
 %---------------------------------------------------------------------------------------
-\documentclass[aspectratio=169,xcolor=dvipsnames,handout]{beamer} % handout
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer} % handout
 
 \newcommand{\backupbegin}{
    \newcounter{finalframe}
@@ -272,7 +272,7 @@
         Adjustable current reference by means of 3 bits (\texttt{BBB}) and \textbf{\SI{5}{\micro\ampere}} nominal value
         \vskip-0.4cm
         \begin{center}
-            \includegraphics[height=0.5\textheight]{images/temperature_effects/BGR_current_Xtemp_all-BBB.pdf}
+            \includegraphics[height=0.5\textheight]{images/temperature_effects/BGR_current_XBBB.pdf}
         \end{center}
         \vskip-0.2cm
         \begin{itemize}
@@ -368,7 +368,7 @@
         \end{center}
         \vspace{0.05cm}
         
-        \column{0.55\textwidth}
+        \column{0.53\textwidth}
             \vspace{-0.3cm}
             \begin{center}
                 \includegraphics[width=0.49\textwidth]{images/temperature_effects/low_energy_gain_auto_530mV.pdf}
@@ -446,7 +446,7 @@
             \end{itemize}
         \end{enumerate}
         \vspace{0.2cm}
-        GOOD and USABLE items have been shipped to \textit{Columbia University} to be used in the final assembly of the experiment at the \textit{MIT Bates} facility in Middleton, Massachusetts
+        GOOD and USABLE items have been shipped to \textbf{Columbia University} to be used in the final assembly of the experiment at the \textbf{MIT Bates} facility in Middleton, Massachusetts
         \column{0.42\textwidth}
             \centering
             \vskip0.05cm
@@ -516,7 +516,7 @@
             \end{columns}
             \centering
             \vspace{0.3cm}
-            \textbf{Americium 241} source place underneath\\ detector \#0 (Channels 0 to 7) during X-ray detection experiment
+            \textbf{Americium 241} source placed underneath\\ detector \#0 (Channels 0 to 7) during X-ray detection experiment
     \end{columns}
 \end{frame}
 
@@ -585,9 +585,7 @@
                 \raggedright
                 \textcolor{Black}{(*) F. Rogers et al., “Large-area Si(Li) detectors for X-ray spectrometry and particle tracking in the GAPS experiment” Journal of Instrumentation, vol. 14, Art. no. 10, 2019, doi: 10.1088/1748-0221/14/10/p10009}
             \end{textblock*}
-       
-            
-            
+
         \column{0.5\textwidth}
             \centering
             \fontsize{9pt}{1}\selectfont
@@ -603,7 +601,6 @@
                 \item Most probable value peaked in \textbf{$\approx \SI{691}{\kilo\electronvolt}$} \greencheck
                 \item Measurement is consistent with data acquired with the same type of Si(Li) detector and discrete electronics (*) \greencheck
             \end{itemize}
-        
     \end{columns}
 \end{frame}
 
@@ -743,9 +740,10 @@
 
 \begin{frame}{SLIDER32 ASIC}
    \begin{columns}
-    \column{0.6\textwidth}
+    \column{0.55\textwidth}
+        \vskip0.1cm
         \fontsize{10pt}{1}\selectfont
-        \textbf{\textcolor{ForestGreen}{SLIDER: SiLI DEtector Readout}}\\
+        \textbf{\textcolor{ForestGreen}{Flight ASIC - CMOS \SI{180}{\nano\meter} technology}}\\
         \vspace{0.3cm}
         \fontsize{9.5pt}{1}\selectfont
         \textbf{\textcolor{Red}{ASIC features}}
@@ -753,28 +751,36 @@
         \begin{itemize}
             \fontsize{9pt}{1}\selectfont
             \setlength\itemsep{0.3em}
-            \item \SI{180}{\nano\meter} CMOS technology design
-            \item 32 channels per ASIC
-            \item -\SI{40}{\celsius} operating temperature
-            \item Digital Back End (registers control, SPI, ...)
+            \item 32 analog readout channels
+            \item 11-bit ADC
+            \item Digital back end (registers control, SPI, ...)
             \item BGR with 3-bit DAC regulation
             \item 8-bit DAC for global threshold setting
             \item 3-bit DAC for threshold fine trimming
             \item Detector leakage current readout
             \item Temperature sensor readout
-            \item low-noise \textbf{Charge Sensitive Amplifier} (CSA) performing dynamic signal compression
-            \item unipolar second order semi-Gaussian \textbf{time invariant filter}
-            \item single-ended to differential \textbf{Sample \& Hold} (S\&H)
-            \item 11-bit \textbf{Analog to Digital Converter} (ADC)
         \end{itemize}
+        \vspace{0.2cm}
+        \textbf{\textcolor{Red}{Package}}
+        \vspace{0.1cm}
+        \begin{itemize}
+            \fontsize{9pt}{1}\selectfont
+            \setlength\itemsep{0.3em}
+            \item Plastic Thin Quad Flat Pack (TQFP128)
+            \item $14 \times \SI{14}{\milli\metre\squared}$
+            \item 128 pins
+            \item Pitch of \SI{0.4}{\milli\metre}
+            \item 600 samples fabricated
+        \end{itemize}
+        
     \column{0.35\textwidth}
         \begin{figure}
         \centering
         \vspace{-0.25cm}
-        \includegraphics[height=0.2\textheight]{images/backup_slides/SLIDER32_asic_package.jpg}
-        \vspace{0.2cm}
-        \vskip0.001cm
         \includegraphics[height=0.5\textheight]{images/experiment_intro/gaps_asic_circuit.jpg}
+        \vspace{0.3cm}
+        \vskip0.1cm
+        \includegraphics[height=0.22\textheight]{images/backup_slides/SLIDER32_asic_package.jpg}
         \end{figure}
     \end{columns}
 \end{frame}
@@ -887,14 +893,92 @@
 \end{frame}
 
 \begin{frame}{Front-end board shields}
+    \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
+    \addtolength{\leftmargini}{\labelsep}
+    \fontsize{9pt}{1}\selectfont
+    \begin{columns}
+        \column{0.45\textwidth}
+            \includegraphics[width=1\textwidth]{images/backup_slides/FEB_with_shields.pdf}
+            
+        \column{0.49\textwidth}
+            \includegraphics[width=0.99\textwidth]{images/backup_slides/shields_menjiao_coppia.pdf}
+
+            \vskip0.3cm
+            \begin{itemize}
+                \item \textbf{Type A} and \textbf{Type B} front-end board shields
+                \item Designed with metal plane connected to ground
+                \item Installed on front-end board over tracks connecting Si(Li) detector strips to ASIC
+                \item \textcolor{Red}{\textbf{Problem:}} long tracks acting as antennas for disturbances of electromagnetic nature
+                \item \textcolor{ForestGreen}{\textbf{Solution:}} cover tracks with shields to lower the noise
+            \end{itemize}
+    \end{columns}
     
 \end{frame}
 
 \begin{frame}{Front-end board test setup}
+    \begin{columns}
+        \column{0.48\textwidth}
+            \fontsize{9pt}{1}\selectfont
+            \textcolor{Red}{\textbf{Test setup}}
+            \begin{itemize}
+                \fontsize{8.5pt}{1}\selectfont
+                \item FEB or 6 FEBs connected by 5 flex-rigid boards
+                \item Termination connector to close the row
+                \item FPGA Intel Cyclone V (\SI{48}{\mega\hertz} clock frequency)
+                \item Interface board, flex-ribbon cable and adapter board for connecting FPGA to FEB
+                \item Keysight N6705C DC power supply, providing analog, digital and calibration 
+                \item PC connected via USB to FPGA
+                \item Purposely developed Python software to perform test on FEB and acquire data
+                \item MATLAB script to elaborate data and plot results
+            \end{itemize}
+
+            \vspace{0.15cm}
+            \fontsize{9pt}{1}\selectfont
+            \textcolor{Red}{\textbf{Tests performed}}
+            \begin{itemize}
+                \item Automated test performed via dedicated Python script
+                \item Voltage measurements on FEB taken with multimeter
+            \end{itemize}
+
+        \column{0.48\textwidth}
+            \centering
+            \vskip0.1cm
+            \includegraphics[height=0.85\textheight]{images/backup_slides/FEB_setup_combo.pdf}
+            
+    \end{columns}
     
 \end{frame}
 
 \begin{frame}{Threshold setting for X-ray detection}
+    \begin{columns}[T]
+        \column{0.475\textwidth}
+            \centering
+             \fontsize{9pt}{1}\selectfont
+            \textbf{\textcolor{ForestGreen}{Charge scan performed on Si(Li) detector \#0}}\\
+             \fontsize{8.5pt}{1}\selectfont
+             \includegraphics[height=0.55\textheight]{images/backup_slides/Threshold Scan - Detector 0 - TH214.pdf}
+             \vspace{0.1cm}
+            \begin{itemize}
+                \item Detector \#0: channels 0 to 7
+                \item \textbf{Goal:} determine THR value to detect \ce{^{241}Am} X-ray peaks at \SI{26.34}{\kilo\electronvolt} and \SI{59.54}{\kilo\electronvolt}
+                \item Channel's trigger profile obtained keeping THR constant and varying injected charge
+            \end{itemize}
+
+        \column{0.475\textwidth}
+            \centering
+            \fontsize{9pt}{1}\selectfont
+            \textbf{\textcolor{ForestGreen}{Threshold \& ENC obtained from charge scan}}\\
+            \fontsize{8.5pt}{1}\selectfont
+            \vskip0.26cm
+            \includegraphics[height=0.515\textheight]{images/backup_slides/ENC_channels.pdf}
+            \vspace{0.15cm}
+            \begin{itemize}
+                \item Threshold and ENC values for each channel extracted by interpolating Gaussian CDF
+                \item Mean threshold equivalent to \textbf{\SI{22.65}{\kilo\electronvolt}}
+                \item \textcolor{Red}{\textbf{Channel 6:}} \textbf{\SI{10.29}{\kilo\electronvolt}} threshold
+                \item \textcolor{Red}{\textbf{Channel 7:}} \textbf{\SI{32.98}{\kilo\electronvolt}} threshold
+            \end{itemize}
+    \end{columns}
     
 \end{frame}
 
