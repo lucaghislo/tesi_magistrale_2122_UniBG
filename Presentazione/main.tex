@@ -119,9 +119,9 @@
         \vspace{0.3cm}
         \textbf{\large \textcolor{ForestGreen}{The instrument}}\\
         \vspace{0.25cm}
-        \textbf{\textcolor{Red}{Time-of-Flight System (TOF)}}
+        \textbf{\textcolor{Red}{Time-of-Flight System (ToF)}}
         \begin{itemize}
-            \item 220 plastic scintillator paddles with Si-PM readout
+            \item 220 plastic scintillator paddles with SiPM readout
         \end{itemize}\pause
         \vspace{0.15cm}
         \textbf{\textcolor{Red}{Si(Li) Tracker}}
@@ -174,7 +174,7 @@
             \item Channels per ASIC: \textbf{32}
             \item Operating temperature: \textbf{\SI{-40}{\celsius}}
             \item Power dissipation: $\leq$ \textbf{\SI{10}{\milli\watt/ch}}
-            \item Dynamic range: \textbf{\SI{10}{\kilo\electronvolt} - \SI{100}{\mega\electronvolt}}
+            \item Dynamic range: \textbf{\SI{20}{\kilo\electronvolt} - \SI{100}{\mega\electronvolt}}
             \item Analog resolution: \textbf{\SI{4}{\kilo\electronvolt} (FWHM)}
             \item Threshold: \textbf{\SI{20}{\kilo\electronvolt}}
         \end{itemize}
@@ -325,7 +325,7 @@
             Channel gain studied in two energy regions:
             \begin{itemize}
                 \item \textbf{\textcolor{Red}{Low energy region}}: X-ray detection region ranging from \textbf{0} to \textbf{\SI{100}{\kilo\electronvolt}}
-                \item \textbf{\textcolor{Red}{High energy region}}: Muon detection region, ranging from \textbf{40} to \textbf{\SI{55}{\mega\electronvolt}}
+                \item \textbf{\textcolor{Red}{High energy region}}: muon detection region, ranging from \textbf{40} to \textbf{\SI{55}{\mega\electronvolt}}
             \end{itemize}
             \vspace{0.4cm}
     \end{columns}
@@ -618,7 +618,7 @@
         \begin{itemize}
             \item Scintillator/SiPM assembly placed underneath Si(Li) detector \#2: channels 16 to 23 highlighted in red
             \vskip0.4cm
-            \includegraphics[width=0.9\textwidth]{images/muon_detection/scintillator_sensor_detail.png}
+            \includegraphics[width=0.8\textwidth]{images/muon_detection/scintillator_sensor_detail.png}
             \vskip0.4cm
             \item \textbf{ArduSiPM} radiation detector used as an external trigger source
             \item 2 hours acquisition
@@ -704,6 +704,62 @@
 
 
 %---------------------------------------------------------------------------------------
+%	The GAPS detection principle
+%---------------------------------------------------------------------------------------
+
+\begin{frame}{The GAPS detection principle}
+    \fontsize{9pt}{1}\selectfont
+    \begin{columns}
+        \column{0.5\textwidth}
+            \begin{itemize}
+                \setlength\itemsep{1em}
+                \item \textcolor{Red}{Antinuclei slow down in the Si(Li) tracker material}, until captured by the target material forming an exotic atom, with the antinucleus orbiting the nucleus of target material
+                \item \textcolor{Red}{Exotic atoms de-excite emitting X-rays} with characteristic energies that depend on the reduced mass of the nucleus-antinucleus system
+                \item Finally, the \textcolor{Red}{antinucleus annihilates} with the target material, producing pions and protons
+            \end{itemize}
+
+        \column{0.5\textwidth}
+            \centering
+            \includegraphics[width=0.85\textwidth]{images/backup_slides/tracker_scheme_manghisoni.jpg}
+    \end{columns}
+
+    \vspace{0.1cm}
+    \begin{columns}
+        \column{0.985\textwidth}
+            \begin{itemize}
+                \item \textcolor{Red}{Characteristic X-rays (20-\SI{100}{\kilo\electronvolt}) are detected by the Si(Li) detectors.} Tracks from the charged annihilation products can be reconstructed using both the tracker and ToF, providing measurements of energy depositions and velocities
+                \item The GAPS detector uniquely identifies an antinucleus species while providing rejection power against protons and other non-antimatter cosmic-ray particles
+            \end{itemize}
+        \column{0.01\textwidth}
+    \end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	4 keV analog resolution requirement
+%---------------------------------------------------------------------------------------
+
+\begin{frame}{\SI{4}{\kilo\electronvolt} analog resolution requirement}
+    \begin{columns}
+        \column{0.4\textwidth}
+            \centering
+            \includegraphics[height=0.47\textheight]{images/backup_slides/antiproton_antideuteron_1.png}
+
+        \column{0.4\textwidth}
+            \centering
+            \includegraphics[height=0.47\textheight]{images/backup_slides/antiproton_antideuteron_2.png}
+    \end{columns}
+
+    \vspace{0.5cm}
+    \begin{columns}
+        \column{0.9\textwidth}
+            \centering
+             \SI{4}{\kilo\electronvolt} analog resolution required to distinguish \textbf{antideuterons} (particle of interest for the experiment) from \textbf{antiprotons}, treated as noise
+    \end{columns}
+\end{frame}
+
+
+%---------------------------------------------------------------------------------------
 %	Analog readout channel and ADC
 %---------------------------------------------------------------------------------------
 
@@ -712,8 +768,8 @@
     \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
     \addtolength{\leftmargini}{\labelsep}
     \centering
-    \includegraphics[width=0.68\textwidth]{images/backup_slides/readoutchannelADC.pdf}
-    \vskip0.2cm
+    \includegraphics[width=0.85\textwidth]{images/backup_slides/schematico_detector.pdf}
+    \vskip0.3cm
     \begin{columns}[T]
         \column{0.3\textwidth}
             \begin{itemize}
@@ -881,6 +937,11 @@
     \end{columns}
 \end{frame}
 
+
+%---------------------------------------------------------------------------------------
+%	A row of 6 modules
+%---------------------------------------------------------------------------------------
+
 \begin{frame}{A row of 6 modules}
     \begin{columns}
         \column{0.4\textwidth}
@@ -894,6 +955,11 @@
             \includegraphics[width=1\textwidth]{images/backup_slides/row_scheme_elisa.pdf}   
     \end{columns}
 \end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	Front-end board shields
+%---------------------------------------------------------------------------------------
 
 \begin{frame}{Front-end board shields}
     \settowidth{\leftmargini}{\usebeamertemplate{itemize item}}
@@ -915,8 +981,12 @@
                 \item \textcolor{ForestGreen}{\textbf{Solution:}} cover tracks with shields to lower the noise
             \end{itemize}
     \end{columns}
-    
 \end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	Front-end board test setup
+%---------------------------------------------------------------------------------------
 
 \begin{frame}{Front-end board test setup}
     \begin{columns}
@@ -947,10 +1017,13 @@
             \centering
             \vskip0.1cm
             \includegraphics[height=0.85\textheight]{images/backup_slides/FEB_setup_combo.pdf}
-            
     \end{columns}
-    
 \end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	Threshold setting for X-ray detection
+%---------------------------------------------------------------------------------------
 
 \begin{frame}{Threshold setting for X-ray detection}
     \begin{columns}[T]
@@ -982,8 +1055,12 @@
                 \item \textcolor{Red}{\textbf{Channel 7:}} \textbf{\SI{32.98}{\kilo\electronvolt}} threshold
             \end{itemize}
     \end{columns}
-    
 \end{frame}
+
+
+%---------------------------------------------------------------------------------------
+%	Si(Li) detectors leakage current measurement
+%---------------------------------------------------------------------------------------
 
 \begin{frame}{Si(Li) detectors leakage current measurement}
     \begin{columns}[T]
@@ -1011,9 +1088,7 @@
                 \item \textbf{\SI{1.59}{\nano\ampere}} minimum on channel 31
                 \item \textbf{\SI{746.11}{\nano\ampere}} in total over 32 channels is consistent with power supply readout
             \end{itemize}
-        
     \end{columns}
-    
 \end{frame}
 
 \backupend
