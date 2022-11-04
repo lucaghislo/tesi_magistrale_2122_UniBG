@@ -1,0 +1,26 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Reference current values and variations with respect to temperature from \SI {-40}{\celsius } to \SI {30}{\celsius } for each bias settings.\relax }}{8}{table.caption.14}%
+\contentsline {table}{\numberline {1.2}{\ignorespaces Estimated temperature coefficients.\relax }}{9}{table.caption.17}%
+\contentsline {table}{\numberline {1.3}{\ignorespaces \texttt {CSAVrefGM} voltage measured at temperatures varying from \SI {-40}{\celsius } to \SI {30}{\celsius } with CSA REFERENCE REGULATION bits set to \texttt {0011} and \texttt {0111} respectively.\relax }}{12}{table.caption.20}%
+\contentsline {table}{\numberline {1.4}{\ignorespaces Gain and pedestal linear regression models coefficients obtained from measurements with automatically generated \texttt {CSAVrefGM} voltage and \texttt {HRRR} set to \texttt {0011}.\relax }}{15}{table.caption.22}%
+\contentsline {table}{\numberline {1.5}{\ignorespaces Gain and pedestal linear regression models coefficients obtained from measurements with \texttt {CSAVrefGM} voltage set at a fixed value of \SI {530}{\milli \volt }.\relax }}{15}{table.caption.23}%
+\contentsline {table}{\numberline {1.6}{\ignorespaces $V_{\textit {tn, max}}$ and $V_{\textit {tn, lsb}}$ measured at temperatures ranging from \SI {-40}{\celsius } to \SI {30}{\celsius }.\relax }}{20}{table.caption.31}%
+\contentsline {table}{\numberline {1.7}{\ignorespaces Linear regression model coefficients evaluated over global threshold measurements taken at temperatures varying from \SI {-40}{\celsius } to \SI {30}{\celsius }.\relax }}{21}{table.caption.32}%
+\contentsline {table}{\numberline {1.8}{\ignorespaces Linear regression model coefficients evaluated over global threshold measurements taken at temperatures varying from \SI {-40}{\celsius } to \SI {-30}{\celsius }.\relax }}{21}{table.caption.34}%
+\contentsline {table}{\numberline {1.9}{\ignorespaces Linear regression model coefficients evaluated over global threshold measurements taken by spanning the 8-bit DAC code and by varying the fine threshold (FTHR) code.\relax }}{23}{table.caption.36}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces SPI commands and configuration bits.\relax }}{38}{table.caption.45}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces List of voltages measured during the bias test of the FEB.\relax }}{42}{table.caption.47}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces List of currents measured during the bias test of the FEB.\relax }}{42}{table.caption.48}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces Structure of the entry for the Dummy-1 front-end boards test report.\relax }}{59}{table.caption.64}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces Structure of the entry for the flex-rigid boards test report.\relax }}{62}{table.caption.67}%
+\contentsline {table}{\numberline {2.6}{\ignorespaces Structure of the entry for the termination connectors test report.\relax }}{63}{table.caption.69}%
+\contentsline {table}{\numberline {2.7}{\ignorespaces Structure of the entry for the front-end board shields test report.\relax }}{65}{table.caption.72}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Main \texttt {GAPS\_DAQ} parameters settings used during data acquisition. Other parameters were kept at their default value, provided by the application.\relax }}{78}{table.caption.84}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces GAPS ASIC requirements.\relax }}{98}{table.caption.103}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
