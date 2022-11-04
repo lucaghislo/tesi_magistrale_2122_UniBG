@@ -1,0 +1,219 @@
+%-------------------------------------------------------------------------------
+%	REQUIRED PACKAGES AND  CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+%\documentclass[temporary]{oist_thesis} % Temporary version for thesis revision and examination
+\documentclass[final]{oist_thesis} % Final version for thesis submission
+
+% To show \subsubsection{} numbered in TOC
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{2}
+
+\usepackage[english]{babel} % The document is in English
+\usepackage[utf8]{inputenc} % UTF8 encoding
+\usepackage[T1]{fontenc} % Font encoding
+
+\usepackage{graphicx} % For including images
+\graphicspath{{./Images/}} % Specifies the directory where pictures are stored
+
+\usepackage{eso-pic} % For the background picture on the title page
+
+\usepackage{setspace} % For using single or double spacing
+\usepackage{longtable} % tables that can span several pages
+\usepackage{pdfpages} % To include a pdf files of your published papers as an appendix
+\usepackage{fancyhdr} % For the headers
+\usepackage{hyperref} % Adds clickable links at references
+\usepackage{afterpage} % blank page
+\usepackage{bm}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{0}%
+    \newpage}
+    
+\newcommand\blankpageNN{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+  
+
+%-------------------------------------------------------------------------------
+%	ADD YOUR PACKAGES (be careful of package interaction)
+%-------------------------------------------------------------------------------
+
+\usepackage{xcolor}
+\usepackage{amsthm,amsmath,amssymb,amsfonts,bbm}% Math symbols
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0.4pt}% Line at the footer visible
+}
+
+\usepackage{hyperref}
+\usepackage{pdfpages}
+\usepackage{dirtree}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{siunitx}
+\usepackage{floatrow}
+\usepackage{comment}
+\usepackage{multirow}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{makecell}
+\hypersetup{
+    colorlinks,
+    linkcolor={black!100!black},
+    citecolor={black!100!black},
+    urlcolor={black!100!black}
+}
+\usepackage[verbose]{placeins}
+\usepackage{ragged2e}
+\usepackage{nccmath}
+\usepackage[absolute,overlay]{textpos}
+\usepackage{titlesec}
+\usepackage[version=4]{mhchem}
+\usepackage[notransparent]{svg}
+\usepackage{csquotes}
+
+
+%-------------------------------------------------------------------------------
+%	PDF METADATA
+%-------------------------------------------------------------------------------
+
+\hypersetup{
+    pdfauthor={Luca Ghislotti},
+    pdftitle={Characterisation of the readout electronics of the Si(Li) tracker for the first flight of the GAPS experiment},
+    pdfsubject={This thesis work describes the characterisation work that has been carried out on the flight items of the lithium-drifted silicon tracker of the GAPS experiment and includes an in-depth description of the validation techniques used for all detector components and the results obtained during the testing process.},
+    pdfkeywords={GAPS, Dark Matter, ASIC, Microelectronics},
+    pdfproducer={Overleaf},
+    pdfcreator={PdfTeX}
+}
+
+
+%-------------------------------------------------------------------------------
+%	ADD YOUR DEFINITIONS AND COMMANDS
+%-------------------------------------------------------------------------------
+
+\makeatletter
+\def\smallunderbrace#1{\mathop{\vtop{\m@th\ialign{##\crcr
+   $\hfil\displaystyle{#1}\hfil$\crcr
+   \noalign{\kern3\p@\nointerlineskip}%
+   \tiny\upbracefill\crcr\noalign{\kern3\p@}}}}\limits}
+\makeatother
+
+\newfloatcommand{capbtabbox}{table}[][\FBwidth]
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand\T{\rule{0pt}{2.6ex}}       % Top strut
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}} % Bottom strut
+\newcommand{\minus}{\scalebox{0.75}[1.5]{$-$}}
+\sisetup{detect-weight=true, detect-family=true}
+
+
+%-------------------------------------------------------------------------------
+%	BIBLIOGRAPHY STYLE
+%-------------------------------------------------------------------------------
+
+\usepackage[
+    backend=biber,
+    style=numeric,
+    sorting=none,
+    maxnames=8,
+]{biblatex}
+
+\addbibresource{thesis_bibliography.bib}
+\appto{\bibsetup}{\sloppy}
+\AtEveryBibitem{
+    \clearfield{urlyear}
+    \clearfield{urlmonth}
+}
+
+
+%-------------------------------------------------------------------------------
+%	TITLE PAGE
+%-------------------------------------------------------------------------------
+
+\begin{document}
+
+\input{Preamble/titlepage/titlepage_EN_logo.tex}
+\blankpage
+
+
+%-------------------------------------------------------------------------------
+%	PREAMBLE PAGES
+%-------------------------------------------------------------------------------
+
+\startpreamble
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
+
+\input{Preamble/acknowledgments}
+\input{Preamble/dedication}
+
+
+%-------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES
+%-------------------------------------------------------------------------------
+
+\unnumberedchapter{Contents} % Contents
+\tableofcontents % Write out the Table of Contents
+\unnumberedchapter{List of Figures} % List of Figures
+\listoffigures % Write out the List of Figures 
+\unnumberedchapter{List of Tables} % List of Tables
+\listoftables % Write out the List of Tables
+
+
+%-------------------------------------------------------------------------------
+%	THESIS MAIN TEXT
+%-------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\unnumberedchapter{Introduction} % Title of the unnumbered chapter % Introduction
+\input{MainText/introduction} % Introduction (unnumbered)
+
+\numberedchapter % Regular chapters following: input your chapters here
+
+\input{MainText/chapters/chapter1}
+\input{MainText/chapters/chapter2}
+\input{MainText/chapters/chapter3}
+
+\unnumberedchapter{Conclusions} % Title of the unnumbered chapter % Conclusion
+\input{MainText/conclusion} % Conclusion (unnumbered)
+
+
+%-------------------------------------------------------------------------------
+%	APPENDICES
+%-------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\appendix
+\numberedchapter % Regular chapters following
+\input{MainText/appendix/appendixGAPSintro}
+\input{MainText/appendix/appendixItemsReport}
+\input{MainText/appendix/appendix32CHmuons.tex}
+\input{MainText/appendix/appendixPCB}
+
+
+%-------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%-------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\unnumberedchapter{Bibliography} % Title of the unnumbered chapter % Bibliography
+\printbibliography[]
+
+
+%-------------------------------------------------------------------------------
+%	NOTE
+%-------------------------------------------------------------------------------
+
+\input{MainText/note} % nota
+
+\end{document}
